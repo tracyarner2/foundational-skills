@@ -1,0 +1,6 @@
+library(usethis)
+use_git_config(user.name = "gigimcc4", user.email = "gigimcc4@gmail.com")
+install.packages("xaringanExtra")
+library(xaringan)
+install.packages("devtools")
+devtools::install_github("gadenbuie/xaringanExtra")
