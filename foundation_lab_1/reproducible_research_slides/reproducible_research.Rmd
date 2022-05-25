@@ -144,6 +144,10 @@ class: clear, laser
 
 .author[~ Stodden, 2009b, 38]
 
+???
+
+Piekert et al. exclaims that computational reproducibility is the ability to obtain identical results from the **same data** with the **same computer code**
+
 ---
 # Reproducible Research
 
@@ -159,7 +163,7 @@ class: clear, laser
 ]
 
 ???
-The picture shows graphs being reproduced even from a very older model. 
+Reproducibility is integral for empirical results. 
 
 Reproducible Research has shown to 
 Increase:
@@ -172,6 +176,8 @@ Increase:
 
 Reduces:
 - Effort duplication
+
+Even with open science advancements projects fail to be reproduced by other researchers due to software dependencies, ambiguous documentation of exact computational steps, copy and paste errors and poor best practices.
 
 .panel[.panel-name[What?]
 
@@ -212,6 +218,15 @@ I'm not sure yet
 ]
 ]
 
+???
+Piekert et al. 2021 and Gandrud 2020 suggest following a Workflow for reproducibility to achieve long-term and cross-platform computational reproducibility of data analysis.
+Piekert et al.s workflow includes 
+1. Version control
+2. Dynamic document generating
+3. Dependency Tracking
+4. Software management
+
+while Gandrud's includes
 
 ]
 
