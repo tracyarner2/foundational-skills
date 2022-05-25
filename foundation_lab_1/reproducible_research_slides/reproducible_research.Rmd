@@ -200,14 +200,16 @@ Clear communication
 “Reproducible Theory”
 - Foundational works and proofs cited appropriately
 
-.panel[.panel-name[Panel 3]
+.panel[.panel-name[Discussion]
 
-The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
+I'm not sure yet
 ]
 
-.panel[.panel-name[Panel 4]
+.panel[.panel-name[Workflow]
 
-The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
+.center[
+<img src="img/rr_workflow.png" height="425px"/>
+]
 ]
 
 
@@ -220,11 +222,21 @@ The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **
 
 class: clear, inverse, middle, center
 
-Part 2!
+Part 2:
 
 ----
 
-Code-A-Long.
+Code-A-Long
+
+---
+# Showing Your Code
+```{r example-code, echo=TRUE}
+# adding #<< after a line of code highlights it like this 
+alphabet <- letters #<<
+print(alphabet)
+```
+
+
 
 ---
 class: inverse, clear, center
@@ -251,9 +263,3 @@ This work was supported by countless cups of hot tea, cookies, and the RStats Xa
 ]
 
 ---
-# Showing Your Code
-```{r example-code, echo=TRUE}
-# adding #<< after a line of code highlights it like this 
-alphabet <- letters #<<
-print(alphabet)
-```
