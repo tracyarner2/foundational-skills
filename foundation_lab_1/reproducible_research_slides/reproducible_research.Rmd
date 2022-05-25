@@ -95,19 +95,110 @@ Conceptual Overview
 
 .panel[.panel-name[Open Science]
 
+**Open Science - "WHY?"**
+.center[
+<img src="img/open_science_1.png" height="400px"/>
+
+]
+
+???
+- Promotes a more accurate verification of scientific results. 
+- Speeds up scientific inquiry and discovery 
+- Reduces duplication in collecting, creating, transferring, and re-using scientific material.
+- Increases efficient use of financial resources.
+- Results in innovation and increased consumer choice from public research.
+- Promotes citizens’ engagement and trust in science. 
+
+]
+
+.panel[.panel-name[What]
 .pull-left[
-The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
+The [OECD](https://tinyurl.com/oecdlib) directorate for Science, Technology and Innovation (STI) leads OECD research on the contribution of science, technology and industry to well-being and economic growth.
 ]
 
 .pull-right[
-<img src="img/website.png" height="450px"/>
+<img src="img/open_science.png" height="400px"/>
+]
+]
+???
+This framework incorporates access to data and information, as well as civil society engagement, in the different stages of the scientific research process. 
+
+It is not meant to be prescriptive but should help different communities to decide on their own priorities within the open science space and to better visualize how these priorities link to different stage of the scientific process and to different actors. 
+
+Such a framework can be useful also in considering how best to incentive's and measure different aspects of open science.
+
+.panel[.panel-name[Discussion]
+
+"Open Science policies encourage researchers to disclose a wide range of outputs from their work, thereby codifying openness as a specific set of research practices and guidelines that can be interpreted and applied consistently across disciplines and geographical settings." (Levin, N., & Leonelli, S. (2017). How does one “open” science? Questions of value in biological research. Science, Technology, & Human Values, 42(2), 280-305.) 
+
+Do you think openness is an intrinsically positive goal for research and one that needs to be promoted and rewarded at every step of the research process? If so, why?
+]
+
+]
+
+
+---
+class: clear, laser
+
+.quote[Research findings cannot even really be considered “genuine contributions to human knowledge” until they have been verified through replication.]
+
+.author[~ Stodden, 2009b, 38]
+
+---
+# Reproducible Research
+
+.panelset[
+
+.panel[.panel-name[Why?]
+
+.center[
+<img src="img/reprod_1.png" height="450px"/>
+]
+
+
+]
+
+???
+The picture shows graphs being reproduced even from a very older model. 
+
+Reproducible Research has shown to 
+Increase:
+- Study replication
+- Cumulative knowledge development
+- Work habits 
+- Teamwork
+- Ease of revision to a project/study
+- Higher impact research
+
+Reduces:
+- Effort duplication
+
+.panel[.panel-name[What]
+
+**Core Practices**
+
+“The **communication** aspect **should not be an afterthought**, it should be recorded with your analysis as you are going through it.” (-Harrison et al, 2020)
+.center[
+<img src="img/reprod_2.png" height="300px"/>
 ]
 ]
 
-.panel[.panel-name[Panel 2]
+???
 
-The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
-]
+Well-documented research
+- ReadMe file
+- Use of code books - (variables, qual codes defined)
+- Validation procedures
+- Inclusion criteria 
+- Research questions
+- Considering including rough abstract
+Clear communication
+- Explanatory headers for source code files
+- Code is well commented (#)
+- Plain language
+- Rationale for using functions and methods 
+“Reproducible Theory”
+- Foundational works and proofs cited appropriately
 
 .panel[.panel-name[Panel 3]
 
@@ -123,21 +214,17 @@ The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **
 ]
 
 
----
-class: clear, laser
 
-.quote[Education is the most powerful weapon which you can use to change the world.]
 
-.author[~ Nelson Mandela]
 ---
 
 class: clear, inverse, middle, center
 
-This is an inverse slide example!
+Part 2!
 
 ----
 
-Four dashes puts a horizontal line on the slide to divide content.
+Code-A-Long.
 
 ---
 class: inverse, clear, center
