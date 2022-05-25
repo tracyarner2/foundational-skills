@@ -63,10 +63,10 @@ xaringanExtra::use_tile_view()
 # Agenda
 
 .pull-left[**Conceptual Overview**
-- Open-Science (Why??)
-- What is Reproducible Research? (What?)
-- Core Practices (Processes of RR) (How?)
-- Examples in LA of RR (Who?)
+- Open-Science 
+- What is Reproducible Research? 
+- Core Practices (Processes of RR) 
+- Examples in LA of RR 
 ]
 
 .pull-right[ **Code-A-Long**
@@ -152,7 +152,7 @@ class: clear, laser
 .panel[.panel-name[Why?]
 
 .center[
-<img src="img/reprod_1.png" height="450px"/>
+<img src="img/reprod_1.png" height="400px"/>
 ]
 
 
@@ -173,7 +173,7 @@ Increase:
 Reduces:
 - Effort duplication
 
-.panel[.panel-name[What]
+.panel[.panel-name[What?]
 
 **Core Practices**
 
