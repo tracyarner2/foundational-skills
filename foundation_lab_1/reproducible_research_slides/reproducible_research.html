@@ -266,6 +266,81 @@ The history tab allows you to see the commands that you have entered.
 ]
 ]
 
+.panel[.panel-name[New Script]
+.center[
+&lt;img src="img/r_script.png" height="425px"/&gt;
+]
+
+]
+
+
+]
+???
+
+
+**Global options:**
+customize the IDE to better suite your workflow
+- wrap code
+- change color scheme
+- move panes around
+- so much more
+
+]
+]
+???
+
+Let's set up our Global Options for a smooth workflow
+- In the menu bar click `Tools` then `Global Options.`
+    + 1. `R General` -&gt; (untick) Restore .RData into workspace at startup.
+    + 2. `R General` -&gt; Save workspace to .RData on exit: Never
+    + 3. `R Markdown` -&gt; Show output preview in: Viewer Pane
+]
+---
+#Packages
+
+.panelset[
+
+.panel[.panel-name[Packages]
+
+.center[
+&lt;img src="img/packages.png" height="425px"/&gt;
+]
+
+]
+???
+There are about eight packages supplied with the R distribution and many more are available through the CRAN family of Internet sites covering a very wide range of modern statistics, and machine learning. If you need r to do something then there's probably a package for that.
+
+.panel[.panel-name[install]
+
+- 1st  Install tidyverse always use quotations for install
+install.packages("tidyverse")
+
+
+```r
+# read in tidyverse, do not need quotations reading into script
+*library(tidyverse)
+```
+
+```
+## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+```
+
+```
+## ✔ ggplot2 3.3.5     ✔ purrr   0.3.4
+## ✔ tibble  3.1.6     ✔ dplyr   1.0.8
+## ✔ tidyr   1.2.0     ✔ stringr 1.4.0
+## ✔ readr   2.1.2     ✔ forcats 0.5.1
+```
+
+```
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+```
+
+
+]
+
 ]
 
 ---

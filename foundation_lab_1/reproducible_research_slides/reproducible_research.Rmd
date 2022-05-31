@@ -286,6 +286,65 @@ The history tab allows you to see the commands that you have entered.
 ]
 ]
 
+.panel[.panel-name[New Script]
+.center[
+<img src="img/r_script.png" height="425px"/>
+]
+
+]
+
+
+]
+???
+
+
+**Global options:**
+customize the IDE to better suite your workflow
+- wrap code
+- change color scheme
+- move panes around
+- so much more
+
+]
+]
+???
+
+Let's set up our Global Options for a smooth workflow
+- In the menu bar click `Tools` then `Global Options.`
+    + 1. `R General` -> (untick) Restore .RData into workspace at startup.
+    + 2. `R General` -> Save workspace to .RData on exit: Never
+    + 3. `R Markdown` -> Show output preview in: Viewer Pane
+]
+---
+#Packages
+
+.panelset[
+
+.panel[.panel-name[Packages]
+
+.center[
+<img src="img/packages.png" height="425px"/>
+]
+
+]
+???
+There are about eight packages supplied with the R distribution and many more are available through the CRAN family of Internet sites covering a very wide range of modern statistics, and machine learning. If you need r to do something then there's probably a package for that.
+
+.panel[.panel-name[install]
+
+- 1st  Install tidyverse always use quotations for install
+install.packages("tidyverse")
+
+```{r install-code, echo=TRUE}
+
+
+# read in tidyverse, do not need quotations reading into script
+library(tidyverse) #<<
+```
+
+
+]
+
 ]
 
 ---
