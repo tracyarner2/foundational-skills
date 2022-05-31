@@ -69,7 +69,7 @@ xaringanExtra::use_tile_view()
 - Examples in LA of RR 
 ]
 
-.pull-right[ **Code-A-Long**
+.pull-right[ **Code-Along**
 - IDE “Scavenger Hunt” (Partner Activity)
 - Highlighting Code Elements (Partner Activity)
 - Style Editor
@@ -129,9 +129,13 @@ Such a framework can be useful also in considering how best to incentive's and m
 
 .panel[.panel-name[Discussion]
 
-"Open Science policies encourage researchers to disclose a wide range of outputs from their work, thereby codifying openness as a specific set of research practices and guidelines that can be interpreted and applied consistently across disciplines and geographical settings." (Levin, N., & Leonelli, S. (2017). How does one “open” science? Questions of value in biological research. Science, Technology, & Human Values, 42(2), 280-305.) 
+"Open Science policies encourage researchers to disclose a wide range of outputs from their work, thereby codifying openness as a specific set of research practices and guidelines that can be interpreted and applied consistently across disciplines and geographical settings." (Levin, N., & Leonelli, S. (2017). 
 
-Do you think openness is an intrinsically positive goal for research and one that needs to be promoted and rewarded at every step of the research process? If so, why?
+How do you "open" science in your practice?
+
+*How does one “open” science? Questions of value in biological research. Science, Technology, & Human Values, 42(2), 280-305.)* 
+
+
 ]
 
 ]
@@ -204,11 +208,12 @@ Clear communication
 - Plain language
 - Rationale for using functions and methods 
 “Reproducible Theory”
-- Foundational works and proofs cited appropriately
+- Foundation works and proofs cited appropriately
 
 .panel[.panel-name[Discussion]
 
-I'm not sure yet
+What have your experiences been with Reproducible Research?
+
 ]
 
 .panel[.panel-name[Workflow]
@@ -241,7 +246,47 @@ Part 2:
 
 ----
 
-Code-A-Long
+Code-Along
+
+---
+
+.panelset[
+
+.panel[.panel-name[R Environment]
+
+.center[
+<img src="img/r_console.png" height="425px"/>
+]
+
+]
+???
+**What is the Integrated Development Environment (IDE)?**
+The IDE four main areas
+- Console (& Terminal)
+- Scripting and Viewing Window
+- Files/Plots/Packages/Help
+- Environment (& Connections/Git)
+
+**CONSOLE:**
+The console will show you what items have been run and any errors
+The terminal provides access to the system shell. You can run scripts here
+
+***Scripting and Viewing:**
+The Script Window is the place to enter and run your code so that it is easily edited and saved for future use.
+Two ways to execute your code in the R script, you can either highlight the code and click on Run, or you can highlight the code and press CTRL + Enter on your keyboard.
+
+**Environment Window:**
+The Environment tab allows you to see what objects are in the work space.
+The history tab allows you to see the commands that you have entered.
+
+.panel[.panel-name[Global Options]
+
+.center[
+<img src="img/global.png" height="425px"/>
+]
+]
+
+]
 
 ---
 # Showing Your Code
