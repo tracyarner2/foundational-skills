@@ -1,6 +1,6 @@
 
 
-# THE BASICS #######################
+# CODE- ALONG #######################
 
 ## 1. Programming Basics ###########
 
@@ -66,9 +66,35 @@ my_product <- my_number * 2
 my_product
 
 
+### d. Packages #######################
 
+#### install.packages() function ######
 
-### d. Vectors ######################
+install.packages("tidyverse")
+
+library(tidyverse)
+?tidyverse
+
+#' Run the following code to 
+#' install the readr package. 
+
+library(readr)
+
+#did it work? Maybe you need to install first. You can also check if you package is loaded in the package pane.
+
+#' Now use the library() function to load the readr package into R.
+
+#' Use ? to check the help document for the readr package.
+
+###########################################
+###########################################
+
+#AFTERNOON WORK IF YOU CHOOSE
+
+###########################################
+###########################################
+
+### e. Vectors ######################
 
 #### c() function ###################
 
@@ -119,7 +145,7 @@ my_vector <- c(50:100)
 my_vector[50]
 
 
-### e. Data Types ###################
+### f. Data Types ###################
 
 
 
@@ -142,7 +168,7 @@ vec <- c("Harry", "Hermione", "Rubeus", "Draco")
 vec
 
 
-### f. Lists #########################
+### g. Lists #########################
 
 ?list()
 
@@ -164,7 +190,7 @@ str(my_list)
 
 
 
-#### data.frame() function ############
+#### h. data.frame() function ############
 
 
 data <- data.frame(
@@ -182,31 +208,9 @@ str(data)
 #' Examine the contents of your data frame.
 
 
-#### $ operator #######################
+#### i. $ operator #######################
 
 data$name
 
 #' Extract the courses from your data frame using $. 
 
-
-
-
-### g. Packages #######################
-
-#### install.packages() function ######
-
-install.packages("tidyverse")
-
-library(tidyverse)
-?tidyverse
-
-#' Run the following code to 
-#' install the readr package. 
-
-
-
-#' Now use the library() function to load the readr package into R.
-
-
-
-#' Use ? to check the help document for the readr package. 
