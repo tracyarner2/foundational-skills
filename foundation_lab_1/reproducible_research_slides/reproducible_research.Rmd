@@ -249,6 +249,7 @@ Part 2:
 Code-Along
 
 ---
+# R Programming Basics
 
 .panelset[
 
@@ -285,16 +286,6 @@ The history tab allows you to see the commands that you have entered.
 <img src="img/global.png" height="425px"/>
 ]
 ]
-
-.panel[.panel-name[New Script]
-.center[
-<img src="img/r_script.png" height="425px"/>
-]
-
-]
-
-
-]
 ???
 
 
@@ -305,7 +296,10 @@ customize the IDE to better suite your workflow
 - move panes around
 - so much more
 
-]
+
+.panel[.panel-name[New Script]
+.center[
+<img src="img/r_script.png" height="425px"/>
 ]
 ???
 
@@ -315,6 +309,121 @@ Let's set up our Global Options for a smooth workflow
     + 2. `R General` -> Save workspace to .RData on exit: Never
     + 3. `R Markdown` -> Show output preview in: Viewer Pane
 ]
+.panel[.panel-name[Programming]
+- Objects are the nouns of the R language
+	+ owen_meany < - mean(numeric_vector)
+- Functions are the verbs
+	+ owen_meany < - mean(numeric_vector)
+- Arguments are the adverbs or the direct object
+	+ owen_meany < - mean(numeric_vector)
+As in any sentence, there is also “punctuation” 
+	+ owen_meany < - mean(numeric_vector)
+
+
+]
+
+
+]
+
+
+---
+# Functions
+
+.panelset[
+
+.panel[.panel-name[Functions]
+
+.center[
+<img src="img/functions.png" height="425px"/>
+]
+]
+
+???
+Functions: are everything you do in R. 
+
+.panel[.panel-name[Structure]
+- mean()
+- filter()
+
+
+```{r round-block, echo=TRUE}
+#round pi
+round(3.14) #<<
+
+```
+
+]
+]
+???
+Say you want to take the mean of a number, you would write mean( )
+Suppose you want to round a number, you would use round( ) and put the number inside the parentheses. Make sure to look in the console pane to see the answer.
+- Functions always include parenthesis
+
+---
+# Arguments
+
+.panelset[
+
+.panel[.panel-name[Arguments]
+
+.center[
+<img src="img/arguments.png" height="425px"/>
+]
+]
+
+.panel[.panel-name[Structure]
+
+```{r argument-block, echo = TRUE}
+#use help to look at arguments
+?round
+
+#round pi to two digits
+round(3.14, digits = 2) #<<
+```
+
+]
+
+???
+- We talked about the help window or pane earlier. You can add a question mark before the round() function to look at the arguments. 
+
+- Look for an argument that you can add to pi to round to the nearest 1 decimal places
+HINT look under USAGE in the arguments help section
+
+]
+
+
+---
+# Objects
+.panelset[
+
+.panel[.panel-name[Objects]
+
+.center[
+<img src="img/objects.png" height="425px"/>
+]
+Objects: are everything you have in R - things that you save like data frames in tabular form. Think back when you have used excel and you had to save your spread sheet and name it. That is comparable to an object. 
+
+To save something into an object we need to use the assignment operator <-.  The assignment operator is used for assignment operation. Operator that assigns a certain value to a variable and scope is within the function and outside as well. 
+
+???
+
+]
+.panel[.panel-name[Structure]
+```{r object-block, echo=TRUE}
+twenty <-20 #<<
+forty <- 20 #<<
+
+```
+
+]
+]
+???
+
+
+We will save the number 20 to the word twenty. I could have easily called the new object any other name to save as the object. Then I can **call** the number by typing twenty in and running it.
+
+Don’t ever want to use TRUE/FALSE, those are reserved for testing logical variables.
+Also, NaN, inf and NA are reserved for outcomes such as whether a variable is negative or positive infinity, not a number, or missing.
 ---
 #Packages
 
@@ -328,12 +437,14 @@ Let's set up our Global Options for a smooth workflow
 
 ]
 ???
+You only install the package once, ever...mostly ever :). But, you will need to read in the package to Rstudio for each session. Sometimes during the session.
+
 There are about eight packages supplied with the R distribution and many more are available through the CRAN family of Internet sites covering a very wide range of modern statistics, and machine learning. If you need r to do something then there's probably a package for that.
 
-.panel[.panel-name[install]
+.panel[.panel-name[Structure]
 
-- 1st  Install tidyverse always use quotations for install
-install.packages("tidyverse")
+1.  Download packages to computer with `intall.packages("")`.
+2.  Read in package to Rstudio with `library()`
 
 ```{r install-code, echo=TRUE}
 
@@ -344,16 +455,10 @@ library(tidyverse) #<<
 
 
 ]
+???
+
 
 ]
-
----
-# Showing Your Code
-```{r example-code, echo=TRUE}
-# adding #<< after a line of code highlights it like this 
-alphabet <- letters #<<
-print(alphabet)
-```
 
 
 
