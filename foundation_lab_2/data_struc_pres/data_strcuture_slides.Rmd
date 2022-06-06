@@ -91,18 +91,16 @@ class: clear, laser
 
 .panel[.panel-name[Types]
 
-.pull-left[
-- Indicators of a school's success and progress.
-- Student progress, student behavior, and student learning.
-- Demographic or social media sources.
-]
 
-
-.pull-right[
+.center[
 <img src="img/data_LA.png" height="400px"/>
 ]
 ]
-
+???
+These types show:
+- Indicators of a school's success and progress.
+- Student progress, student behavior, and student learning.
+- Demographic or social media sources.
 ]
 
 ---
