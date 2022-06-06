@@ -76,7 +76,7 @@ class: clear, laser
 - Legal & Ethical Considerations
 ]
 
-.pull-right[**Part-2  Code-Along**
+.pull-right[**Part-2  Code-A-Long**
 - Read in Data
 - view Data
 
