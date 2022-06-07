@@ -4,7 +4,7 @@
     <title>Foundations - Data Structures</title>
     <meta charset="utf-8" />
     <meta name="author" content="Presenter Name, Author Two, Author Three" />
-    <meta name="date" content="2022-06-06" />
+    <meta name="date" content="2022-06-07" />
     <script src="libs/header-attrs-2.14/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
@@ -37,7 +37,7 @@ class: clear, title-slide, inverse, center, top, middle
 # Foundations - Data Structures
 ----
 ### **Presenter Name**, Author Two, Author Three
-### June 06, 2022
+### June 07, 2022
 
 ---
 # Recap from Reproducible Research
@@ -86,10 +86,16 @@ class: clear, laser
 ]
 
 ???
-These types show:
+Although we are going to talk about these types of data in silo, in practice researchers find value in using them together.
+In the following presentation we will introduce a workflow outlining ways which  data  from  multiple  sources  can  be  analyzed, interpreted, and  translated into change.
+
+
+The types of data show:
 - Indicators of a school's success and progress.
 - Student progress, student behavior, and student learning.
 - Demographic or social media sources.
+
+
 ]
 
 ---
@@ -106,6 +112,9 @@ of technology-based methods that can be applied to support learning and instruct
 &lt;img src="img/digital_LA.png" height="300px"/&gt;
 ]
 ]
+???
+
+According to Krumm et al, Digital Learning Environments have fueled data intensive research in education more than any other data.
 
 .panel[.panel-name[Games+]
 
@@ -122,7 +131,6 @@ of technology-based methods that can be applied to support learning and instruct
 ]
 ]
 ???
-
 - Early, iterative user-testing
 - help surface basic player interactions for improved core mechanics
 - UI/UX and learning design
@@ -136,7 +144,6 @@ Intelligent Tutoring Systems
 2. A student model
 3. An instructional, or pedagogical model
 
-- Krumm, Means, &amp; Bienkowski, 2010, p.31
 ]
 
 .pull-right[
@@ -144,25 +151,50 @@ Intelligent Tutoring Systems
 ]
 ]
 ???
-- applies artificial intelligence to students’ interactions with the system
-- an expert, or domain model, which organizes the skills and strategies in the domain, 
-- a student model of what a student understands about the domain that is inferred from their performances on learning tasks.
+Intelligent Tutoring Systems is a type of DLE that applies AI to students interactions in the digital system.
+
+- has three models, an expert, or domain model, which organizes the skills and strategies in the domain, 
+a student model of what a student understands about the domain that is inferred from their performances on learning tasks and,
+an instructional (pedagogical model) that includes  common mistakes and misconceptions along with a corresponding feedback strategy 
+
 
 - The same data that the ITS uses to figure out how to respond to a student’s actions can also be used by human analysts to gain a detailed picture of learning processes and the behaviors learners engage in.
 
-.panel[.panel-name[MOOCs]
-
-- Free/freemiam courses, certificates, PD
+.panel[.panel-name[LMS]
+Learning Management Systems
+.pull-left[
+- Free/freemium courses, certificates, PD
 - Edx
 - Coursera
 - Friday Institute
 - Collect granular data like ITS
+]
 
 .pull-right[
 &lt;img src="img/digital_LA.png" height="300px"/&gt;
 ]
 ]
+???
+A Learning Management System (LMS) is an online integrated software used for creating, delivering, tracking, and reporting educational courses and outcomes. Often used as student-facing repositories of digital resources and activities,
 
+
+We use Moodle at NCSU. What LMS do you use at your institution?
+
+.panel[.panel-name[MOOCs]
+.pull-left[
+- Free/freemium courses, certificates, PD
+- Edx
+- Coursera
+- Friday Institute
+- Collect granular data like ITS
+]
+
+.pull-right[
+&lt;img src="img/digital_LA.png" height="300px"/&gt;
+]
+]
+???
+Raise your hand if you have ever participated in a MOOC? The FI has many free MOOCs available, but there are also EDx and Coursera that you can take a MOOC at. These offer a major source for data from the large numbers of participants.
 
 ]
 
@@ -171,6 +203,17 @@ Intelligent Tutoring Systems
 # Administrative Data
 
 .panelset[
+
+.panel[.panel-name[A.D.]
+
+Types of State and Federal systems used in schools and districts to collect and store information to deliver some *sort* of service.
+.pull-right[
+&lt;img src="img/Admin_LA.png" height="300px"/&gt;
+]
+]
+???
+Administrative Data is the second type of data fueling data intensive research.
+Used in Schools, at district level and throughout most states.
 
 .panel[.panel-name[SIS]
 
@@ -182,20 +225,27 @@ Intelligent Tutoring Systems
 ]
 
 .pull-right[
-&lt;img src="img/website.png" height="450px"/&gt;
+&lt;img src="img/Admin_LA.png" height="300px"/&gt;
 ]
 ]
 ???
 **Student information systems**
-Can be at the Student level or Teacher and Administrator level.
-- demographics, attendance, and academic performances
-- teacher- and administrator-facing repositories of student demographic and learning-outcome data.
+Can be at the Student level or Teacher and Administrator level of student demographic and learning-outcome data.
+
 - A ready source of data on educational outcomes (e.g., grades) and demographic information, which can play a role in evaluations of technology-based interventions as well as early warning system research 
 
 
 .panel[.panel-name[SLDS]
 
-.
+.pull-left[
+- Connects state-wide
+- Accountability and reporting
+
+]
+
+.pull-right[
+&lt;img src="img/Admin_LA.png" height="300px"/&gt;
+]
 ]
 ???
 **statewide longitudinal data systems**
@@ -204,15 +254,7 @@ Can be at the Student level or Teacher and Administrator level.
 - Ability to link state K12 with HEd system; storage of each student’s demographic characteristics and enrollment history and scores on state accountability tests
 - Data infrastructure to examine “educational outcomes at the scale of an entire state” p.34
 
-.panel[.panel-name[Panel 3]
-
-The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
-]
-
-.panel[.panel-name[Panel 4]
-
-The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
-]
+State  level  and  university-based  researchers  increasingly  leveraged  these  data  for  both  accountability  and  reporting  purposes  as  well  as  district-and  school-improvement purposes.
 
 
 ]
