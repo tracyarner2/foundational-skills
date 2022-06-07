@@ -81,7 +81,7 @@ class: clear, laser
 .pull-left[**Part-1  Conceptual Overview**
 - Types of Data Used in LA (Sources)
 - Characteristics of Data (Format)
-- Legal & Ethical Considerations
+
 ]
 
 .pull-right[**Part-2  Code-Along**
@@ -227,6 +227,7 @@ Raise your hand if you have ever participated in a MOOC? The FI has many free MO
 .panel[.panel-name[A.D.]
 
 Types of State and Federal systems used in schools and districts to collect and store information to deliver some *sort* of service.
+
 .pull-right[
 <img src="img/Admin_LA.png" height="300px"/>
 ]
@@ -284,49 +285,171 @@ State  level  and  university-based  researchers  increasingly  leveraged  these
 
 .panelset[
 
-.panel[.panel-name[DLE]
+.panel[.panel-name[Sensors+]
+
+Location, physical movement and speech data.
+
+.pull-right[
+<img src="img/Sensor_LA.png" height="300px"/>
+]
+]
+???
+How many of you have an apple watch, or a fitbit or Samsung? These watches measure different things surrounding our health and fitness. The data can then be used to explain or predict our **health**
+
+.panel[.panel-name[Research]
 
 .pull-left[
-The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
+- capture biometric data
+- parse audio and video recordings using machine learning and artificial intelligence techniques
+- Fitness devices
+- Multimodal investigation
 ]
 
 .pull-right[
-<img src="img/website.png" height="450px"/>
-]
-]
-
-.panel[.panel-name[Panel 2]
-
-The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
+<img src="img/Sensor_LA.png" height="300px"/>
 ]
 
-.panel[.panel-name[Panel 3]
-
-The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
 ]
+???
 
-.panel[.panel-name[Panel 4]
+identifying multiple affective and engagement-related states
+detect facial expressions(audio, video)
+speech recognition
+speech prosody
 
-The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
-]
+- Understanding  what  learners  do  as  they  engage  in  learning  tasks  can  drive  digital  learning  environment adaptations.
 
 
 ]
+---
+# Characteristics of Data
+
+.panelset[
+
+.panel[.panel-name[Types]
+
+
+.center[
+<img src="img/data_types.png" height="400px"/>
+]
+]
+
+???
+
+In data-intensive research we might acquire data from LMS, SIS or another source. Data maybe to big for a typical  database  software  tools  to  capture,  store,  manage,  and  analyze”
+
+Those data are similar but different because 
+1. the tasks that students are engaged in and 
+2. how data from those tasks are collected and stored by the technology. 
 
 
 
+.panel[.panel-name[Structured]
+
+```{r round-block, echo=FALSE, warning=FALSE, message=FALSE}
+#show first 5 rows
+library(tidyverse)
+sci_course <- read_csv("data/sci-online-classes.csv")
+sci_course%>%
+  head(n=5)
+```
+
+]
+???
+Types: Quantitative in nature
+Here we see the rows and columns nice and tidy. 
+- data is tidy when each column is a variable, each row is an observation, and each cell is a single value.
+
+We typically have tidy data in Excel files or SQL databases that we can import using the readr function or here function.
+
+- Tabular - relational data. 
+Examples might include:
+- performance data (current and prior)
+- demographic data (student’s ethnic and or group or disability)
+
+Each field (variable) is discrete and can be accessed separately or jointly along with data from other fields (variables).
+
+.panel[.panel-name[Unstructured]
+
+.center[
+<img src="img/unstructured.png" height="400px"/>
+]
+]
+???
+Types: Qualitative in nature
+Non-Relational Data
+sensor data, web logs, clickstreams, keystroke capture data, emails, images and videos
+
+Text Heavy relationships between nodes
+IE: Audio, video, dates SQL database
+
+.panel[.panel-name[Semi-Structured]
+
+.center[
+
+```{r sna_plot, message=FALSE, echo=FALSE, warning=FALSE}
+library(igraph)
+ties <- read_csv("data/dlt1-edgelist.csv", 
+                 col_types = cols(Sender = col_character(),
+                                  Receiver = col_character(), 
+                                  `Category Text` = col_skip(), 
+                                  `Comment ID` = col_character(), 
+                                  `Discussion ID` = col_character()))
+actors <- read_csv("data/dlt1-nodes.csv", 
+                   col_types = cols(UID = col_character(), 
+                                    Facilitator = col_character(), 
+                                    expert = col_character(), 
+                                    connect = col_character()))
+network <- graph_from_data_frame(d = ties, 
+                                 vertices = actors, 
+                                 directed = T) 
+E(network)$weight <- 1 
+weighted_network <- simplify(network,
+                             edge.attr.comb = list(weight="sum")
+                             )
+node_degree <- degree(weighted_network, mode = "all")
+plot(weighted_network,
+     vertex.label = NA,
+     vertex.size = node_degree*.1,
+     edge.arrow.size = .04)
+```
+
+
+]
+]
+???
+
+Types - Qualitative data
+Triangular Data (uses surveys and interview answers)
+Semi-structured data is a form of structured data that does not conform with the formal structure of data models associated with relational databases or other forms of data tables.
+
+self-describing structure
+contain tags
+IE: Social media, JSON and XML
+
+.panel[.panel-name[Meta-Data]
+
+]
+???
+data about data - contexts and purposes for why the data was collected
+IE: fields for dates and locations on a set of photographs
+
+]
 
 ---
 
 class: clear, inverse, middle, center
 
-This is an inverse slide example!
+Part 2:
 
 ----
 
-Four dashes puts a horizontal line on the slide to divide content.
+Code-Along
 
 ---
+
+
+
 class: inverse, clear, center
 
 ## .font130[.center[**Thank you!**]]
@@ -349,10 +472,3 @@ class: inverse, clear, center
 This work was supported by countless cups of hot tea, cookies, and the RStats Xaringan community willingness to post of plethora of tutorials. But you may wish to thank your funding agency (e.g., the National Science Foundation) and put their logo on the left as shown here.
 ]]
 ]
----
-# Showing Your Code
-```{r example-code, echo=TRUE}
-# adding #<< after a line of code highlights it like this 
-alphabet <- letters #<<
-print(alphabet)
-```
