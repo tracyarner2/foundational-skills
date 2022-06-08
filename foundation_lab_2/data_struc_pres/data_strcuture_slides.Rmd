@@ -425,14 +425,21 @@ Semi-structured data is a form of structured data that does not conform with the
 
 self-describing structure
 contain tags
-IE: Social media, JSON and XML
+IE: Social media, JSON and XML, Social Network
 
 .panel[.panel-name[Meta-Data]
 
+.center[
+<img src="img/meta_dat.png" height="300px"/>
+]
+
 ]
 ???
-data about data - contexts and purposes for why the data was collected
-IE: fields for dates and locations on a set of photographs
+Not in the readings but something to think about is Meta-data collection, such as the field dates, times and locations of photos, videos and other structured data about data.
+ - contexts and purposes for why the data was collected
+ 
+You can read more about the meta data standards on Canada's heritage information network. https://www.canada.ca/en/heritage-information-network/services/collections-documentation-standards/chin-guide-museum-standards/metadata-data-structure.html
+
 
 ]
 
