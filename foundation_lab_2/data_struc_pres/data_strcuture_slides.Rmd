@@ -454,7 +454,63 @@ Part 2:
 Code-Along
 
 ---
+# Set Working Directory
 
+```{r eval = FALSE, echo=TRUE}
+setwd("/path/to/my/directory")
+```
+
+
+---
+# Reading in data
+```{r echo=TRUE}
+
+library(tidyverse)
+
+```
+
+???
+Continuing on from foundation lab one we will use "good programming practices" to learn more about reading in data.
+
+Again we are using a script file in R Studio. You will become familiar with R Markdown files in the next foundation lab. 
+
+In order to read in data we must load packages that allow us to read data in, like we did in foundation lab 1. 
+
+You might remember that when you start R it includes several packages like Base R package. 
+We are going to reload the Tidyverse package so that we can use the readr package.
+
+
+*Reminder if needed*
+R comes with several packages in base r when you start a session. Packages are a collection of objects, data sets around a theme or purpose. You may find a package whose objects are for the purpose of correlation, like in the cor package. Or you may find a package that has objects to produce better tables, like in the *kable extra* package. Or you may find a package that will help wrangling the data (processing it) easier than in Base R package. That is the package we are going to install here Tidyverse.
+
+Tidyverse is a suite of packages that share a common philosophy and are designed to work together. Think Google products or Microsoft products. data importing, data wrangling and plotting.
+---
+
+
+# Using the readr function
+
+[readr](https://readr.tidyverse.org/)
+
+```{r}
+
+```
+
+
+???
+readr is a quick way to read in comma-separated values (CSV) and tab-separated values (TSV)
+
+- show also how to click on the file and import data or compy the location
+
+
+---
+# read in excel files
+```{r}
+library(readxl) #<<
+csss_tweets <- read_excel("data/csss_tweets.xlsx")
+head(csss_tweets, n = 5)
+```
+
+---
 
 
 class: inverse, clear, center
