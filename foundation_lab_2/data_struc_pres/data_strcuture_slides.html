@@ -423,9 +423,23 @@ Code-Along
 
 
 ```r
+#sets your working directory
 setwd("/path/to/my/directory")
+
+# tells you what working directory your in
+getwd()
 ```
 
+???
+Continuing on from foundation lab one we will use "good programming practices" to learn more about reading in data.
+
+Again we are using a script file in R Studio. You will become familiar with R Markdown files in the next foundation lab. 
+
+A default working directory is a folder where RStudio goes, every time you open it. You can change the default working directory from RStudio menu under: Tools –&gt; Global options –&gt; click on “Browse” to select the default working directory you want.
+
+Although you can set your working directory in Session menu tool it is better to set it with code for reproducibility.
+
+You can also create a project and connect to your github account. Then open up the project which also sets the directory.
 
 ---
 # Reading in data
@@ -435,17 +449,15 @@ library(tidyverse)
 ```
 
 ???
-Continuing on from foundation lab one we will use "good programming practices" to learn more about reading in data.
-
-Again we are using a script file in R Studio. You will become familiar with R Markdown files in the next foundation lab. 
 
 In order to read in data we must load packages that allow us to read data in, like we did in foundation lab 1. 
 
-You might remember that when you start R it includes several packages like Base R package. 
-We are going to reload the Tidyverse package so that we can use the readr package.
+Although there are rad in capabilities with the utils package in base r, we are going to use a more modern approach.
+
+One of the packages in Tidyverse allows for reading in Comma delimeter files, or CSV. 
 
 
-*Reminder if needed*
+*Reminder if needed - this was discussed in foundation 1*
 R comes with several packages in base r when you start a session. Packages are a collection of objects, data sets around a theme or purpose. You may find a package whose objects are for the purpose of correlation, like in the cor package. Or you may find a package that has objects to produce better tables, like in the *kable extra* package. Or you may find a package that will help wrangling the data (processing it) easier than in Base R package. That is the package we are going to install here Tidyverse.
 
 Tidyverse is a suite of packages that share a common philosophy and are designed to work together. Think Google products or Microsoft products. data importing, data wrangling and plotting.
@@ -456,17 +468,50 @@ Tidyverse is a suite of packages that share a common philosophy and are designed
 
 [readr](https://readr.tidyverse.org/)
 
+.pull-left[
 
+```r
+online_classes &lt;- read_csv("data/sci-online-classes.csv")
 
+head(online_classes, n=5)
+```
+
+```
+## # A tibble: 5 × 30
+##   student_id course_id     total_points_possi… total_points_ea… percentage_earn…
+##        &lt;dbl&gt; &lt;chr&gt;                       &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+## 1      43146 FrScA-S216-02                3280             2220            0.677
+## 2      44638 OcnA-S116-01                 3531             2672            0.757
+## 3      47448 FrScA-S216-01                2870             1897            0.661
+## 4      47979 OcnA-S216-01                 4562             3090            0.677
+## 5      48797 PhysA-S116-01                2207             1910            0.865
+## # … with 25 more variables: subject &lt;chr&gt;, semester &lt;chr&gt;, section &lt;chr&gt;,
+## #   Gradebook_Item &lt;chr&gt;, Grade_Category &lt;lgl&gt;, FinalGradeCEMS &lt;dbl&gt;,
+## #   Points_Possible &lt;dbl&gt;, Points_Earned &lt;dbl&gt;, Gender &lt;chr&gt;, q1 &lt;dbl&gt;,
+## #   q2 &lt;dbl&gt;, q3 &lt;dbl&gt;, q4 &lt;dbl&gt;, q5 &lt;dbl&gt;, q6 &lt;dbl&gt;, q7 &lt;dbl&gt;, q8 &lt;dbl&gt;,
+## #   q9 &lt;dbl&gt;, q10 &lt;dbl&gt;, TimeSpent &lt;dbl&gt;, TimeSpent_hours &lt;dbl&gt;,
+## #   TimeSpent_std &lt;dbl&gt;, int &lt;dbl&gt;, pc &lt;dbl&gt;, uv &lt;dbl&gt;
+```
+]
+
+.pull-right[
+&lt;img src="img/delimiter.png" height="300px"/&gt;
+]
 
 ???
 readr is a quick way to read in comma-separated values (CSV) and tab-separated values (TSV)
 
-- show also how to click on the file and import data or compy the location
+- show also how to click on the file and import data or copy the location
 
 
 ---
 # read in excel files
+
+```r
+*library(readxl)
+csss_tweets &lt;- read_excel("data/csss_tweets.xlsx")
+head(csss_tweets, n = 5)
+```
 
 ```
 ## # A tibble: 5 × 91

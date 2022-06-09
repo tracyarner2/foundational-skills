@@ -457,9 +457,23 @@ Code-Along
 # Set Working Directory
 
 ```{r eval = FALSE, echo=TRUE}
+#sets your working directory
 setwd("/path/to/my/directory")
+
+# tells you what working directory your in
+getwd()
 ```
 
+???
+Continuing on from foundation lab one we will use "good programming practices" to learn more about reading in data.
+
+Again we are using a script file in R Studio. You will become familiar with R Markdown files in the next foundation lab. 
+
+A default working directory is a folder where RStudio goes, every time you open it. You can change the default working directory from RStudio menu under: Tools –> Global options –> click on “Browse” to select the default working directory you want.
+
+Although you can set your working directory in Session menu tool it is better to set it with code for reproducibility.
+
+You can also create a project and connect to your github account. Then open up the project which also sets the directory.
 
 ---
 # Reading in data
@@ -470,17 +484,15 @@ library(tidyverse)
 ```
 
 ???
-Continuing on from foundation lab one we will use "good programming practices" to learn more about reading in data.
-
-Again we are using a script file in R Studio. You will become familiar with R Markdown files in the next foundation lab. 
 
 In order to read in data we must load packages that allow us to read data in, like we did in foundation lab 1. 
 
-You might remember that when you start R it includes several packages like Base R package. 
-We are going to reload the Tidyverse package so that we can use the readr package.
+Although there are rad in capabilities with the utils package in base r, we are going to use a more modern approach.
+
+One of the packages in Tidyverse allows for reading in Comma delimeter files, or CSV. 
 
 
-*Reminder if needed*
+*Reminder if needed - this was discussed in foundation 1*
 R comes with several packages in base r when you start a session. Packages are a collection of objects, data sets around a theme or purpose. You may find a package whose objects are for the purpose of correlation, like in the cor package. Or you may find a package that has objects to produce better tables, like in the *kable extra* package. Or you may find a package that will help wrangling the data (processing it) easier than in Base R package. That is the package we are going to install here Tidyverse.
 
 Tidyverse is a suite of packages that share a common philosophy and are designed to work together. Think Google products or Microsoft products. data importing, data wrangling and plotting.
@@ -491,20 +503,30 @@ Tidyverse is a suite of packages that share a common philosophy and are designed
 
 [readr](https://readr.tidyverse.org/)
 
-```{r}
+.pull-left[
+```{r echo = TRUE, message = FALSE, warning=FALSE}
+online_classes <- read_csv("data/sci-online-classes.csv")
+
+head(online_classes, n=5)
+
+
 
 ```
+]
 
+.pull-right[
+<img src="img/delimiter.png" height="300px"/>
+]
 
 ???
 readr is a quick way to read in comma-separated values (CSV) and tab-separated values (TSV)
 
-- show also how to click on the file and import data or compy the location
+- show also how to click on the file and import data or copy the location
 
 
 ---
 # read in excel files
-```{r}
+```{r echo=TRUE, warning=FALSE, message=FALSE}
 library(readxl) #<<
 csss_tweets <- read_excel("data/csss_tweets.xlsx")
 head(csss_tweets, n = 5)
