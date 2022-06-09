@@ -442,12 +442,20 @@ Although you can set your working directory in Session menu tool it is better to
 You can also create a project and connect to your github account. Then open up the project which also sets the directory.
 
 ---
-# Reading in data
+# Read in Data
+.panelset[
+
+.panel[.panel-name[package]
+
 
 ```r
-library(tidyverse)
-```
+# Load tidyverse package 
+*library(tidyverse)
 
+# could load only readr 
+*library(readr)
+```
+]
 ???
 
 In order to read in data we must load packages that allow us to read data in, like we did in foundation lab 1. 
@@ -461,9 +469,30 @@ One of the packages in Tidyverse allows for reading in Comma delimeter files, or
 R comes with several packages in base r when you start a session. Packages are a collection of objects, data sets around a theme or purpose. You may find a package whose objects are for the purpose of correlation, like in the cor package. Or you may find a package that has objects to produce better tables, like in the *kable extra* package. Or you may find a package that will help wrangling the data (processing it) easier than in Base R package. That is the package we are going to install here Tidyverse.
 
 Tidyverse is a suite of packages that share a common philosophy and are designed to work together. Think Google products or Microsoft products. data importing, data wrangling and plotting.
----
 
+.panel[.panel-name[functions]
+Common readr functions
 
+&lt;img src="img/readr_function.png" height="300px"/&gt;
+
+]
+???
+
+Common functions that are included when you read in data are 
+1. the file, we need to give a path to get the data. It should be in the working directory.
+
+2. column names corresponds to variables on the first row. The first row of the input will be used as the column names, and will not be included in the data frame. If FALSE, column names will be generated automatically: X1, X2, X3 etc.
+
+3. NA corresponds to missing values. commonly you will see capital NA but you may also see quotations or only a period depending on the original database (excel, SAS, STATA etc).
+
+4. Skip functions allows you to skill to when your data starts. 
+
+5. col_types is not typically needed but good to know. R guesses what type of column types you have when it reads in the file using the default guess_max.
+This is convenient (and fast), but not robust. If the imputation fails, you'll need to increase the guess_max or supply the correct types yourself.
+
+6. guess_max if the imputation fails increase the number beyond the 1000 default to guess col_types correctly.
+
+.panel[.panel-name[readr]
 # Using the readr function
 
 [readr](https://readr.tidyverse.org/)
@@ -497,14 +526,15 @@ head(online_classes, n=5)
 .pull-right[
 &lt;img src="img/delimiter.png" height="300px"/&gt;
 ]
-
+]
 ???
 readr is a quick way to read in comma-separated values (CSV) and tab-separated values (TSV)
 
 - show also how to click on the file and import data or copy the location
 
 
----
+
+.panel[.panel-name[readxl]
 # read in excel files
 
 ```r
@@ -530,7 +560,16 @@ head(csss_tweets, n = 5)
 ## #   media_t.co &lt;lgl&gt;, media_expanded_url &lt;lgl&gt;, media_type &lt;lgl&gt;,
 ## #   ext_media_url &lt;lgl&gt;, ext_media_t.co &lt;lgl&gt;, ext_media_expanded_url &lt;lgl&gt;, …
 ```
+]
 
+???
+
+
+.panel[.panel-name[functions]
+
+]
+
+]
 ---
 
 
