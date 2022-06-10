@@ -4,7 +4,7 @@
     <title>Foundations - Data Structures</title>
     <meta charset="utf-8" />
     <meta name="author" content="Presenter Name, Author Two, Author Three" />
-    <meta name="date" content="2022-06-09" />
+    <meta name="date" content="2022-06-10" />
     <script src="libs/header-attrs-2.14/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
@@ -37,7 +37,7 @@ class: clear, title-slide, inverse, center, top, middle
 # Foundations - Data Structures
 ----
 ### **Presenter Name**, Author Two, Author Three
-### June 09, 2022
+### June 10, 2022
 
 ---
 # Recap from Reproducible Research
@@ -426,7 +426,7 @@ Code-Along
 #sets your working directory
 setwd("/path/to/my/directory")
 
-# tells you what working directory your in
+# tells you what working directory you are in
 getwd()
 ```
 
@@ -437,7 +437,7 @@ Again we are using a script file in R Studio. You will become familiar with R Ma
 
 A default working directory is a folder where RStudio goes, every time you open it. You can change the default working directory from RStudio menu under: Tools –&gt; Global options –&gt; click on “Browse” to select the default working directory you want.
 
-Although you can set your working directory in Session menu tool it is better to set it with code for reproducibility.
+Although you can set your working directory in Session menu tool it is better to set it with code for reproducibility using the setwd() function.
 
 You can also create a project and connect to your github account. Then open up the project which also sets the directory.
 
@@ -460,9 +460,9 @@ You can also create a project and connect to your github account. Then open up t
 
 In order to read in data we must load packages that allow us to read data in, like we did in foundation lab 1. 
 
-Although there are rad in capabilities with the utils package in base r, we are going to use a more modern approach.
+Although there are read-in capabilities with the `utils package` in base r, we are going to use a more modern approach.
 
-One of the packages in Tidyverse allows for reading in Comma delimeter files, or CSV. 
+One of the packages in Tidyverse allows for reading in Comma delimiter files, or CSV. 
 
 
 *Reminder if needed - this was discussed in foundation 1*
@@ -495,7 +495,9 @@ This is convenient (and fast), but not robust. If the imputation fails, you'll n
 .panel[.panel-name[readr]
 # Using the readr function
 
-[readr](https://readr.tidyverse.org/)
+Learn more about [readr.](https://readr.tidyverse.org/)
+
+Use `read_csv()` function to read in CSV.
 
 .pull-left[
 
