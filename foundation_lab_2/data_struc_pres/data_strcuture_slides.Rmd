@@ -1,6 +1,6 @@
 ---
   title: "Foundations - Data Structures"
-  author: "**Presenter Name**, Author Two, Author Three"
+  author: "**Presenter Name**, Jeanne McClure, Catherine Noonan"
   institute: "Instituttional Affiliation"
   date: '`r format(Sys.time(), "%B %d, %Y")`'
   output:
@@ -552,14 +552,12 @@ readr is a quick way to read in comma-separated values (CSV) and tab-separated v
 - We read in from the path. My data is stored in a folder called data. I then use the assignment operator to save it as a new object called online-classes. 
 - (instructor is showing how to import from file) a quick way to see where your data file is stored is by clicking on the file under files and then import. 
 
-.panel[.panel-name[functions]
-
-]
-
-
 
 .panel[.panel-name[readxl]
 # read in excel files
+
+Read in with `readxl` package
+
 ```{r echo=TRUE, warning=FALSE, message=FALSE}
 library(readxl) #<<
 csss_tweets <- read_excel("data/csss_tweets.xlsx")
@@ -568,12 +566,76 @@ head(csss_tweets, n = 5)
 ]
 
 ???
+To read in an excel file we will need to install the readxl package and then read in with the read_excel function. We can see that it is an excel file with the .xlsx extension.
 
+.panel[.panel-name[functions]
+
+Check what sheets are included.
+
+```{r echo = TRUE, message = FALSE, warning=FALSE}
+?read_excel
+
+excel_sheets("data/csss_tweets.xlsx") # <<
+csss_tweets <- read_excel("data/csss_tweets.xlsx", sheet = "Sheet1")
+head(csss_tweets, n = 5)
+
+```
+
+]
+???
+You can check what sheets are included in your excel file by calling it with the excel_sheets function. 
+Then you can call only that sheet. Our data only includes one sheet so we do not really need to use this function, but it's good to know.
+]
+---
+# Read in data cont.
+.panelset[
+
+.panel[.panel-name[path]
+
+Read in from Path
+
+```{r echo = TRUE, message = FALSE, warning = FALSE}
+sci_ol_classes <- read_csv("C:/Users/User/Documents/RProj22/foundation_labs_2022/foundation_lab_2/data/sci-online-classes.csv") #<<
+```
 
 
 ]
----
+???
 
+You can read in from your computers path. If you aren't sure you go to the file and hold down Shift on your keyboard and right-click on the file.
+You would need to change the direction of the slashes so that R can read it in.
+
+.panel[.panel-name[url]
+
+Read in a url path with `read_csv2` function.
+
+```{r echo = TRUE, message = FALSE, warning = FALSE}
+air_quality <- read_csv2("https://www4.stat.ncsu.edu/~online/datasets/AirQualityUCI.csv") #<<
+head(air_quality, n=3)
+```
+
+
+]
+???
+
+If you want to read in a url you use the read_csv2 function. 
+
+.panel[.panel-name[.dta file]
+
+Read in a Stata file with `read_dta` function
+
+```{r echo = TRUE}
+library(haven)
+
+gpa_dt <- read_dta("data/GPA3.dta") #<<
+```
+
+]
+
+]
+
+
+---
 
 class: inverse, clear, center
 
@@ -597,3 +659,4 @@ class: inverse, clear, center
 This work was supported by countless cups of hot tea, cookies, and the RStats Xaringan community willingness to post of plethora of tutorials. But you may wish to thank your funding agency (e.g., the National Science Foundation) and put their logo on the left as shown here.
 ]]
 ]
+

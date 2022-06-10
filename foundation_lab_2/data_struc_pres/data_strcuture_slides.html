@@ -3,7 +3,7 @@
   <head>
     <title>Foundations - Data Structures</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Presenter Name, Author Two, Author Three" />
+    <meta name="author" content="Presenter Name, Jeanne McClure, Catherine Noonan" />
     <meta name="date" content="2022-06-10" />
     <script src="libs/header-attrs-2.14/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
@@ -36,7 +36,7 @@ class: clear, title-slide, inverse, center, top, middle
 
 # Foundations - Data Structures
 ----
-### **Presenter Name**, Author Two, Author Three
+### **Presenter Name**, Jeanne McClure, Catherine Noonan
 ### June 10, 2022
 
 ---
@@ -535,14 +535,12 @@ readr is a quick way to read in comma-separated values (CSV) and tab-separated v
 - We read in from the path. My data is stored in a folder called data. I then use the assignment operator to save it as a new object called online-classes. 
 - (instructor is showing how to import from file) a quick way to see where your data file is stored is by clicking on the file under files and then import. 
 
-.panel[.panel-name[functions]
-
-]
-
-
 
 .panel[.panel-name[readxl]
 # read in excel files
+
+Read in with `readxl` package
+
 
 ```r
 *library(readxl)
@@ -570,12 +568,116 @@ head(csss_tweets, n = 5)
 ]
 
 ???
+To read in an excel file we will need to install the readxl package and then read in with the read_excel function. We can see that it is an excel file with the .xlsx extension.
 
+.panel[.panel-name[functions]
+
+Check what sheets are included.
+
+
+```r
+?read_excel
+
+excel_sheets("data/csss_tweets.xlsx") # &lt;&lt;
+```
+
+```
+## [1] "Sheet1"
+```
+
+```r
+csss_tweets &lt;- read_excel("data/csss_tweets.xlsx", sheet = "Sheet1")
+head(csss_tweets, n = 5)
+```
+
+```
+## # A tibble: 5 × 91
+##   user_id             status_id     created_at          screen_name text  source
+##   &lt;chr&gt;               &lt;chr&gt;         &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; 
+## 1 1331246991762976769 136572200862… 2021-02-27 17:54:35 InnerSchol… "@We… Twitt…
+## 2 1331246991762976769 136572187371… 2021-02-27 17:54:03 InnerSchol… "@Bo… Twitt…
+## 3 1331246991762976769 136572178780… 2021-02-27 17:53:42 InnerSchol… "@Co… Twitt…
+## 4 1331246991762976769 136572174606… 2021-02-27 17:53:32 InnerSchol… "@Co… Twitt…
+## 5 1331246991762976769 136572164488… 2021-02-27 17:53:08 InnerSchol… "Ano… Twitt…
+## # … with 85 more variables: display_text_width &lt;dbl&gt;, reply_to_status_id &lt;chr&gt;,
+## #   reply_to_user_id &lt;chr&gt;, reply_to_screen_name &lt;chr&gt;, is_quote &lt;lgl&gt;,
+## #   is_retweet &lt;lgl&gt;, favorite_count &lt;dbl&gt;, retweet_count &lt;dbl&gt;,
+## #   quote_count &lt;lgl&gt;, reply_count &lt;lgl&gt;, hashtags &lt;lgl&gt;, symbols &lt;lgl&gt;,
+## #   urls_url &lt;lgl&gt;, urls_t.co &lt;lgl&gt;, urls_expanded_url &lt;lgl&gt;, media_url &lt;lgl&gt;,
+## #   media_t.co &lt;lgl&gt;, media_expanded_url &lt;lgl&gt;, media_type &lt;lgl&gt;,
+## #   ext_media_url &lt;lgl&gt;, ext_media_t.co &lt;lgl&gt;, ext_media_expanded_url &lt;lgl&gt;, …
+```
+
+]
+???
+You can check what sheets are included in your excel file by calling it with the excel_sheets function. 
+Then you can call only that sheet. Our data only includes one sheet so we do not really need to use this function, but it's good to know.
+]
+---
+# Read in data cont.
+.panelset[
+
+.panel[.panel-name[path]
+
+Read in from Path
+
+
+```r
+*sci_ol_classes &lt;- read_csv("C:/Users/User/Documents/RProj22/foundation_labs_2022/foundation_lab_2/data/sci-online-classes.csv")
+```
 
 
 ]
----
+???
 
+You can read in from your computers path. If you aren't sure you go to the file and hold down Shift on your keyboard and right-click on the file.
+You would need to change the direction of the slashes so that R can read it in.
+
+.panel[.panel-name[url]
+
+Read in a url path with `read_csv2` function.
+
+
+```r
+*air_quality &lt;- read_csv2("https://www4.stat.ncsu.edu/~online/datasets/AirQualityUCI.csv")
+head(air_quality, n=3)
+```
+
+```
+## # A tibble: 3 × 17
+##   Date       Time   `CO(GT)` `PT08.S1(CO)` `NMHC(GT)` `C6H6(GT)` `PT08.S2(NMHC)`
+##   &lt;chr&gt;      &lt;chr&gt;     &lt;dbl&gt;         &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;           &lt;dbl&gt;
+## 1 10/03/2004 18.00…      2.6          1360        150       11.9            1046
+## 2 10/03/2004 19.00…      2            1292        112        9.4             955
+## 3 10/03/2004 20.00…      2.2          1402         88        9               939
+## # … with 10 more variables: `NOx(GT)` &lt;dbl&gt;, `PT08.S3(NOx)` &lt;dbl&gt;,
+## #   `NO2(GT)` &lt;dbl&gt;, `PT08.S4(NO2)` &lt;dbl&gt;, `PT08.S5(O3)` &lt;dbl&gt;, T &lt;dbl&gt;,
+## #   RH &lt;dbl&gt;, AH &lt;dbl&gt;, ...16 &lt;lgl&gt;, ...17 &lt;lgl&gt;
+```
+
+
+]
+???
+
+If you want to read in a url you use the read_csv2 function. 
+
+.panel[.panel-name[.dta file]
+
+Read in a Stata file with `read_dta` function
+
+
+```r
+library(haven)
+
+*gpa_dt &lt;- read_dta("data/GPA3.dta")
+```
+
+]
+
+]
+
+
+---
 
 class: inverse, clear, center
 
@@ -599,6 +701,7 @@ class: inverse, clear, center
 This work was supported by countless cups of hot tea, cookies, and the RStats Xaringan community willingness to post of plethora of tutorials. But you may wish to thank your funding agency (e.g., the National Science Foundation) and put their logo on the left as shown here.
 ]]
 ]
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
