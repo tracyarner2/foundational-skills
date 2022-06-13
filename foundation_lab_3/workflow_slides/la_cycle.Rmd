@@ -1,5 +1,5 @@
 ---
-  title: "Presentation Title"
+  title: "Learning Analytics Cycle"
   author: "**Presenter Name**, Author Two, Author Three"
   institute: "Instituttional Affiliation"
   date: '`r format(Sys.time(), "%B %d, %Y")`'
@@ -60,23 +60,45 @@ xaringanExtra::use_tile_view()
 ### `r format(Sys.time(), "%B %d, %Y")`
 
 ---
-# Agenda
+# Recap from Data Structures Presentation
 
-This is what we'll cover today
-- Agenda item 1
-- Agenda item 2
-- Agenda item 3
+- Types of Data Used in LA (Sources)
+- Characteristics of Data (Format)
 
----
-# Showing Your Code
-```{r example-code, echo=TRUE}
-# adding #<< after a line of code highlights it like this 
-alphabet <- letters #<<
-print(alphabet)
-```
 
 ---
-# Panels, Columns, Links, and Image
+# Learning Analytics Cycle Agenda
+
+
+.pull-left[**Part-1  Conceptual Overview**
+- Stages of the Workflow
+  + Prepare
+  + Wrangle
+  + Explore
+  + Model
+  + Communicate
+
+]
+
+.pull-right[**Part-2  Code-Along**
+- Common R-Markdown Syntax
+- Workflow outline
+
+]
+
+---
+
+class: clear, inverse, middle, center
+
+Part 1:
+
+----
+
+Learning Analytics Cycle: Conceptual Overview
+
+---
+
+# Learning Analytics Cycle
 
 .panelset[
 
@@ -108,25 +130,18 @@ The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **
 
 
 ]
-
-
----
-class: clear, laser
-
-.quote[Education is the most powerful weapon which you can use to change the world.]
-
-.author[~ Nelson Mandela]
 ---
 
 class: clear, inverse, middle, center
-
-This is an inverse slide example!
+Part 2:
 
 ----
 
-Four dashes puts a horizontal line on the slide to divide content.
+Code-Along
+
 
 ---
+
 class: inverse, clear, center
 
 ## .font130[.center[**Thank you!**]]

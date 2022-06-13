@@ -1,11 +1,84 @@
 ##############################
+## Set Working Directory #####
+##############################
+
+# Set from Session or...
+
+setwd("C:/Users/User/Documents/RProj22/foundation_labs_2022/foundation_lab_2")
+
+
+
+##############################
 #####  Reading In Data   #####
 ##############################
 
-# Continuing on from foundation lab one we will use "good Programming practices" to learn more about reading in data.
 
-# Again we are using a script file in R Studio. You will become familiar with R Markdown files later in the day or week. In order to read in data we must load packages that allow us to read data in.
+library(tidyverse)
 
-# R comes with several packages when you start a session. Packages are a collection of objects, data sets around a theme or purpose. You may find a package whose objects are for the purpose of correlation, like in the cor package. Or you may find a package that has objects to produce better tables, like in the *kable extra* package. Or you may find a package that will help wrangling the data (processing it) easier than in Base R package. That is the package we are going to install here Tidyverse.
 
-#Tidyverse is a suite of packages that share a common philosophy and are designed to work together. Think Google products or Microsoft products. data importing, data wrangling and plotting.
+#############################
+###### Read in csv file #####
+#############################
+
+online_classes <- read_csv("data/sci-online-classes.csv")
+view(online_classes)
+head(online_classes, n=5)
+tail(online_classes, n =5)
+
+#############################
+##### Read in Excel File ####
+#############################
+
+library(readxl)
+
+csss_tweets <- read_excel("data/csss_tweets.xlsx")
+view(ccss_tweets)
+head(csss_tweets, n = 5L)
+tail(ccss_tweets, n = 5)
+
+###### Excel Function ######## 
+
+?read_excel
+
+excel_sheets("data/csss_tweets.xlsx")
+csss_tweets <- read_excel("data/csss_tweets.xlsx", sheet = "Sheet1")
+
+
+
+
+############################
+####### From Path ##########
+############################
+
+sci_ol_classes <- read_csv("C:/Users/User/Documents/RProj22/foundation_labs_2022/foundation_lab_2/data/sci-online-classes.csv")
+
+
+sci_ol_classes
+
+
+###########################
+####### From URL ##########
+###########################
+
+air_quality <- read_csv2("https://www4.stat.ncsu.edu/~online/datasets/AirQualityUCI.csv")
+air_quality
+
+
+#########################
+######## Stata ##########
+#########################
+
+library(haven)
+
+gpa_dt <- read_dta("data/GPA3.dta")
+
+gpa_dt
+
+#########################
+######## Tibble #########
+#########################
+
+class(sci_ol_classes)
+
+str(sci_ol_classes)
+

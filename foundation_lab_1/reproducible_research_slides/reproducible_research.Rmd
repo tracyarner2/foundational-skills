@@ -1,6 +1,6 @@
 ---
   title: "Reproducible Research"
-  author: "**Presenter Name**, Author Two, Author Three"
+  author: "**Presenter Name**, Jeanne McClure, Catherine Noonan"
   institute: "Instituttional Affiliation"
   date: '`r format(Sys.time(), "%B %d, %Y")`'
   output:
