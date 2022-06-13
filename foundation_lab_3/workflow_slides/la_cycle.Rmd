@@ -105,11 +105,16 @@ Learning Analytics Cycle: Conceptual Overview
 .panel[.panel-name[Panel 1]
 
 .pull-left[
-The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
+- Stages of the Workflow
+  + Prepare
+  + Wrangle
+  + Explore
+  + Model
+  + Communicate
 ]
 
 .pull-right[
-<img src="img/website.png" height="450px"/>
+<img src="img/la_wrkflow.png" height="350px"/>
 ]
 ]
 
