@@ -160,37 +160,69 @@ Documented from Guo, 2012; Wickham & Grolemund, 2017; and Marsh 2012, this gener
 ]
 
 .pull-right[
-<img src="img/prepare_wrkflow.png" height="350px"/>
+<img src="img/prepare_wflow.png" height="350px"/>
 ]
 ]
 ???
-Being prepared for a data-intensive analysis involves clear and refined research questions with an understanding of where the data is coming from. 
-For example Krumm et al writes about understanding the activity system for which the technology was used. Is it for instructional, reward or even a social collaborative context. Having that understanding will allow for more refined understanding when formulating guiding research questions for the analysis. Identify what gets collected and stored by technology is important fo rthe development of the research question.
+Being prepared for a data-intensive analysis involves clear and refined research questions with an understanding of where the data came from. 
+For example Krumm et al uses the example surrounding an activity system for which the technology was used. Is it for instructional, reward or even a social collaborative context? Having that understanding will allow for more refined understanding when formulating guiding research questions for the analysis. Identify what gets collected and stored by technology is important for the development of the research question.
 Here you may even refine your research question after having a better idea of where the data came from. The question may also be refined and redeveloped after you have started the data intensive analysis.
 The Learning Analysis Cycle is not a linear process but rather a process of phases that can be moved around.
 
 .panel[.panel-name[Wrangle]
 
 .pull-left[
-- Stages of the Workflow
-  + Define and refine
-  + Identify
-  + Develop
+<img src="img/wrangling_steps.png" height="350px"/>
 ]
 
 .pull-right[
-<img src="img/wrangle_wrkflow.png" height="350px"/>
+<img src="img/wrangle_wflow.png" height="250px"/>
 ]
 ]
+???
+Wrangling or sometimes called "munging or pre-processing" entails the work of manipulating, cleaning, transforming, and merging data.
+- **manipulating** involves identifying, acquiring, and importing data into analysis software.
+- Wickham & Grolemund suggest cleaning data involves ensuring that each variable is in its own column, each observation is in its own row, and each value
+is in its own cell within a dataset.
+  + Krumm et al add that **data cleaning** also involves identifying and remediating missing data, extreme values, and ensuring consistent use of identifier, key, or linking variables.
+-  transforming variables, such as recoding
+categorical variables and rescaling continuous variables.   + These types of transformations are the initial building blocks for exploratory data analysis
+-  One of the biggest value add ons is merging once disparate data sources is 
+  + EX: merging data from a student information system that stores student grades with data from a digital learning environment that stores students’ longitudinal interactions can unlock what student do and do not do on a day to day basis.
 
 .panel[.panel-name[Explore]
+.pull-left[
+- Data Visualization
+- Feature Engineering
+]
 
-The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
+.pull-right[
+<img src="img/explore_wflow.png" height="250px"/>
+]
+
 ]
 .panel[.panel-name[Model]
-
+.pull-left[
+<img src="img/model_steps.png" height="350px"/>
 ]
+
+.pull-right[
+<img src="img/model_wflow.png" height="250px"/>
+]
+]
+???
+
+
 .panel[.panel-name[Communicate]
+
+.pull-left[
+<img src="img/communicate_steps.png" height="350px"/>
+]
+???
+
+.pull-right[
+<img src="img/communicate_wflow.png" height="250px"/>
+]
 ]
 
 ]
