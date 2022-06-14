@@ -1,6 +1,5 @@
 ---
   title: "Reproducible Research"
-  author: "**Presenter Name**, Jeanne McClure, Catherine Noonan"
   institute: "Instituttional Affiliation"
   date: '`r format(Sys.time(), "%B %d, %Y")`'
   output:
@@ -58,6 +57,10 @@ xaringanExtra::use_tile_view()
 ----
 ### `r rmarkdown::metadata$author`
 ### `r format(Sys.time(), "%B %d, %Y")`
+
+---
+
+<img src="img/team_2022.png" height="550px"/>
 
 ---
 # Agenda

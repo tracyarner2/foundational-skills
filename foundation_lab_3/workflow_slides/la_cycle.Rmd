@@ -1,6 +1,5 @@
 ---
   title: "Learning Analytics Cycle"
-  author: "**Presenter Name**, Author Two, Author Three"
   institute: "Instituttional Affiliation"
   date: '`r format(Sys.time(), "%B %d, %Y")`'
   output:
@@ -58,6 +57,10 @@ xaringanExtra::use_tile_view()
 ----
 ### `r rmarkdown::metadata$author`
 ### `r format(Sys.time(), "%B %d, %Y")`
+---
+
+
+<img src="img/team_2022.png" height="550px"/>
 
 ---
 # Recap from Data Structures Presentation
@@ -134,7 +137,7 @@ Learning Analytics Cycle: Conceptual Overview
 .panel[.panel-name[Cycle]
 
 .pull-left[
-- Stages of the Workflow
+- Phases of the Workflow
   + Prepare
   + Wrangle
   + Explore
@@ -228,27 +231,46 @@ The exploratory data analysis phase includes:
 ]
 ]
 ???
-Moseling is used to develop a mathematical summary of relationships within a dataset. 
+Really there could be a whole workshop on Modeling...this is really a condensed version.
+
+Modeling is used to develop a mathematical summary of relationships within a dataset. 
 It is an iterative process that involves building and evaluating the model.
-Two models - Unsupervised and supervised.
-- Unsupervised learning
-  + Exploratory
-  + Used to understand the structure of one’s dataset 
-  + Also called, structure discovery, algorithms are useful for understanding relationships among features in a dataset.
+
+Two general models used - **Unsupervised** and **Supervised**.
 
 - Supervised learning
-  + Predictive modeling
+  + uses inference and Predictive modeling
+    + this are similar but distinct where the researcher uses a model to interpret the relationships among features and an outcome (inference) or  whether a researcher uses a model to make predictions or classifications (prediction).
+    + Inference involves paying particular attention to the specific relationships between features and an outcome.
+    + prediction relies on a known outcome where the ultimate task of a researcher is to find the right combination of features and an algorithm to predict or classify unseen data.
   + Quantifies relationships between features and a known outcome
-  + Classification - model categorical outcomes (e.g., yes or no outcomes)
-  + Regression - characterize continuous outcomes (e.g., test scores)
-  +  Supervised learning models are different in
-that they can be used to quantify relationships between features and a known outcome p.46
+  + Classification - model categorical outcomes when variables are categorical. (e.g., yes or no outcomes)
+  + Regression - characterize continuous outcomes. When the known outcome is numeric and continuous in
+nature, such as a test score, then this learning task is referred to as regression (e.g., test scores)
+  + Supervised learning models are different in
+that they can be used to quantify relationships between features and a known outcome p.46.
+  + Known outcomes are also commonly referred to as labels or dependent variables.
+    + include longer-term results, like dropping out of school or short term results - like being off task.
+  + Features used in a supervised learning model can also be referred to as predictors or regressors.
+  + The types of algorithms are boundless from linear models, decision trees, support vector machines, and k-nearest neighbors
 
+- Unsupervised learning
+  + Exploratory
+  + Also called, structure discovery, algorithms are useful for understanding relationships among features in a dataset.
+  + Unsupervised data or structured discovery cannot be easily evaluated against a ground truth, or known outcome.
+  + Structure discovery helps in identifying patterns within one’s data or reducing the overall dimensionality in one’s data when the model is not being trained against a known outcome.Can add new features from this discovery.
+    + Using K-means and hierarchical cluster algorithms to group observations within one’s datasets as well as principal components and factor analysis to reduce the dimensionality in one’s dataset.
+
+It is not uncommon that one will use multiple structure discovery, inference, and prediction methods in one project.
 
 .panel[.panel-name[Communicate]
 
 .pull-left[
-<img src="img/communicate_steps.png" height="350px"/>
+
+- Select
+- Polish
+_ Narrate
+
 ]
 ???
 
@@ -256,6 +278,14 @@ that they can be used to quantify relationships between features and a known out
 <img src="img/communicate_wflow.png" height="250px"/>
 ]
 ]
+???
+1.  **Select.** Communicating what one has learned involves selecting among those analyses that are most important and most useful to an intended audience, as well as selecting a form for displaying that information, such as a graph or table in static or interactive form,
+    i.e. a "data product."
+
+2.  **Polish**. After creating initial versions of data products, research teams often spend time refining or polishing them, by adding or editing titles, labels, and notations and by working with colors and shapes to highlight key points.
+
+3.  **Narrate.** Writing a narrative to accompany the data products involves, at a minimum, pairing a data product with its related research question, describing how best to interpret the data product, and explaining the ways in which the data product helps answer the research question.
+
 
 ]
 ---
