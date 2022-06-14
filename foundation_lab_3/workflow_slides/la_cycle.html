@@ -4,7 +4,7 @@
     <title>Learning Analytics Cycle</title>
     <meta charset="utf-8" />
     <meta name="author" content="Presenter Name, Author Two, Author Three" />
-    <meta name="date" content="2022-06-13" />
+    <meta name="date" content="2022-06-14" />
     <script src="libs/header-attrs-2.14/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
@@ -37,7 +37,7 @@ class: clear, title-slide, inverse, center, top, middle
 # Learning Analytics Cycle
 ----
 ### **Presenter Name**, Author Two, Author Three
-### June 13, 2022
+### June 14, 2022
 
 ---
 # Recap from Data Structures Presentation
@@ -140,7 +140,7 @@ Documented from Guo, 2012; Wickham &amp; Grolemund, 2017; and Marsh 2012, this g
 ]
 
 .pull-right[
-&lt;img src="img/prepare_wflow.png" height="350px"/&gt;
+&lt;img src="img/prepare_wflow.png" height="250px"/&gt;
 ]
 ]
 ???
@@ -179,11 +179,28 @@ categorical variables and rescaling continuous variables.   + These types of tra
 .pull-right[
 &lt;img src="img/explore_wflow.png" height="250px"/&gt;
 ]
-
 ]
+???
+In the reading and according to Behren's, 
+
+*How do we build rich mental models of the phenomena being examined?*
+
+Right, by discovering patterns in the data and graphically representing the variables.
+The exploratory data analysis phase includes:
+- Data visualization:
+  + Graphically representing one or more variables
+  + Allows for discovery of patterns in data and formation of mental models
+- Feature engineering
+  + Creating new variables within a data set
+    + Draws on:
+    + Knowledge from theory or practice
+    + Experience with a particular data system
+    + General experience in data-intensive research
+
+
 .panel[.panel-name[Model]
 .pull-left[
-&lt;img src="img/model_steps.png" height="350px"/&gt;
+&lt;img src="img/modelphase_appr.png" height="350px"/&gt;
 ]
 
 .pull-right[
@@ -191,6 +208,21 @@ categorical variables and rescaling continuous variables.   + These types of tra
 ]
 ]
 ???
+Moseling is used to develop a mathematical summary of relationships within a dataset. 
+It is an iterative process that involves building and evaluating the model.
+Two models - Unsupervised and supervised.
+- Unsupervised learning
+  + Exploratory
+  + Used to understand the structure of one’s dataset 
+  + Also called, structure discovery, algorithms are useful for understanding relationships among features in a dataset.
+
+- Supervised learning
+  + Predictive modeling
+  + Quantifies relationships between features and a known outcome
+  + Classification - model categorical outcomes (e.g., yes or no outcomes)
+  + Regression - characterize continuous outcomes (e.g., test scores)
+  +  Supervised learning models are different in
+that they can be used to quantify relationships between features and a known outcome p.46
 
 
 .panel[.panel-name[Communicate]

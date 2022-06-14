@@ -160,7 +160,7 @@ Documented from Guo, 2012; Wickham & Grolemund, 2017; and Marsh 2012, this gener
 ]
 
 .pull-right[
-<img src="img/prepare_wflow.png" height="350px"/>
+<img src="img/prepare_wflow.png" height="250px"/>
 ]
 ]
 ???
@@ -199,11 +199,28 @@ categorical variables and rescaling continuous variables.   + These types of tra
 .pull-right[
 <img src="img/explore_wflow.png" height="250px"/>
 ]
-
 ]
+???
+In the reading and according to Behren's, 
+
+*How do we build rich mental models of the phenomena being examined?*
+
+Right, by discovering patterns in the data and graphically representing the variables.
+The exploratory data analysis phase includes:
+- Data visualization:
+  + Graphically representing one or more variables
+  + Allows for discovery of patterns in data and formation of mental models
+- Feature engineering
+  + Creating new variables within a data set
+    + Draws on:
+    + Knowledge from theory or practice
+    + Experience with a particular data system
+    + General experience in data-intensive research
+
+
 .panel[.panel-name[Model]
 .pull-left[
-<img src="img/model_steps.png" height="350px"/>
+<img src="img/modelphase_appr.png" height="350px"/>
 ]
 
 .pull-right[
@@ -211,6 +228,21 @@ categorical variables and rescaling continuous variables.   + These types of tra
 ]
 ]
 ???
+Moseling is used to develop a mathematical summary of relationships within a dataset. 
+It is an iterative process that involves building and evaluating the model.
+Two models - Unsupervised and supervised.
+- Unsupervised learning
+  + Exploratory
+  + Used to understand the structure of one’s dataset 
+  + Also called, structure discovery, algorithms are useful for understanding relationships among features in a dataset.
+
+- Supervised learning
+  + Predictive modeling
+  + Quantifies relationships between features and a known outcome
+  + Classification - model categorical outcomes (e.g., yes or no outcomes)
+  + Regression - characterize continuous outcomes (e.g., test scores)
+  +  Supervised learning models are different in
+that they can be used to quantify relationships between features and a known outcome p.46
 
 
 .panel[.panel-name[Communicate]
