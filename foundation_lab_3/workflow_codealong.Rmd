@@ -23,7 +23,7 @@ Let's get familiar with the R Markdown layout and syntax.
 
 Yaml is not a markup language. It contains, title, author, dates, type of document etc. YAML is picky!
 
-Check out this site on[Yaml heading](https://zsmith27.github.io/rmarkdown_crash-course/lesson-4-yaml-headers.html) by @Smith.
+Check out this site on[Yamll heading](https://zsmith27.github.io/rmarkdown_crash-course/lesson-4-yaml-headers.html) by @Smith.
 
 ### 1.2 R Markdown
 
@@ -86,8 +86,142 @@ Images:
 2. Add a code chunk by holding down `Ctrl` + `Alt` + `I`
 
 
-## 2. WorkFlow
+## 2. WorkFlow Recap
 
 ### 3.1 Workflow
 Each organization may have a familiar workflow. In Learning Analytics we use a five step process:
 ![Learning Analytics Workflow](img/la_wrkflow.png){width="60%"}
+
+
+1.  **Prepare**: Prior to analysis, it's critical to understand the context and data
+    sources you're working with so you can formulate useful and answerable        
+    questions. You'll also need to become familiar with and load essential packages
+    for analysis.
+2.  **Wrangle**: Wrangling data entails the work of manipulating,
+    cleaning, transforming, and merging data. In Part 2 we focus on
+    importing CSV files, tidying and joining our data.
+3.  **Explore**: In Part 3, we use basic data visualization and
+    calculate some summary statistics to explore our data and see what
+    insight it provides in response to our question.
+4.  **Model:** After identifying variable that may be related to student
+    performance through exploratory analysis, we'll look at correlations
+    and create some simple models of our data using linear regression.
+5.  **Communicate:** To wrap up our case study, we'll develop our first
+    "data product" and share our analyses and findings by creating our
+    first web page using R Markdown.
+    
+## 0. Introduction
+
+Provide a brief overview or case study.
+
+- Include your R1: *research questions!*
+
+## 1. Prepare
+
+Here you load your libraries. If this is the first time using the library then you will need to install first using the 'install.packages("")' function.
+
+To help us import our data, we'll be using two packages:
+{[readr](https://readr.tidyverse.org)} and
+{[here](https://here.r-lib.org)} .
+
+```{r}
+library(tidyverse)
+library(here)
+```
+
+
+## 2. Wrangle
+
+
+In general, data wrangling involves some combination of cleaning, reshaping, transforming, and merging data (Wickham & Grolemund, 2017). The importance of data wrangling is difficult to overstate, as it involves the initial steps of going from raw data to a dataset that can be explored and modeled (Krumm et al, 2018). 
+
+In Part 2, we focus on the the following workflow processes:
+
+a.  **Import Data**. In this section, we introduce the `read_csv()`
+    function for working with CSV files and revisit some key functions
+    for inspecting our data.
+
+b.  **Tidy Data**. We introduce the `separate()` and `clean_names()`
+    functions for getting our data nice and tidy, and revisit the
+    `mutate()` for creating new variables.
+
+c.  **Join Data**. We conclude our data wrangling by introducing
+    `join()` functions for merging our processed files into a single
+    data frame for analysis.
+
+a. Import Data
+
+Education data are stored in all sorts of different file formats and structures. Here, we'll focus on working with Comma-separated values (CSV) files.
+
+we learned in Foundation lab 2, similar to spreadsheet formats Excel and Google Sheets, CSVs allow us to store rectangular data frames, but in a much simpler plain-text format, where all the important information in the file is represented by text. Note that "text" here refers to numbers, letters, and symbols you can type on your keyboard. In Tidyverse Skills for Data Science, Wright et al. (2021) note that the advantage of CSVs is that
+
+… that there are no workbooks or metadata making it difficult to open these files. CSVs are flexible files and are thus the preferred storage method for tabular data for many data scientists .
+
+#### Data Source #1: Log Data
+
+Log-trace data is data generated from our interactions with digital technologies, such as archived data from social media postings. In education, an increasingly common source of log-trace data is that generated from interactions with LMS and other digital tools.
+
+The data we will use has already been "wrangled" quite a bit and is a summary type of log-trace data: the number of minutes students spent on the course. While this data type is fairly straightforward, there are even more complex sources of log-trace data out there (e.g., time stamps associated with when students started and stopped accessing the course).
+
+
+Let's use the `read_csv()` function from {readr} to import our
+`log-data.csv` file directly from our data folder and name this data set
+`time_spent`, to help us to quickly recollect what function it serves in
+this analysis:
+
+```{r}
+#load with read_csv package
+time_spent <- read_csv("~/RProj22/foundation_labs_2022/foundation_lab_3/data/log-data.csv")
+```
+
+Now let's load it with the {here} package.
+
+```{r}
+#load with here package
+time_spent <- read_csv(here("data", "log-data.csv"))
+```
+
+#### Data Source #2: Academic Achievement Data
+
+Academic achievement data is (obviously) is a very common form of data
+in education. In this case study, we'll use both the sum of the points
+students earned as well as the number of points possible to compute the
+percentage of points they earned in the course---a measure comparable
+(but likely a little different based on teachers' grading policies) to
+their final grade.
+
+We'll load the data in the same way as earlier but take a quick peek but
+including the name of our data frame in the code chunk as well:
+
+```{r}
+gradebook <- read_csv(here("data", "gradebook-summary.csv"))
+
+gradebook
+```
+
+#### Data Source #3: Self-Report Survey
+
+The third data source is a self-report survey. This was data collected
+before the start of the course. The survey included ten items, each
+corresponding to one of three motivation measures: interest, utility
+value, and perceived competence. These were chosen for their alignment
+with one way to think about students' motivation, to what extent they
+expect to do well (corresponding to their perceived competence) and
+their value for what they are learning (corresponding to their interest
+and utility value). We'll use this in the third learning lab.
+
+```{r}
+survey <- read_csv(here("data", "survey.csv"))
+
+survey
+```
+
+## Wrangle
+
+
+## Explore
+
+
+## Model
+
+## Communicate

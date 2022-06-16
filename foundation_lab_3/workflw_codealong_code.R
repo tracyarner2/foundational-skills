@@ -1,7 +1,8 @@
-####################
-####Load Library####
-####################
+###################
+#####  Prepare ####
+###################
 
+#load libraries
 library(tidyverse)
 library(here)
 
@@ -109,7 +110,76 @@ data_to_explore
 ##### EXPLORE #####
 ###################
 
-###### a. Table Summaries
+########################
+###### A. TABLE SUMMARY
 
+#install package if this is first time using Skimr
+install.packages("skimr")
+
+#load library
 library(skimr)
+
+#skim data
 skim(data_to_explore)
+
+# using the `select()` and `filter()` functions. In the code chunk below,look at descriptive for just `proportion_earned` , `time_spent` and `gender`, but only for the "OcnA" and "PhysA" subjects.
+
+data_to_explore %>% 
+  select(c('subject', 'gender', 'proportion_earned', 'time_spent')) %>% 
+  filter(subject == "OcnA" | subject == "PhysA") %>%
+  skim()
+
+########################
+########### B. DATA VIZ
+
+# create a histogram
+data_to_explore %>% 
+  ggplot(aes(x = time_spent_hours)) +
+  geom_histogram(bins = 30)
+
+# create a scatter plot
+ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color = enrollment_status)) +
+  geom_point()
+
+# scatter plot facet wrap
+ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color = enrollment_status)) +
+  geom_point() +
+  facet_wrap(~ subject)
+
+#################
+##### Model #####
+#################
+
+##########################
+########### A. MATHMATICAL
+
+# Does time spent predict grade earned?
+# Use linear regression model
+lm(proportion_earned ~ time_spent_hours, 
+   data = data_to_explore)
+
+
+# Add predictor variable for science
+lm(proportion_earned ~ time_spent_hours + int, 
+   data = data_to_explore)
+
+# save the model
+m1 <- lm(proportion_earned ~ time_spent_hours + int, data = data_to_explore)
+
+#run the summary
+summary(m1)
+
+# use the {apaTables} package to create a nice regression table that could be used for later publication.
+apa.reg.table(m1, filename = "lm-table.doc")
+
+###################
+### Communicate ###
+###################
+
+data_to_explore %>% 
+  ggplot(aes(x = time_spent_hours)) +
+  geom_histogram(bins = 20, color = "black", fill = "white") +
+  facet_wrap(~subject, ncol = 2)
+
+# add a write up for communication
+
