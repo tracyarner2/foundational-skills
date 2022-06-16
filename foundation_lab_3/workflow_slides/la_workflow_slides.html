@@ -402,9 +402,194 @@ add here to run you can click the green arrow, sun everything above by clicking 
 
 
 ]
+???
+
+Again this is the general workflow. It is not a linear process and can flow to answer your research questions, or revise them depending on your needs.
+
+1.  **Prepare**: Prior to analysis, it's critical to understand the context and data sources you're working with so you can formulate useful and answerable        questions. You'll also need to become familiar with and load essential packages for analysis.
+
+2.  **Wrangle**: Wrangling data entails the work of manipulating, cleaning, transforming, and merging data. 
+3.  **Explore**: In Part 3, we use basic data visualization and calculate some summary statistics to explore our data and see what insight it provides in response to our question.
+
+4.  **Model:** After identifying variable that may be related to student performance through exploratory analysis, we'll look at correlations and create some simple models of our data using linear regression.
+
+5.  **Communicate:** To wrap up our case study, we'll develop our first "data product" and share our analyses and findings by creating our first web page using R Markdown.
+
+Additionally you may add a section 0. that offers insight into a case study, research questions, and the reason for your analysis. What sparked you to collect data on this particular topic? What's the background?
+
+.panel[.panel-name[Prepare]
+
+
+To help us import our data, we'll be using two packages:
+{[readr](https://readr.tidyverse.org)} and
+{[here](https://here.r-lib.org)} .
+
+]
+
+???
+In this part of the workflow, **Prepare**, load your libraries. If this is the first time using the library then you will need to install first using the 'install.packages("")' function before using the `library()` function.
+
+.panel[.panel-name[Wrangle]
+
+1. **Import**
+2. **Tidy**
+3. **Join**
 
 
 ]
+???
+
+About 45% of your time is spent in cleaning the data.
+
+In general, data wrangling involves some combination of cleaning, reshaping, transforming, and merging data (Wickham &amp; Grolemund, 2017). The importance of data wrangling is difficult to overstate, as it involves the initial steps of going from raw data to a dataset that can be explored and modeled (Krumm et al, 2018). 
+
+ In the wrangle section we are going to:
+
+a.  **Import Data**. In this section, we introduce the `read_csv()` function for working with CSV files and revisit some key functions for inspecting our data.
+
+b.  **Tidy Data**. We introduce the `separate()` and `clean_names()` functions for getting our data nice and tidy, and revisit the `mutate()` for creating new variables.
+
+c.  **Join Data**. We conclude our data wrangling by introducing  a`join()` function for merging our processed files into a single data frame for analysis.
+
+.panel[.panel-name[Import]
+
+
+```r
+#load Library
+library(tidyverse)
+library(here)
+#load with read_csv package
+*time_spent &lt;- read_csv("~/RProj22/foundation_labs_2022/foundation_lab_3/data/log-data.csv")
+
+#load with here package
+time_spent &lt;- read_csv(here(
+* "data", "log-data.csv"))
+```
+
+]
+???
+
+Education data are stored in all sorts of different file formats and structures. Here, we'll focus on working with Comma-separated values (CSV) files.
+
+We learned in Foundation lab 2, similar to spreadsheet formats Excel and Google Sheets, CSVs allow us to store rectangular data frames, but in a much simpler plain-text format, where all the important information in the file is represented by text. Note that "text" here refers to numbers, letters, and symbols you can type on your keyboard. 
+
+In Tidyverse Skills for Data Science, Wright et al. (2021), note that the advantage of CSVs is that there are no workbooks or metadata making it difficult to open these files. CSVs are flexible files and are thus the preferred storage method for tabular data for many data scientists .
+
+We are going to load two more sets of data one for academic achievement and the other for survey data.
+
+.panel[.panel-name[Tidy]
+
+.center[
+&lt;img src="img/dplyr.png" height="425px"/&gt;
+]
+
+
+]
+???
+There are a lot of functions in dplyr that help you to solve specific problems We will be using the seperate and mutate functions. 
+
+1. we will load `time_spent` and run the `separate()` function with
+the `course_id` variable to split up the subject, semester, and section
+so we can use them later on. In other words, whereas above we separated
+the variable `course_variable`, in the data set we'll use here, we'll
+separate the `course_id` variable.
+
+Once we've processed the data how we
+would like, we have to assign, or save, the results back to the name for
+the data with which we have been working. This is done with the
+assignment operator, or the \&lt;- symbol.
+
+2. We'll use
+`mutate()` to create a new variable for the percentage of points each
+student earned; keep in mind as you work through these steps how so many
+parts of wrangling data involves either changing a variable or creating
+a new one. For these purposes, mutate can be very helpful. 
+
+Let's process `time_spent` variable that is in number of *minutes* that students spent on the
+course LMS. We will change it to
+`time_spent_hours`, that represents the number of *hours* that students spent on the course LMS.
+
+We will also process gradebook data and 
+
+Survey data - which we will use a new package called janitor. 
+Let's look at the survey data again. We notice that the data You may noticed that `student_ID` is not formatted the same as `student_id` in our other files. This is important because in the next section when were "join," or merge, our data files, these variables will
+need to have identical names.
+
+Fortunately the
+{[janitor](https://garthtarr.github.io/meatR/janitor.html)} package has
+simple functions for examining and cleaning dirty data. It was built
+with beginning and intermediate R users in mind and is optimized for
+user-friendliness. There is also a handy function called `clean_names()`
+in the {janitor} package for standardizing variable names.
+
+.panel[.panel-name[join]
+
+.center[
+&lt;img src="img/join.png" height="425px"/&gt;
+]
+
+
+]
+???
+
+Next, we will join the data together. There are many different join functions that can be used to join data sets.
+
+You may already be aware that your single
+analysis involves multiple data files.
+
+While in some cases it is
+possible to analyze each data set individually, it is often useful (or
+necessary, depending upon your goal) to join these sources of data
+together. This is especially the case for learning analytics research,
+in which researchers and analysts often are interested in understanding
+teaching and learning through the lens of multiple data sources,
+including digital data, institutional records, and survey data, among
+other sources. In all of these cases, knowing how to promptly join
+together files---even files with tens of thousands of hundreds of
+thousands of rows---can be empowering.
+
+A key (pun intended) with joins is to consider what variable(s) will
+serve as the *key*. This is the variable to join by.
+
+A key must have two characteristics; it is:
+
+-   a character string--- a word (thus, you cannot join on a number
+    unless you "coerce" or change it to be a character string, first)
+
+-   present in both of the data frames you are joining.
+
+To join two datasets, it is important that the *key* (or *keys*) on
+which you are joining the data is formatted identically. The key
+represents an identifier that is present in both of the data sets you
+are joining. For instance, you may have data collected from (or created
+about) the same students that are from two very different sources, such
+as a self-report survey of students and their teacher-assigned grades in
+class.
+
+While some of the time it takes some thought to determine what the key
+is (or what the keys are---you can join on multiple keys!), you need just one variable that meets both of the above
+characteristics.
+
+we're going to use a single join function, `full_join()`. In
+the code below, join `gradebook` and `time_spent`; type the names of
+those two data frames as arguments to the `full_join()` function in a
+similar manner as in the `full_join()` code above, and then run this
+code chunk. For now, don't specify anything for the `by =` part of the
+function.
+
+You may notice a message in the console or first output box above that
+says `Joining, by = c("student_id", "Course", "Subject", "Section")`.
+This is telling us that these files are being joined on the basis of all
+four of these variables matching in both data sets; in other words, for
+rows to be joined, they must match identically on all four of these
+variables.
+
+
+For more on joins:
+&lt;https://statisticsglobe.com/r-dplyr-join-inner-left-right-full-semi-anti&gt;
+
+]
+
 
 
 ---
