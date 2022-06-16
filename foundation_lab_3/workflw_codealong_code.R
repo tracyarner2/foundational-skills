@@ -83,7 +83,6 @@ survey
 ########## C. JOIN DATA
 
 # use single joint to join data sets by student_id, subject, semester and section.
-
 joined_data <- full_join(gradebook, time_spent, 
                          by = c("student_id", "subject", "semester", "section"))
 
