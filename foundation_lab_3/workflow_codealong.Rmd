@@ -43,9 +43,6 @@ R Markdowns syntax is based off of [Pandoc's Markdown](https://pandoc.org/MANUAL
     + #### Four
     + ##### Five
 
-### 👉 Your Turn ⤵
-- Add a # hash symbol in front of a short sentence and press `Knit` 
-
 ##### Bullet points
 Bullet points can be used with a `single dash` or a `plus sign`
 
@@ -57,28 +54,6 @@ Bullet points can be used with a `single dash` or a `plus sign`
 - Learn how to read in data.
 - Learn to wrangle data.
 
-
-
-##### Task List
-
-> Outcomes:
-
-- [x] Get excited to learn R Markdown
-- [ ] Meet new peeps
-- [ ] Share my new knowledge
-
-### 👉 Your Turn ⤵
-Create a goal or two for today. You can use a *task list* or *bullets* click knit when complete.
-
- - get r markdown to work
-
-##### Images and weblinks
-
-Weblinks: [name of site or url](url link address)
-
-
-Images:  
-![imagename or leave blank](img/kitty.jpg){width=80px}
 
 ### 1.3. Add a Code Chunk
 1. Menu Bar > 'Code' > 'insert chunk'
@@ -93,22 +68,6 @@ Each organization may have a familiar workflow. In Learning Analytics we use a f
 ![Learning Analytics Workflow](img/la_wrkflow.png){width="60%"}
 
 
-1.  **Prepare**: Prior to analysis, it's critical to understand the context and data
-    sources you're working with so you can formulate useful and answerable        
-    questions. You'll also need to become familiar with and load essential packages
-    for analysis.
-2.  **Wrangle**: Wrangling data entails the work of manipulating,
-    cleaning, transforming, and merging data. In Part 2 we focus on
-    importing CSV files, tidying and joining our data.
-3.  **Explore**: In Part 3, we use basic data visualization and
-    calculate some summary statistics to explore our data and see what
-    insight it provides in response to our question.
-4.  **Model:** After identifying variable that may be related to student
-    performance through exploratory analysis, we'll look at correlations
-    and create some simple models of our data using linear regression.
-5.  **Communicate:** To wrap up our case study, we'll develop our first
-    "data product" and share our analyses and findings by creating our
-    first web page using R Markdown.
     
 ## 0. Introduction
 
@@ -118,13 +77,11 @@ Provide a brief overview or case study.
 
 ## 1. Prepare
 
-Here you load your libraries. If this is the first time using the library then you will need to install first using the 'install.packages("")' function.
+Load Packages
 
-To help us import our data, we'll be using two packages:
-{[readr](https://readr.tidyverse.org)} and
-{[here](https://here.r-lib.org)} .
+```{r warning =FALSE, message=FALSE}
 
-```{r}
+#Load necessary packages
 library(tidyverse)
 library(here)
 ```
@@ -133,29 +90,7 @@ library(here)
 ## 2. Wrangle
 
 
-In general, data wrangling involves some combination of cleaning, reshaping, transforming, and merging data (Wickham & Grolemund, 2017). The importance of data wrangling is difficult to overstate, as it involves the initial steps of going from raw data to a dataset that can be explored and modeled (Krumm et al, 2018). 
-
-In Part 2, we focus on the the following workflow processes:
-
-a.  **Import Data**. In this section, we introduce the `read_csv()`
-    function for working with CSV files and revisit some key functions
-    for inspecting our data.
-
-b.  **Tidy Data**. We introduce the `separate()` and `clean_names()`
-    functions for getting our data nice and tidy, and revisit the
-    `mutate()` for creating new variables.
-
-c.  **Join Data**. We conclude our data wrangling by introducing
-    `join()` functions for merging our processed files into a single
-    data frame for analysis.
-
-a. Import Data
-
-Education data are stored in all sorts of different file formats and structures. Here, we'll focus on working with Comma-separated values (CSV) files.
-
-we learned in Foundation lab 2, similar to spreadsheet formats Excel and Google Sheets, CSVs allow us to store rectangular data frames, but in a much simpler plain-text format, where all the important information in the file is represented by text. Note that "text" here refers to numbers, letters, and symbols you can type on your keyboard. In Tidyverse Skills for Data Science, Wright et al. (2021) note that the advantage of CSVs is that
-
-… that there are no workbooks or metadata making it difficult to open these files. CSVs are flexible files and are thus the preferred storage method for tabular data for many data scientists .
+### a. *Import Data*
 
 #### Data Source #1: Log Data
 
@@ -164,9 +99,7 @@ Log-trace data is data generated from our interactions with digital technologies
 The data we will use has already been "wrangled" quite a bit and is a summary type of log-trace data: the number of minutes students spent on the course. While this data type is fairly straightforward, there are even more complex sources of log-trace data out there (e.g., time stamps associated with when students started and stopped accessing the course).
 
 
-Let's use the `read_csv()` function from {readr} to import our
-`log-data.csv` file directly from our data folder and name this data set
-`time_spent`, to help us to quickly recollect what function it serves in
+Let's use the `read_csv()` function from {readr} to import our `log-data.csv` file directly from our data folder and name this data set `time_spent`, to help us to quickly recollect what function it serves in
 this analysis:
 
 ```{r}
@@ -179,24 +112,22 @@ Now let's load it with the {here} package.
 ```{r}
 #load with here package
 time_spent <- read_csv(here("data", "log-data.csv"))
+
+#inspect data
+time_spent
 ```
 
 #### Data Source #2: Academic Achievement Data
 
-Academic achievement data is (obviously) is a very common form of data
-in education. In this case study, we'll use both the sum of the points
-students earned as well as the number of points possible to compute the
-percentage of points they earned in the course---a measure comparable
-(but likely a little different based on teachers' grading policies) to
-their final grade.
 
-We'll load the data in the same way as earlier but take a quick peek but
-including the name of our data frame in the code chunk as well:
+We'll load the data in the same way as earlier but take a quick peek but including the name of our data frame in the code chunk as well:
 
 ```{r}
+#load data 2: Academic Achievement
 gradebook <- read_csv(here("data", "gradebook-summary.csv"))
 
-gradebook
+#inspect data with glimpse
+glimpse(gradebook)
 ```
 
 #### Data Source #3: Self-Report Survey
@@ -213,15 +144,189 @@ and utility value). We'll use this in the third learning lab.
 ```{r}
 survey <- read_csv(here("data", "survey.csv"))
 
-survey
+#load data 3:Self-Report Survey
+survey <- read_csv(here("data", "survey.csv"))
+
+#inspect data with view - yes the "V" is capitalized
+View(survey)
 ```
 
-## Wrangle
+### b. Tidy data
 
+
+##### Data 1: TIME SPENT
+# separate course_id variable in the time-spent
+```{r} 
+time_spent %>%
+  separate(course_id,
+           c("subject", "semester", "section"))
+```
+
+
+```{r}
+time_spent <- time_spent %>%
+  separate(course_id,
+           c("subject", "semester", "section"))
+```
+
+```{r}
+# mutate minutes to hours on time spent and save as new variable.
+time_spent <- time_spent %>% 
+  mutate(time_spent_hours = time_spent / 60)
+```
+
+##### Data 2: GRADEBOOK
+```{r}
+# separate the course_id variable
+gradebook <- gradebook %>% 
+  separate(course_id, c("subject", "semester", "section"))
+```
+
+```{r}
+# Mutate to a proportion, take total points earned divide by total points. Save as new variable proportion_earned.
+gradebook <- gradebook %>% 
+  mutate(proportion_earned = (total_points_earned / total_points_possible))
+
+#inspect data
+gradebook
+
+```
+
+##### Data 3: SURVEY
+
+```{r}
+#inspect data 
+survey
+
+# load janitor to clean variable names that do not match
+library(janitor)
+
+#clean column
+survey <- clean_names(survey)
+
+#inspect data to check for consistency with other data
+survey
+
+```
+
+#### C. Join Data
+
+```{r}
+# use single join to join data sets by student_id, subject, semester and section.
+joined_data <- full_join(gradebook, time_spent, 
+                         by = c("student_id", "subject", "semester", "section"))
+
+```
+
+# join together the grade_book and log_wrangled
+data_to_explore <- full_join(joined_data, survey, by = c("student_id", "subject", "section"))
+
+#Inspect data
+data_to_explore
+
+
+
+```{r}
+#mutate to change variable class from double or numeric to character
+joined_data <- joined_data %>%
+  mutate(student_id = as.character(student_id))
+
+#inspect data
+joined_data
+
+#try again to together the grade_book and log_wrangled
+data_to_explore <- full_join(joined_data, survey, by = c("student_id", "subject", "semester", "section"))
+
+# inspect data
+data_to_explore
+
+```
 
 ## Explore
 
 
+
+#### A. TABLE SUMMARY
+```{r}
+#install package if this is first time using skimr
+
+
+#load library
+library(skimr)
+
+#skim data
+skim(data_to_explore)
+
+```
+
+```{r}
+# using the `select()` and `filter()` functions. In the code chunk below,look at descriptive for just `proportion_earned` , `time_spent` and `gender`, but only for the "OcnA" and "PhysA" subjects.
+
+data_to_explore %>% 
+  select(c('subject', 'gender', 'proportion_earned', 'time_spent')) %>% 
+  filter(subject == "OcnA" | subject == "PhysA") %>%
+  skim()
+```
+
+
+#### B. DATA VIZ
+
+```{r}
+# create a histogram
+data_to_explore %>% 
+  ggplot(aes(x = time_spent_hours)) +
+  geom_histogram(bins = 30)
+
+```
+
+```{r}
+# create a scatter plot
+ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color = enrollment_status)) +
+  geom_point()
+
+```
+
+```{r}
+# scatter plot facet wrap
+ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color = enrollment_status)) +
+  geom_point() +
+  facet_wrap(~ subject)
+
+```
+
 ## Model
+
+
+#### A. MATHMATICAL
+
+Does time spent predict grade earned?
+
+```{r}
+# Use linear regression model
+lm(proportion_earned ~ time_spent_hours, 
+   data = data_to_explore)
+```
+
+```{r}
+# Add predictor variable for science
+lm(proportion_earned ~ time_spent_hours + int, 
+   data = data_to_explore)
+
+# save the model
+m1 <- lm(proportion_earned ~ time_spent_hours + int, data = data_to_explore)
+
+```
+
+```{r}
+#run the summary
+summary(m1)
+
+```
+
+```{r}
+# use the {apaTables} package to create a nice regression table that could be used for later publication.
+apa.reg.table(m1, filename = "lm-table.doc")
+
+```
 
 ## Communicate
