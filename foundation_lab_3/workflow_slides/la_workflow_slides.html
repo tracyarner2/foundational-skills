@@ -3,7 +3,7 @@
   <head>
     <title>Learning Analytics Workflow</title>
     <meta charset="utf-8" />
-    <meta name="date" content="2022-06-16" />
+    <meta name="date" content="2022-06-17" />
     <script src="libs/header-attrs-2.14/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
@@ -36,7 +36,7 @@ class: clear, title-slide, inverse, center, top, middle
 # Learning Analytics Workflow
 ----
 ### 
-### June 16, 2022
+### June 17, 2022
 ---
 
 
@@ -393,7 +393,7 @@ add here to run you can click the green arrow, sun everything above by clicking 
 
 ]
 ---
-
+# Workflow 
 .panelset[
 
 .panel[.panel-name[Workflow]
@@ -417,7 +417,7 @@ Again this is the general workflow. It is not a linear process and can flow to a
 
 Additionally you may add a section 0. that offers insight into a case study, research questions, and the reason for your analysis. What sparked you to collect data on this particular topic? What's the background?
 
-.panel[.panel-name[Prepare]
+.panel[.panel-name[PREPARE]
 
 
 To help us import our data, we'll be using two packages:
@@ -429,7 +429,7 @@ To help us import our data, we'll be using two packages:
 ???
 In this part of the workflow, **Prepare**, load your libraries. If this is the first time using the library then you will need to install first using the 'install.packages("")' function before using the `library()` function.
 
-.panel[.panel-name[Wrangle]
+.panel[.panel-name[WRANGLE]
 
 1. **Import**
 2. **Tidy**
@@ -530,6 +530,7 @@ in the {janitor} package for standardizing variable names.
 
 
 ]
+]
 ???
 
 Next, we will join the data together. There are many different join functions that can be used to join data sets.
@@ -570,7 +571,7 @@ While some of the time it takes some thought to determine what the key
 is (or what the keys are---you can join on multiple keys!), you need just one variable that meets both of the above
 characteristics.
 
-we're going to use a single join function, `full_join()`. In
+We're going to use a single join function, `full_join()`. In
 the code below, join `gradebook` and `time_spent`; type the names of
 those two data frames as arguments to the `full_join()` function in a
 similar manner as in the `full_join()` code above, and then run this
@@ -589,8 +590,152 @@ For more on joins:
 &lt;https://statisticsglobe.com/r-dplyr-join-inner-left-right-full-semi-anti&gt;
 
 ]
+---
+.panelset[
+
+.panel[.panel-name[EXPLORE]
 
 
+```r
+#load library
+library(skimr)
+
+#skim data
+skim(data_to_explore)
+```
+
+]
+
+
+
+???
+As highlighted in both
+[DSEIUR](https://datascienceineducation.com/c03.html#doing-analysis-exploring-visualizing-and-modeling-data)
+and Learning Analytics Goes to School, calculating summary statistics
+and data visualization are a key part of exploratory data analysis. One
+goal in this phase is explore questions that drove the original analysis
+and develop new questions and hypotheses to test in later stages. 
+In this part we will:
+-   **Summarize Key Stats**. We'll learn about the {skmir} package for
+    pulling together some quick creating descriptive statistics when
+    your goal is to understand your data internally.
+
+-   **Visualize Data**. We'll introduce the histogram geom for taking a
+    quick peak the distributions of some key variables and put together
+    some scatter plots for examining potential relationships between
+    time spent and student performance.
+    
+    On the right,
+    we see that the skimr package is used for creating descriptive statistics *when your goal
+is to understand your data internally* (rather than to create a tablefor an external-to-the-research-team audience, like for a journal article).
+
+-   Pass to the `skim()` function a single argument
+-   That single *argument* is the data frame (aka in tidyverse parlance,
+    a tibble) for which you are aiming to calculate descriptive
+    statistics
+    
+**Note:** If you are having difficult viewing your data in the code
+chunk, try clicking the icon in the output that looks like a spreadsheet
+with an arrow on it to expand your output in a separate window.
+
+.panel[.panel-name[Table]
+
+```r
+data_to_explore %&gt;% 
+  select(c('subject', 'gender', 'proportion_earned', 'time_spent')) %&gt;% 
+  filter(subject == "OcnA" | subject == "PhysA") %&gt;%
+  skim() &lt;##
+```
+
+
+]
+
+.panel[.panel-name[Viz - histogram]
+
+.pull-left[
+
+
+```r
+data_to_explore %&gt;% 
+  ggplot(aes(x = time_spent_hours)) +
+  geom_histogram(bins = 30)
+```
+]
+.pull-right[
+&lt;img src="img/hist.png" height="250px"/&gt;
+
+]
+
+
+]
+
+.panel[.panel-name[Viz - Scatter]
+
+.pull-left[
+&lt;img src="img/scatter.png" height="250px"/&gt;
+
+]
+.pull-right[
+&lt;img src="img/facet_scatter.png" height="250px"/&gt;
+]
+]
+
+
+
+]
+---
+.panelset[
+
+.panel[.panel-name[MODEL]
+
+
+```r
+# Add predictor variable for science
+lm(proportion_earned ~ time_spent_hours + int, 
+   data = data_to_explore)
+
+# save the model
+m1 &lt;- lm(proportion_earned ~ time_spent_hours + int, data = data_to_explore)
+```
+
+
+]
+
+.panel[.panel-name[Mathematical]
+.center[
+&lt;img src="img/apa_table.png" height="350px"/&gt;
+]
+]
+
+.panel[.panel-name[COMMUNICATE]
+
+&lt;img src="img/communicate.png" height="350px"/&gt;
+]
+
+???
+The final(ish) step in our workflow/process is sharing the results of
+analysis with wider audience. Krumm et al. (2018) have outline the
+following 3-step process for communicating with education stakeholders
+what you have learned through analysis:
+
+1.  **Select**. Communicating what one has learned involves selecting
+    among those analyses that are most important and most useful to an
+    intended audience, as well as selecting a form for displaying that
+    information, such as a graph or table in static or interactive form,
+    i.e. a "data product."
+
+2.  **Polish**. After creating initial versions of data products,
+    research teams often spend time refining or polishing them, by
+    adding or editing titles, labels, and notations and by working with
+    colors and shapes to highlight key points.
+
+3.  **Narrate**. Writing a narrative to accompany the data products
+    involves, at a minimum, pairing a data product with its related
+    research question, describing how best to interpret the data
+    product, and explaining the ways in which the data product helps
+    answer the research question.
+
+]
 
 ---
 class: inverse, clear, center
