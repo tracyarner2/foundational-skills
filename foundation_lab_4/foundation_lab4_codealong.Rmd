@@ -1,0 +1,66 @@
+---
+title: "Lab4_"
+author: "Jeanne McClure"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## ggplot grammar
+
+
+
+## Explore
+
+
+
+#### A. TABLE SUMMARY
+```{r}
+#install package if this is first time using skimr
+
+
+#load library
+library(skimr)
+
+#skim data
+skim(data_to_explore)
+
+```
+
+```{r}
+# using the `select()` and `filter()` functions. In the code chunk below,look at descriptive for just `proportion_earned` , `time_spent` and `gender`, but only for the "OcnA" and "PhysA" subjects.
+
+data_to_explore %>% 
+  select(c('subject', 'gender', 'proportion_earned', 'time_spent')) %>% 
+  filter(subject == "OcnA" | subject == "PhysA") %>%
+  skim()
+```
+
+
+#### B. DATA VIZ
+
+```{r}
+# create a histogram
+data_to_explore %>% 
+  ggplot(aes(x = time_spent_hours)) +
+  geom_histogram(bins = 30)
+
+```
+
+```{r}
+# create a scatter plot
+ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color = enrollment_status)) +
+  geom_point()
+
+```
+
+```{r}
+# scatter plot facet wrap
+ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color = enrollment_status)) +
+  geom_point() +
+  facet_wrap(~ subject)
+
+```

@@ -324,6 +324,10 @@ summary(m1)
 ```
 
 ```{r}
+#install apaTables if this is your first time
+
+#load packages
+library(apaTables)
 # use the {apaTables} package to create a nice regression table that could be used for later publication.
 apa.reg.table(m1, filename = "lm-table.doc")
 

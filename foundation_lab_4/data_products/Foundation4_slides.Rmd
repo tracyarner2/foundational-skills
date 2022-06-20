@@ -1,0 +1,201 @@
+---
+  title: "Foundation 4"
+  institute: "Instituttional Affiliation"
+  date: '`r format(Sys.time(), "%B %d, %Y")`'
+  output:
+    xaringan::moon_reader:
+      css:
+       - default
+       - css/laser.css
+       - css/laser-fonts.css
+      lib_dir: libs                        # creates directory for libraries
+      seal: false                          # false: custom title slide
+      nature:
+        highlightStyle: default         # highlighting syntax for code
+        highlightLines: true               # true: enables code line highlighting
+        highlightLanguage: ["r"]           # languages to highlight
+        countIncrementalSlides: false      # false: disables counting of incremental slides
+        ratio: "16:9"                      # 4:3 for standard size,16:9
+        slideNumberFormat: |
+         <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+         </div>
+---
+class: clear, title-slide, inverse, center, top, middle
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, echo=FALSE}
+# then load all the relevant packages
+pacman::p_load(pacman, knitr)
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+# these allow any code snippets to be copied to the clipboard so they 
+# can be pasted easily
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D\"></i>",
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+```
+```{r xaringan-extras, echo=FALSE}
+xaringanExtra::use_tile_view()
+
+```
+
+# `r rmarkdown::metadata$title`
+----
+### `r rmarkdown::metadata$author`
+### `r format(Sys.time(), "%B %d, %Y")`
+
+---
+
+<img src="img/team_2022.png" height="550px"/>
+---
+# Agenda
+
+.pull-left[**Part-1  Conceptual Overview**
+- Purpose of Visualizations
+- Principles
+  + Perception
+  + Color
+  + Cognitive Processing
+  ]
+
+.pull-right[**Part-2  Code-Along**
+- Explore phase
+- `ggplot` grammar
+- Scatter plot
+
+]
+]
+---
+
+class: clear, inverse, middle, center
+
+Part 1:
+
+----
+
+Intro to Data Visualization: Conceptual Overview
+
+---
+# Purpose of Data Visualizations
+
+.panelset[
+
+.panel[.panel-name[Why?]
+
+.center[
+<img src="img/dataviz_ex1.png" height="400px"/>
+]
+]
+
+???
+
+Looking at data graphed visualization may be easy to understand but it can be messy.
+This visualization looks at Twitter sentiment of four popular Learning Management Systems. 
+
+Looking at the the frequency table it is hard to get a good sense of the twitter sentiment for each LMS.
+
+In the the visualization we can quickly see that it looks as though Blackboard had the most positive scores. However, when reading the analysis you know that the Twitter counts for Blackboard were the lowest. So, this graph is very informative but requires you to look at all of the analysis for understanding. 
+
+In "Data Science for Education," Estrellado et al. (2020) states," that while this relationship might seem intuitive, you can’t draw a definitive conclusion just from the visualization, because it doesn’t tell you whether the relationship between those variables is meaningful."
+]
+
+
+---
+# Panels, Columns, Links, and Image
+
+.panelset[
+
+.panel[.panel-name[Panel 1]
+
+.pull-left[
+The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
+]
+
+.pull-right[
+<img src="img/website.png" height="450px"/>
+]
+]
+
+.panel[.panel-name[Panel 2]
+
+The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
+]
+
+.panel[.panel-name[Panel 3]
+
+The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
+]
+
+.panel[.panel-name[Panel 4]
+
+The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
+]
+
+
+]
+
+
+---
+class: clear, laser
+
+.quote[Education is the most powerful weapon which you can use to change the world.]
+
+.author[~ Nelson Mandela]
+---
+
+class: clear, inverse, middle, center
+Part 2:
+
+----
+
+Code-Along
+
+
+---
+
+
+???
+In the last session we looked at the first two parts of the Learning Analytics Workflow, *Prepare* and *Wrangle.*
+In this session we will continue with the *Explore* phase in the LA workflow cycle.
+
+We will also dive the grammar of ggplot. An important package that is used for data visualization.
+
+
+---
+
+class: inverse, clear, center
+
+## .font130[.center[**Thank you!**]]
+
+.left-col[
+.center[<img style="border-radius: 50%;" src="img/author1.jpeg" height="120px"/><br/>**First Author**<br/><mailto:author1@email.com>]
+]
+.center-col[
+.center[<img style="border-radius: 50%;" src="img/author2.jpeg" height="120px"/><br/>**Second Author**<br/><mailto:author2@email.com>]
+]
+.right-col[
+.center[<img style="border-radius: 50%;" src="img/author3.jpeg" height="120px"/><br/>**Third Author**<br/><mailto:author3@email.com>]
+]
+<br/><br/><br/><br/><br/>
+
+.pull-left-narrow[<br/>.center[<img style="border-radius: 50%;" src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png" height="100px"/> ]]
+
+.pull-right-wide[
+.left[.font70[
+This work was supported by countless cups of hot tea, cookies, and the RStats Xaringan community willingness to post of plethora of tutorials. But you may wish to thank your funding agency (e.g., the National Science Foundation) and put their logo on the left as shown here.
+]]
+]

@@ -114,7 +114,9 @@ On a quick recap from our data structures presentation we discussed the differen
 
 .pull-right[**Part-2  Code-Along**
 - Common R-Markdown Syntax
-- Workflow outline
+- Workflow 
+  + Prepare
+  + Wrangle
 
 ]
 
@@ -418,17 +420,18 @@ add here to run you can click the green arrow, sun everything above by clicking 
 
 .panel[.panel-name[Workflow]
 
-<img src="img/la_wrkflow.png" height="450px"/>
+<img src="img/la_wrkflow.png" height="400px"/>
 
 
 ]
 ???
 
-Again this is the general workflow. It is not a linear process and can flow to answer your research questions, or revise them depending on your needs.
+Again this is the general workflow. It is not a linear process and can flow to answer your research questions, or revise them depending on your needs. The next few sessions will take us through the entire workflow. Today we will focus on the *Prepare* and *Wrangle* phases.
 
 1.  **Prepare**: Prior to analysis, it's critical to understand the context and data sources you're working with so you can formulate useful and answerable        questions. You'll also need to become familiar with and load essential packages for analysis.
 
 2.  **Wrangle**: Wrangling data entails the work of manipulating, cleaning, transforming, and merging data. 
+
 3.  **Explore**: In Part 3, we use basic data visualization and calculate some summary statistics to explore our data and see what insight it provides in response to our question.
 
 4.  **Model:** After identifying variable that may be related to student performance through exploratory analysis, we'll look at correlations and create some simple models of our data using linear regression.
@@ -727,7 +730,7 @@ m1 <- lm(proportion_earned ~ time_spent_hours + int, data = data_to_explore)
 
 .panel[.panel-name[COMMUNICATE]
 
-<img src="img/communicate.png" height="350px"/>
+<img src="img/communicate.png" height="450px"/>
 ]
 
 ???
