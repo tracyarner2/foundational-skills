@@ -74,22 +74,15 @@ xaringanExtra::use_tile_view()
 
 .pull-right[**Part-2  Code-Along**
 - Explore phase
-- `ggplot` grammar
+- `ggplot2` grammar
 - Scatter plot
 
 ]
 ]
----
-
-class: clear, inverse, middle, center
-
-Part 1:
-
-----
-
-Intro to Data Visualization: Conceptual Overview
 
 ---
+
+
 # Purpose of Data Visualizations
 
 .panelset[
@@ -106,14 +99,149 @@ Intro to Data Visualization: Conceptual Overview
 Looking at data graphed visualization may be easy to understand but it can be messy.
 This visualization looks at Twitter sentiment of four popular Learning Management Systems. 
 
-Looking at the the frequency table it is hard to get a good sense of the twitter sentiment for each LMS.
+Looking at the the frequency table on the left it is hard to get a good sense of the twitter sentiment for each LMS.
 
-In the the visualization we can quickly see that it looks as though Blackboard had the most positive scores. However, when reading the analysis you know that the Twitter counts for Blackboard were the lowest. So, this graph is very informative but requires you to look at all of the analysis for understanding. 
+In the the visualization on the right we can quickly see that it looks as though Blackboard had the most positive scores. However, when really diving in and reading the analysis you know that the Twitter counts for Blackboard were the lowest. So, this graph is very informative but requires you to look at all of the analysis for understanding.
 
-In "Data Science for Education," Estrellado et al. (2020) states," that while this relationship might seem intuitive, you can’t draw a definitive conclusion just from the visualization, because it doesn’t tell you whether the relationship between those variables is meaningful."
+In "Data Science for Education," Estrellado et al. (2020) states," that while this relationship might seem intuitive, you can’t draw a definitive conclusion just from the visualization, because it doesn’t tell you whether the relationship between those variables is meaningful." In the proceeding session we will talk about modeling.
+
+The authors explain that, while descriptive statistics and data visualization during the**Explore** step can help us to identify patterns and relationships
+in our data, statistical models can be used to help us determine if relationships, patterns and trends are actually meaningful.
+
+
+
+.panel[.panel-name[Who?]
+.center[
+<img src="img/who.png" height="400px"/>
+]
 ]
 
 
+???
+
+Healy, 2018 explains that knowing who you are creating the visualization for is as important as how it looks in an abstract. Taking large sets of data and having an idea of what sort of visual work is most effective to deliberately simplify things in a way that lets us see past a cloud of data points shown in a figure.
+
+But, know who the visualization is for (who the stakeholders are) is just as important as tidying the data. Having an image for an audience of experts reading a professional journal is going to differ from having one to be interpreted by the public.
+
+.panel[.panel-name[What?]
+
+.pull-left[
+<img src="img/tidy.png" height="400px"/>
+]
+]
+
+???
+
+We will be using the `ggplot2` package which requires you to have a `tidy` format. Have your data in long format rather than short format. We put our data into a `tidy` format during the `wrangle` phase of our learning analytics cycle.
+- join data using a key if there are multiple data sets.
+- each variable is in its own column using `seperate` function
+- each observation is saved in its own row 
+- we also create a variable with observations when we used the `mutate` function.
+
+]
+---
+
+class: clear, inverse, middle, center
+
+Part 1:
+
+----
+
+Intro to Data Visualization: Conceptual Overview
+
+
+
+
+---
+.panelset[
+
+.panel[.panel-name[EXPLORE]
+
+```{r echo = TRUE, eval=FALSE}
+#load library
+library(skimr)
+
+#skim data
+skim(data_to_explore)
+```
+
+]
+
+
+
+???
+As highlighted in both
+[DSEIUR](https://datascienceineducation.com/c03.html#doing-analysis-exploring-visualizing-and-modeling-data)
+and Learning Analytics Goes to School, calculating summary statistics
+and data visualization are a key part of exploratory data analysis. One
+goal in this phase is explore questions that drove the original analysis
+and develop new questions and hypotheses to test in later stages. 
+In this part we will:
+-   **Summarize Key Stats**. We'll learn about the {skmir} package for
+    pulling together some quick creating descriptive statistics when
+    your goal is to understand your data internally.
+
+-   **Visualize Data**. We'll introduce the histogram geom for taking a
+    quick peak the distributions of some key variables and put together
+    some scatter plots for examining potential relationships between
+    time spent and student performance.
+    
+    On the right,
+    we see that the skimr package is used for creating descriptive statistics *when your goal
+is to understand your data internally* (rather than to create a tablefor an external-to-the-research-team audience, like for a journal article).
+
+-   Pass to the `skim()` function a single argument
+-   That single *argument* is the data frame (aka in tidyverse parlance,
+    a tibble) for which you are aiming to calculate descriptive
+    statistics
+    
+**Note:** If you are having difficult viewing your data in the code
+chunk, try clicking the icon in the output that looks like a spreadsheet
+with an arrow on it to expand your output in a separate window.
+
+.panel[.panel-name[Table]
+```{r eval=FALSE, echo=TRUE}
+data_to_explore %>% 
+  select(c('subject', 'gender', 'proportion_earned', 'time_spent')) %>% 
+  filter(subject == "OcnA" | subject == "PhysA") %>%
+  skim() <##
+```
+
+
+]
+
+.panel[.panel-name[Viz - histogram]
+
+.pull-left[
+
+```{r eval = FALSE, echo = TRUE}
+data_to_explore %>% 
+  ggplot(aes(x = time_spent_hours)) +
+  geom_histogram(bins = 30)
+```
+]
+.pull-right[
+<img src="img/hist.png" height="250px"/>
+
+]
+
+
+]
+
+.panel[.panel-name[Viz - Scatter]
+
+.pull-left[
+<img src="img/scatter.png" height="250px"/>
+
+]
+.pull-right[
+<img src="img/facet_scatter.png" height="250px"/>
+]
+]
+
+
+
+]
 ---
 # Panels, Columns, Links, and Image
 
