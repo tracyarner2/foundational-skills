@@ -9,7 +9,14 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## ggplot grammar
+```{r}
+#load libraries
+library(tidyverse)
+library(here)
+
+#read in data from lab3 data to explore
+
+```
 
 
 
@@ -30,6 +37,7 @@ skim(data_to_explore)
 
 ```
 
+## B. TIDY to EXPLORE
 ```{r}
 # using the `select()` and `filter()` functions. In the code chunk below,look at descriptive for just `proportion_earned` , `time_spent` and `gender`, but only for the "OcnA" and "PhysA" subjects.
 
@@ -42,6 +50,74 @@ data_to_explore %>%
 
 #### B. DATA VIZ
 
+ggplot grammar - with layers
+
+
+
+##### layers - Scatter Plot
+
+Basic graph 
+1. data
+2. aes
+3. geom
+
+```{r}
+#layer 1: add data and aesthetics mapping 
+ggplot(data_to_explore, #<<
+       aes(x = time_spent_hours, 
+           y = proportion_earned)) +
+#layer 2: +  geom function type
+  geom_point() #<<
+```
+
+Add **Scale ** with different color for enrollment status.
+
+```{r}
+#layer 1: add data and aesthetics mapping 
+#layer 3: add color scale by type
+ggplot(data_to_explore, 
+       aes(x = time_spent_hours, 
+           y = proportion_earned,
+           color = enrollment_status)) + #<<
+#layer 2: +  geom function type
+  geom_point()
+```
+
+
+Add another layer with **labs* labeling the title
+```{r}
+#layer 1: add data and aesthetics mapping 
+#layer 3: add color scale by type
+ggplot(data_to_explore, 
+       aes(x = time_spent_hours, 
+           y = proportion_earned,
+           color = enrollment_status)) +
+#layer 2: +  geom function type
+  geom_point() +
+#layer 4: add lables
+  x_lab(title="How Time Spent on Course LMS is Related to Points Earned in the Course", x="Time Spent (Hours)", y = "MProportion of Points Earned")
+```
+
+
+Add the **facet** layer
+```{r echo = TRUE, eval=FALSE}
+#layer 1: add data and aesthetics mapping 
+#layer 3: add color scale by type
+ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color = enrollment_status)) +
+#layer 2: +  geom function type
+  geom_point() +
+#layer 4: add lables
+    x_lab(title="How Time Spent on Course LMS is Related to Points Earned in the Course", 
+       x="Time Spent (Hours)",
+       y = "Proportion of Points Earned")
+#layer 5: add facet wrap
+  facet_wrap(~ subject) 
+```
+
+
+
+
+##### layers- Histogram
 ```{r}
 # create a histogram
 data_to_explore %>% 
@@ -50,17 +126,3 @@ data_to_explore %>%
 
 ```
 
-```{r}
-# create a scatter plot
-ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color = enrollment_status)) +
-  geom_point()
-
-```
-
-```{r}
-# scatter plot facet wrap
-ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color = enrollment_status)) +
-  geom_point() +
-  facet_wrap(~ subject)
-
-```
