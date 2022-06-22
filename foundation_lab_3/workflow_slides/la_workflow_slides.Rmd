@@ -545,7 +545,7 @@ with beginning and intermediate R users in mind and is optimized for
 user-friendliness. There is also a handy function called `clean_names()`
 in the {janitor} package for standardizing variable names.
 
-.panel[.panel-name[join]
+.panel[.panel-name[Join]
 
 .center[
 <img src="img/join.png" height="425px"/>
@@ -613,96 +613,7 @@ For more on joins:
 <https://statisticsglobe.com/r-dplyr-join-inner-left-right-full-semi-anti>
 
 ]
----
-.panelset[
 
-.panel[.panel-name[EXPLORE]
-
-```{r echo = TRUE, eval=FALSE}
-#load library
-library(skimr)
-
-#skim data
-skim(data_to_explore)
-```
-
-]
-
-
-
-???
-As highlighted in both
-[DSEIUR](https://datascienceineducation.com/c03.html#doing-analysis-exploring-visualizing-and-modeling-data)
-and Learning Analytics Goes to School, calculating summary statistics
-and data visualization are a key part of exploratory data analysis. One
-goal in this phase is explore questions that drove the original analysis
-and develop new questions and hypotheses to test in later stages. 
-In this part we will:
--   **Summarize Key Stats**. We'll learn about the {skmir} package for
-    pulling together some quick creating descriptive statistics when
-    your goal is to understand your data internally.
-
--   **Visualize Data**. We'll introduce the histogram geom for taking a
-    quick peak the distributions of some key variables and put together
-    some scatter plots for examining potential relationships between
-    time spent and student performance.
-    
-    On the right,
-    we see that the skimr package is used for creating descriptive statistics *when your goal
-is to understand your data internally* (rather than to create a tablefor an external-to-the-research-team audience, like for a journal article).
-
--   Pass to the `skim()` function a single argument
--   That single *argument* is the data frame (aka in tidyverse parlance,
-    a tibble) for which you are aiming to calculate descriptive
-    statistics
-    
-**Note:** If you are having difficult viewing your data in the code
-chunk, try clicking the icon in the output that looks like a spreadsheet
-with an arrow on it to expand your output in a separate window.
-
-.panel[.panel-name[Table]
-```{r eval=FALSE, echo=TRUE}
-data_to_explore %>% 
-  select(c('subject', 'gender', 'proportion_earned', 'time_spent')) %>% 
-  filter(subject == "OcnA" | subject == "PhysA") %>%
-  skim() <##
-```
-
-
-]
-
-.panel[.panel-name[Viz - histogram]
-
-.pull-left[
-
-```{r eval = FALSE, echo = TRUE}
-data_to_explore %>% 
-  ggplot(aes(x = time_spent_hours)) +
-  geom_histogram(bins = 30)
-```
-]
-.pull-right[
-<img src="img/hist.png" height="250px"/>
-
-]
-
-
-]
-
-.panel[.panel-name[Viz - Scatter]
-
-.pull-left[
-<img src="img/scatter.png" height="250px"/>
-
-]
-.pull-right[
-<img src="img/facet_scatter.png" height="250px"/>
-]
-]
-
-
-
-]
 ---
 .panelset[
 
@@ -735,7 +646,7 @@ m1 <- lm(proportion_earned ~ time_spent_hours + int, data = data_to_explore)
 
 ???
 The final(ish) step in our workflow/process is sharing the results of
-analysis with wider audience. Krumm et al. (2018) have outline the
+analysis with wider audience. Krumm et al.(2018) have outline the
 following 3-step process for communicating with education stakeholders
 what you have learned through analysis:
 
