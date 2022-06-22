@@ -140,12 +140,9 @@ Once that happens you can use the various geometric object names from ggplot2 to
 
 .panel[.panel-name[Graph Construction]
 
-.pull-left[
-The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
-]
 
-.pull-right[
-&lt;img src="img/website.png" height="450px"/&gt;
+.center[
+&lt;img src="img/bad_graph.png" height="400px"/&gt;
 ]
 ]
 
@@ -156,19 +153,35 @@ Following (Tufte, 1983, p. 177)principles of having “more routine, workaday de
 -by having a properly chosen format and design,” 
 -“use words, numbers, and drawing together,” 
 -“display an accessible complexity of detail” and “avoid content-free decoration, including chartjunk.
-” 
 
-.panel[.panel-name[Panel 2]
+Not so much on how it looks rather, how human visual perception works.
 
-The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
+.panel[.panel-name[Perception]
+
+&lt;img src="img/perception.png" height="400px"/&gt;
+]
+???
+This is a great graphic from Healy's book. 
+
+What do you see with the graph on the **left**?
+
+- the lines appear at first glance to be converging as the value of x increases. 
+- they might even intersect if we extended the graph out further
+
+What about the graph on the **right**?
+- the curves are clearly equidistant from the beginning. 
+
+These are the same graph - But misleading. The apparent convergence in the left panel is just a result of the aspect ratio of the figure.
+
+
+.panel[.panel-name[Color]
+
+&lt;img src="img/color.png" height="400px"/&gt;
 ]
 
-.panel[.panel-name[Panel 3]
 
-The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
-]
 
-.panel[.panel-name[Gesault Rules]
+.panel[.panel-name[Relationships]
 
 .pull-left[
 - **Proximity**
@@ -178,6 +191,11 @@ The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **
 - **Closure**
 - **Figure and Ground**
 - **Common Fate**
+
+]
+.pull-right[
+
+&lt;img src="img/structure.png" height="400px"/&gt;
 
 ]
 ]
@@ -205,9 +223,17 @@ Code-Along
 
 
 ---
+# Explore setup
+
 .panelset[
 
-.panel[.panel-name[EXPLORE]
+.panel[.panel-name[EXPLORE PHASE]
+
+&lt;img src="img/explore.png" height="400px"/&gt;
+
+]
+
+.panel[.panel-name[TABLE]
 
 
 ```r
@@ -252,7 +278,7 @@ is to understand your data internally* (rather than to create a tablefor an exte
 chunk, try clicking the icon in the output that looks like a spreadsheet
 with an arrow on it to expand your output in a separate window.
 
-.panel[.panel-name[Table]
+.panel[.panel-name[TIDY]
 
 ```r
 data_to_explore %&gt;% 
@@ -401,6 +427,11 @@ ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color =
 
 ]
 ]
+]
+---
+# ggplot continue
+.panelset[
+
 .panel[.panel-name[Viz - histogram]
 
 .pull-left[
