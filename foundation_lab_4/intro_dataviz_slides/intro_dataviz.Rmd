@@ -30,7 +30,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```{r, echo=FALSE}
 # then load all the relevant packages
-pacman::p_load(pacman, knitr)
+pacman::p_load(pacman, knitr, usethis)
 ```
 
 ```{r xaringan-panelset, echo=FALSE}
