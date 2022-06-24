@@ -1,0 +1,73 @@
+---
+title: "dataproducts_codealong"
+author: "Jeanne McClure"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#load libraries
+library(tidyverse)
+library(here)
+
+# read in data to explore 
+survey <- read_csv(here("data", "survey.csv"))
+
+# using the `select()` and `filter()` functions. In the code chunk below,look at descriptive for just `proportion_earned` , `time_spent` and `gender`, but only for the "OcnA" and "PhysA" subjects.
+
+
+```
+## Prepare
+We install and load library's
+
+## Wrangle
+Put the data into tidy format
+
+## Explore
+Look at insights using ggplot
+
+## Model
+Quantify the insights using mathematical models.
+
+#### A. MATHMATICAL
+
+Does time spent predict grade earned?
+
+```{r}
+# Use linear regression model
+lm(proportion_earned ~ time_spent_hours, 
+   data = data_to_explore)
+```
+
+```{r}
+# Add predictor variable for science
+lm(proportion_earned ~ time_spent_hours + int, 
+   data = data_to_explore)
+
+# save the model
+m1 <- lm(proportion_earned ~ time_spent_hours + int, data = data_to_explore)
+
+```
+
+```{r}
+#run the summary
+summary(m1)
+
+```
+
+```{r}
+#install apaTables if this is your first time
+
+#load packages
+library(apaTables)
+# use the {apaTables} package to create a nice regression table that could be used for later publication.
+apa.reg.table(m1, filename = "lm-table.doc")
+
+```
+
+## Communicate
+WHat are your findings?

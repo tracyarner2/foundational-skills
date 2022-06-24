@@ -59,30 +59,60 @@ xaringanExtra::use_tile_view()
 ### `r format(Sys.time(), "%B %d, %Y")`
 
 ---
+
+<img src="img/team_2022.png" height="550px"/>
+
+---
 # Agenda
 
-This is what we'll cover today
-- Agenda item 1
-- Agenda item 2
-- Agenda item 3
+.pull-left[**Part-1  Conceptual Overview**
+- Storytelling
+- Publication-ready products
+]
+
+.pull-right[**Part-2  Code-Along**
+- Model
+- Communicate
+- RMarkdown File formats
+- Citation Manager in R
+- Journal submission
+
+]
+???
+In this presentation we are going to focus on communicating your data and findings effectively with education stakeholders. We'll also talk about how to create publication-ready products in R markdown. 
+
+For the code along, we will continue on in our Learning Analytics workflow to finish up with Model and Communication. Where we will be  converting R markdown files into a variety of formats and experiment a little bit with setting up a bibliography and formatting in-text citations. And if we have time you may have the opportunity to also experiment with the rticles package to tailor a publication or a document for a specific journal.
 
 ---
-# Showing Your Code
-```{r example-code, echo=TRUE}
-# adding #<< after a line of code highlights it like this 
-alphabet <- letters #<<
-print(alphabet)
-```
+
+
+class: clear, inverse, middle, center
+
+Part 1:
+
+----
+
+Learning Analytics Workflow: Conceptual Overview
 
 ---
-# Panels, Columns, Links, and Image
+
+# Recap from Intro to Data Viz
+
+- Explore Phase and helpful pages
+- ggplot Grammar 
+
+???
+Again we finished our last session in the Explore phase of our LA Cycle. Using GGplot and its layers to create data visualizations.
+
+---
+# Communicating
 
 .panelset[
 
-.panel[.panel-name[Panel 1]
+.panel[.panel-name[Data storytelling]
 
 .pull-left[
-The [LASER Institute](https://www.fi.ncsu.edu/projects/laser-institute/) is a **professional development program**for early and mid-career researchers and funded by the National Science Foundation (ECR: BCSER).
+Pre-Reading: The [R for Data Science](https://r4ds.had.co.nz/), Chapters, 21 & 23 by Hadley Wickham & Garrett Grolemund.
 ]
 
 .pull-right[

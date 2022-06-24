@@ -240,6 +240,9 @@ data_to_explore <- full_join(joined_data, survey, by = c("student_id", "subject"
 # inspect data
 data_to_explore
 
+# write data to file to use later
+write_csv(data_to_explore, "data/data_to_explore.csv")
+
 ```
 
 ## Explore
