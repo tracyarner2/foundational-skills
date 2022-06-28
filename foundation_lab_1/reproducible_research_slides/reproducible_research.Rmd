@@ -73,13 +73,20 @@ xaringanExtra::use_tile_view()
 ]
 
 .pull-right[ **Code-Along**
-- IDE “Scavenger Hunt” (Partner Activity)
-- Highlighting Code Elements (Partner Activity)
-- Style Editor
-- Get Coding
+- R Programming Basics
+- R Grammar
+  + Functions
+  + Arguments
+  + Objects
+  + Packages
 
-]
 *Optional: RR Checklist for Your Research*
+]
+???
+
+In the following presentation we will discuss a conceptual overview of reproducible research. we'll discuss what open science is, what reproducible research is, describe core practices of reproducible research. If time allows we will briefly share two examples of reproducible research projects in R. 
+
+Additionally, the code-along will consist of an introduction to R and its IDE. Then we will begin to look at various coding grammar - functions, arguments, objects and packages. 
 
 ---
 
@@ -105,12 +112,10 @@ Conceptual Overview
 ]
 
 ???
-- Promotes a more accurate verification of scientific results. 
-- Speeds up scientific inquiry and discovery 
-- Reduces duplication in collecting, creating, transferring, and re-using scientific material.
-- Increases efficient use of financial resources.
-- Results in innovation and increased consumer choice from public research.
-- Promotes citizens’ engagement and trust in science. 
+
+According to the Organization for Economic Cooperation and Development, open science encompasses unhindered access to scientific articles, access to data from public research, and collaborative research. Open science offers a range of benefits including more accurate verification of scientific results, speeding up the process of scientific inquiry and discovery, reducing duplication of effort, increasing efficient use of financial resources, improved innovation and increased consumer choice from public research, and promotion of citizens engagement and trust and science 
+
+ 
 
 ]
 
@@ -127,6 +132,8 @@ The [OECD](https://tinyurl.com/oecdlib) directorate for Science, Technology and 
 This framework incorporates access to data and information, as well as civil society engagement, in the different stages of the scientific research process. 
 
 It is not meant to be prescriptive but should help different communities to decide on their own priorities within the open science space and to better visualize how these priorities link to different stage of the scientific process and to different actors. 
+
+This diagram from the 2018 article by Dai, Shin  and Smith is a good illustration of open science and how it relates to the scientific process. You'll see that in the inner portion of the diagram is a continual cycle that involves conceptualization, followed by data gathering and analysis, then publication and review, and that this process is iterative. In the outer ring of the model are shown a variety of sources and ideas that contribute to open science.
 
 Such a framework can be useful also in considering how best to incentive's and measure different aspects of open science.
 
@@ -151,16 +158,13 @@ class: clear, laser
 
 .author[~ Stodden, 2009b, 38]
 
-???
-
-Piekert et al. exclaims that computational reproducibility is the ability to obtain identical results from the **same data** with the **same computer code**
 
 ---
 # Reproducible Research
 
 .panelset[
 
-.panel[.panel-name[Why?]
+.panel[.panel-name[What]
 
 .center[
 <img src="img/reprod_1.png" height="400px"/>
@@ -170,23 +174,36 @@ Piekert et al. exclaims that computational reproducibility is the ability to obt
 ]
 
 ???
-Reproducibility is integral for empirical results. 
 
-Reproducible Research has shown to 
-Increase:
-- Study replication
-- Cumulative knowledge development
-- Work habits 
-- Teamwork
-- Ease of revision to a project/study
-- Higher impact research
+So what is reproducible research and how does it relate to open science? According to Harrison et al in their 2020 article, reproducible research means that “future you and anyone else will be able to pick up your analysis and reproduce the same results, including figures and tables.” Stodden, in the 2009 publication, states that research findings cannot even really be considered genuine contributions to human knowledge until they have been verified through replication. 
 
+The piece here that I think links reproducible research and open science very well and helps support some of those advantages to open science that we discussed a few slides ago is that scientific inquiry and scientific progress rely heavily upon the ability to reproduce the conditions of an experiment or a research study. That's very difficult to achieve if there's limited information about the conditions and processes under which or with which that research occurred in the first place. 
+
+When you use reproducible research techniques, however, all of the steps, all of the components are publicly available. This even includes the version of the software package that you used to analyze your data. And we're going to talk about what some of those procedures are and what some of those standards are for producing reproducible research. But I hope you can see the link between clearly and openly communicating how you've set up a study and how that might contribute to this notion of open science.
+
+
+.panel[.panel-name[Why?]
+.pull-left[
+Increases:
+Study replication
+Cumulative knowledge development
+Work habits 
+Teamwork
+Ease of revision to a project/study
+Higher impact research
+]
+.pull-right[
 Reduces:
-- Effort duplication
+Effort duplication
+]
 
-Even with open science advancements projects fail to be reproduced by other researchers due to software dependencies, ambiguous documentation of exact computational steps, copy and paste errors and poor best practices.
 
-.panel[.panel-name[What?]
+]
+???
+So why reproducible research? Well this is a bit of a corollary to an earlier slide where we discussed “why open science”. Reproducible research increases your ability to replicate a study and the ability to develop knowledge cumulatively over time and enable contributions from different sources. These authors that are cited below– that's Gandrud 2020 and Harrison et al 2020 – make the point that adhering to principles of reproducible research improves your work habits and your teamwork. It also eases revision of a project or a study and reduces effort duplication. And all of these things result in higher impact research.
+
+
+.panel[.panel-name[Core]
 
 **Core Practices**
 
@@ -198,20 +215,30 @@ Even with open science advancements projects fail to be reproduced by other rese
 
 ???
 
-Well-documented research
-- ReadMe file
-- Use of code books - (variables, qual codes defined)
-- Validation procedures
-- Inclusion criteria 
-- Research questions
-- Considering including rough abstract
-Clear communication
-- Explanatory headers for source code files
-- Code is well commented (#)
-- Plain language
-- Rationale for using functions and methods 
-“Reproducible Theory”
-- Foundation works and proofs cited appropriately
+Let's talk about the sort of nitty-gritty of how you might go about producing reproducible research. 
+First, I want to call your attention to this quote from that Harrison article. It says “the communication aspect should not be an afterthought. It should be recorded with your analysis as you are going through it.” 
+
+So you might relate this to a situation where you're giving a person directions. We don't do this very much anymore because most people will just use their GPS or Google maps but in the olden days if you were giving someone directions, say, to your house, you would give them fairly explicit step by step directions. You would tell them what street names they would expect to see, you would tell them where to turn and which direction to turn, and you would probably also describe very obvious landmarks that they might see along the way. Well reproducible research is very similar in that as you go through the research process, you are also creating a set of directions for someone following behind you. That person may very well be yourself at a later time or it might be someone else, but either way, you're creating this set of directions for someone to reproduce your work as closely as possible to the way you produced it yourself. 
+
+Some core practices of reproducible research are grouped into these three categories: your research is well documented, you communicate clearly, and you use reproducible theory. 
+
+**Research is Well Documented**
+Well documented research includes a read_me file. We will talk a little bit later about some places where you might share your work to make it publicly accessible. GitHub is one such location where you might share your work, including your code that you write. It's standard procedure to include a readme file in your GitHub folder for a given project. That readme file is essentially like the instructions at the top of a worksheet. It tells you where to begin and helps orient you to the entire project. 
+
+Some other aspects of documentation that are important to include are the use of code books. So if you're using variables to represent certain things, or if you're doing qualitative research and you have established a certain set of codes, it behooves you to explain what those variables stand for, and define what those qualitative codes represent. 
+
+Ideally you're also going to include your validation procedures. So you'll share with future you or  other researchers how you validated your processes and tools that you used. You should also include your inclusion criteria: So how did you determine whether participants were appropriate for inclusion in your study? Of course you also want to include the primary research questions that guided your project. And you should consider including a rough abstract of the project as a whole. 
+
+**Clear Communication**
+In the category of clear communication you want to make sure that you include explanatory headers for source code files. And hopefully that's self-explanatory but basically you're going to want to tell people what the code file does. Some other things that are important to include in that explanatory header would be the author or authors, as well as packages that were necessary for that code to run, and versions of packages and software that were used. 
+
+Another really critical piece of reproducible research in R, or really in any coding language, is that you make sure you comment your code. So commenting your code, which will see an example of a little bit later, essentially means that you're going to include a note along with a piece of code that describes the purpose and function of that code. We have a way of annotating that explanatory message, using a pound sign in front of each line of the message, which tells the computer not to read it as code. You will often hear this referred to as “commenting something out”.
+
+Another basic principle of clear communication is making sure that you're using plain language. So try, as best as you are able, to steer clear of jargon or discipline-specific terms. Or, if you use these terms, try to define them. And then lastly, in terms of clear communication, you want to share your rationale for using particular functions as well as the methods that you used in your study. 
+
+**Reproducible Theory**
+The last category listed here is this notion of reproducible theory and essentially this is very basic to research and academia but it means that you are going to appropriately cite any foundational works, or sources, or proofs if you're working in mathematics, so that people who are looking at your research project understand where some of these ideas and concepts that informed your study have come from.
+
 
 .panel[.panel-name[Discussion]
 
@@ -228,13 +255,23 @@ What have your experiences been with Reproducible Research?
 
 ???
 Piekert et al. 2021 and Gandrud 2020 suggest following a Workflow for reproducibility to achieve long-term and cross-platform computational reproducibility of data analysis.
+
 Piekert et al.s workflow includes 
 1. Version control
 2. Dynamic document generating
 3. Dependency Tracking
 4. Software management
 
-while Gandrud's includes
+This diagram is from the Gandrud text it's an example workflow and I thought this would be helpful because it illustrates this concept of being explicit about how things are tied together.
+
+In the sort of top part of the diagram you see the research process. There's raw data, it's gathered, it's analyzed, and then it is published or presented using any of these tools that are listed off to the right. Then at the bottom you see different packages and files that are used at each stage of this process to get from one stage to the next. 
+
+This diagram is a really nice example of explaining not only what's happening in each stage of the research process but also how these stages are tied together. 
+
+Gandrud also makes a point that everything should be human readable and everything should be a text file. Basically that's because the text file is going to be the easiest to read by the greatest number of readers, and that includes human readers and also computer readers.
+
+Then this notion that everything should be human readable is hopefully pretty understandable but basically explains that if you're communicating with other human researchers you want to make sure that your explanations are understandable by other humans. This also links to the concept of using plain language. Gandrud explains this probably much more eloquently than I can and much more clearly so again I encourage you to refer to his text.
+
 
 ]
 
@@ -265,6 +302,9 @@ Code-Along
 ]
 ???
 **What is the Integrated Development Environment (IDE)?**
+
+So this is an image of the R studio integrated development environment. You can see that there are these four main panels and if you're not seeing all four of those panels it's probably because something has been minimized and we can show you how to fix that here in person.
+
 The IDE four main areas
 - Console (& Terminal)
 - Scripting and Viewing Window
@@ -283,6 +323,14 @@ Two ways to execute your code in the R script, you can either highlight the code
 The Environment tab allows you to see what objects are in the work space.
 The history tab allows you to see the commands that you have entered.
 
+**Files pane**
+Access all of your files for a projects
+- view your plots (data visualizations)
+- view what packages are installed
+- the help tab will show you more information about a function or package similar to adding a question mark before a pacakge name or function name.
+- view your Rmarkdown file 
+
+
 .panel[.panel-name[Global Options]
 
 .center[
@@ -291,13 +339,18 @@ The history tab allows you to see the commands that you have entered.
 ]
 ???
 
-
-**Global options:**
-customize the IDE to better suite your workflow
+We can use 
+**Global options:** to customize the IDE to better suite your workflow with things like...
 - wrap code
 - change color scheme
 - move panes around
 - so much more
+
+Let's set up our Global Options for a smooth workflow
+- In the menu bar click `Tools` then `Global Options.`
+    + 1. `R General` -> (untick) Restore .RData into workspace at startup.
+    + 2. `R General` -> Save workspace to .RData on exit: Never
+    + 3. `R Markdown` -> Show output preview in: Viewer Pane
 
 
 .panel[.panel-name[New Script]
@@ -305,25 +358,39 @@ customize the IDE to better suite your workflow
 <img src="img/r_script.png" height="425px"/>
 ]
 ???
+Today we will be working in a script file. A script is simply a text file containing a set of commands and comments. The script can be saved and used later to re-execute the saved commands
 
-Let's set up our Global Options for a smooth workflow
-- In the menu bar click `Tools` then `Global Options.`
-    + 1. `R General` -> (untick) Restore .RData into workspace at startup.
-    + 2. `R General` -> Save workspace to .RData on exit: Never
-    + 3. `R Markdown` -> Show output preview in: Viewer Pane
+To open a new script file 
+  + `file` -> (click) `New file` -> `script`
+  
+*HINT* - make sure to `save as` and save in your correct folder.
+
+
+
+
 ]
 .panel[.panel-name[Programming]
+
 - Objects are the nouns of the R language
-	+ owen_meany < - mean(numeric_vector)
+	**owen_meany** < - mean(numeric_vector)
 - Functions are the verbs
-	+ owen_meany < - mean(numeric_vector)
+	owen_meany < - **mean***(numeric_vector)
 - Arguments are the adverbs or the direct object
-	+ owen_meany < - mean(numeric_vector)
+	owen_meany < - mean(**numeric_vector**)
+	
 As in any sentence, there is also “punctuation” 
-	+ owen_meany < - mean(numeric_vector)
+	+ owen_meany **< - ** mean(numeric_vector)
 
 
 ]
+???
+Now let's talk a little bit about some r programming basics: packages, functions, and arguments. 
+
+**Packages** are bundles of functions, and if that is meaningless to you it's probably also helpful to know that functions do things. So packages are bundles of things that do things. And like we just talked about, packages must be first installed into Rstudio using the install packages function and then loaded into the library using the library function. 
+
+**Functions** are things that do things and so one example would be the function mean which finds the mean of a series of numbers or a vector of numbers. A function always includes the parentheses and whatever is inside the parentheses indicates the thing to which the function is being done. And that thing to which the function is being done is called an argument. 
+
+**Arguments** go inside the parentheses and they are separated by commas. You can have more than one argument within the parentheses. Arguments provide extra details regarding how a function should run or what materials a function should work with. And I've included a couple of examples here. So in the first example, “digits = 1” is an argument that provides extra information for how the round function should work. So this little bit of code is saying find the mean of a numeric vector or or a string of numbers. Round that mean to one digit. In the second example, this argument “package_name”, which by the way is a terrible name for a package, is telling R which package to load into its library.
 
 
 ]
