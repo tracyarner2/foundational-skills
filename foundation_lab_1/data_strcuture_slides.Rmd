@@ -61,29 +61,27 @@ xaringanExtra::use_tile_view()
 ---
 # Recap from Reproducible Research
 
+--
+
 - Well Documented
+--
+
 - Clear Communication
+--
+
 - Reproducible Theory
 
 ???
 
-Krumm sums it up nicely on page 28, "The basic idea
-behind the open data movement is that anyone can access or use a dataset, and key to this movement is not just accessibility but usability. Making open data usable means making it accessible in machine-readable, structured, granular, and well-documented formats."
+In the orientation lab we learned about reproducible research. Keep your code well documented, use clear communication and follow the reproducible theory.
+
+We also learned about the open movement and its importance for  reproducible research.
+
+From your pre-reading, Krumm 2018 sums it up nicely stating, "The basic idea
+behind the open data movement is that anyone can access or use a data set, and key to this movement is not just accessibility but usability. Making open data usable means making it accessible in machine-readable, structured, granular, and well-documented formats."
 
 ---
-<img src="img/team_2022.png" height="550px"/>
----
 
-
-class: clear, laser
-
-.quote[Consider what “knowledge” looks like within the analytic approach being developed asking, *What are we trying to measure?*]
-
-.author[~ Knight & Shum, 2017, p. 19]
-
-
-
----
 # Agenda
 
 .pull-left[**Part-1  Conceptual Overview**
@@ -112,28 +110,23 @@ Part 1:
 Data Structures: Conceptual Overview
 
 
-
 ---
 # Types of Data Used in LA (Sources)
-
-.panelset[
-
-.panel[.panel-name[Types]
 
 
 .center[
 <img src="img/data_LA.png" height="400px"/>
 ]
-]
+
 
 ???
 Although we are going to talk about these types of data in silo, in practice researchers find value in using them together.
-In the following presentation we will introduce a workflow outlining ways which  data  from  multiple  sources  can  be  analyzed, interpreted, and  translated into change.
 
+The types of data we are looking at are  Digital Learning Environments,  Administrative data and Sensors and Multi-modal data.
 
-The types of data like Digital Learning Environments, Sensors and Multmodal and Administrative data show:
+These types of data categories typically show:
 - Indicators of a school's success and progress.
-- Student progress, student behavior, and student learning.
+- Student progress, student behavior, and student learning and,
 - Demographic or social media sources.
 
 
@@ -144,10 +137,11 @@ The types of data like Digital Learning Environments, Sensors and Multmodal and 
 
 .panelset[
 
-.panel[.panel-name[Types]
+.panel[.panel-name[Definition]
 
-Digital learning environments include any set
+.pull-left[Digital learning environments include any set
 of technology-based methods that can be applied to support learning and instruction. Ifenthaler(2017).
+]
 
 .pull-right[
 <img src="img/digital_LA.png" height="300px"/>
@@ -155,71 +149,102 @@ of technology-based methods that can be applied to support learning and instruct
 ]
 ???
 
+Digital learning environments include any set
+of technology-based methods that can be applied to support learning and instruction.
+
 According to Krumm et al, Digital Learning Environments have fueled data intensive research in education more than any other data.
+
+Within the DLE category we include
+- Games and Simulations
+- Intelligent tutoring systems 
+- Learning Management System and,
+- MOOCs
+
 
 
 .panel[.panel-name[Games+]
 
-.pull-left[Games and Simulations:
+.pull-left[**Games and Simulations:**
 - Captures real-time interactions
 - Cognitive outcomes
 - Behavior outcomes
 - Affective outcomes
 
+
 ]
 
 .pull-right[
-<img src="img/digital_LA.png" height="300px"/>
+<img src="img/crystal_island.png" height="300px"/>
 ]
 ]
 ???
+
+The types of data collected in Games and Simulations is capturing real-time interactions, cognitive outcomes, behavior outcomes and affect outcomes.
+
+These data can be used for 
 - Early, iterative user-testing
 - help surface basic player interactions for improved core mechanics
 - UI/UX and learning design
 - Structure discovery and relationship mining
 
+Crystal Island: Uncharted Discovery is an educational video game created by a team of educators and computer scientists at the Center for Educational Informatics aimed at teaching students upper elementary science education, focusing on landforms, navigation, and modeling. In the game, students play as shipwrecked adventurers on a volcanic island. To escape the island, they must complete a series of quests that test their critical thinking skills and teach them content-related information. Upon completion of the quests, the players gain access to a new area of the island which contains a multi-skill quest that requires students to use the knowledge and skills they learned during the previous quests. Once the final quest is completed, the players gain access to a communication device which allows them to call the outside world for rescue.
+
+Crystal Island fuses automated reasoning and human language technologies with game technologies and new media to investigate high-impact adaptive learning environments.
+
+
+
 .panel[.panel-name[ITS]
 
-**Intelligent Tutoring Systems **
-.pull-left[Three types: 
+
+.pull-left[**Intelligent Tutoring Systems**
 1. An expert, or domain model
 2. A student model
 3. An instructional, or pedagogical model
 
 ]
 
+.pull-right[
+<img src="img/duolingo.png" height="350px"/>
+]
+
 ]
 ???
-Intelligent Tutoring Systems is a type of DLE that applies AI to students interactions in the digital system.
 
-- has three models, an expert, or domain model, which organizes the skills and strategies in the domain, 
-a student model of what a student understands about the domain that is inferred from their performances on learning tasks and,
-an instructional (pedagogical model) that includes  common mistakes and misconceptions along with a corresponding feedback strategy 
+Intelligent Tutoring Systems(ITS for short) is a type of DLE that applies AI to students interactions in the digital system.
 
+ITS includes three main models, 
+1. an expert, or domain model, which organizes the skills and strategies in the domain, 
+2. a student model of what a student understands about the domain that is inferred from their performances on learning tasks and,
+3. an instructional (pedagogical model) that includes  common mistakes and misconceptions along with a corresponding feedback strategy 
 
-- The same data that the ITS uses to figure out how to respond to a student’s actions can also be used by human analysts to gain a detailed picture of learning processes and the behaviors learners engage in.
+Intelligent tutoring systems are online based teaching that can generate student feedback with no human interaction.
+
+The same data that the ITS uses to figure out how to respond to a student’s actions can also be used by human analysts to gain a detailed picture of the learning processes and the behaviors learners engage in.
+
+Duolingo app uses artificial intelligence known as spaced repetition. This concept delivers personalized language lessons over longer intervals for optimal learning rather than cramming lessons into a short period of time.
 
 .panel[.panel-name[LMS]
-Learning Management Systems
-.pull-left[
-- Free/freemium courses, certificates, PD
-- Edx
-- Coursera
-- Friday Institute
-- Collect granular data like ITS
+
+.pull-left[Learning Management Systems -
+"web-based systems that allow instructors and students to share instructional materials, make class announcements, submit and return course assignments, and communicate with each other online." (Krum et al., 2018)
+
 ]
 
 .pull-right[
-<img src="img/digital_LA.png" height="300px"/>
+<img src="img/canvas.png" height="300px"/>
 ]
 ]
 ???
-A Learning Management System (LMS) is an online integrated software used for creating, delivering, tracking, and reporting educational courses and outcomes. Often used as student-facing repositories of digital resources and activities.
+We are all probably pretty familiar with Learning Management Systems(LMS).
+A Learning Management System (LMS) is an online integrated software used for creating, delivering, tracking, and reporting educational courses and outcomes. 
 
+Contributes to trace data, survey data, discussion posts, open ended questions and video diaries.
+Tools allow instructors to provide feedback to students’
 
-We use Moodle at NCSU. What LMS do you use at your institution? 
+Often used as *student-facing repositories* of digital resources and activities.
 
-What other types of Digital Learning environments are you using on your campus? 
+At North Carolina State University we use Moodle. What LMS do you use at your institution? What types of data does it generate?
+
 
 .panel[.panel-name[MOOCs]
 .pull-left[
@@ -231,7 +256,7 @@ What other types of Digital Learning environments are you using on your campus?
 ]
 
 .pull-right[
-<img src="img/digital_LA.png" height="300px"/>
+<img src="img/fi_mooc.png" height="300px"/>
 ]
 ]
 ???
@@ -631,7 +656,7 @@ Then you can call only that sheet. Our data only includes one sheet so we do not
 Read in from Path
 
 ```{r echo = TRUE, message = FALSE, warning = FALSE}
-sci_ol_classes <- read_csv("C:/Users/User/Documents/RProj22/foundation_labs_2022/foundation_lab_2/data/sci-online-classes.csv") #<<
+sci_ol_classes <- read_csv("C:/Users/User/Documents/RProj22/foundation_labs_2022/foundation_lab_1/data/sci-online-classes.csv") #<<
 ```
 
 
@@ -695,4 +720,5 @@ class: inverse, clear, center
 This work was supported by countless cups of hot tea, cookies, and the RStats Xaringan community willingness to post of plethora of tutorials. But you may wish to thank your funding agency (e.g., the National Science Foundation) and put their logo on the left as shown here.
 ]]
 ]
-
+---
+<img src="img/team_2022.png" height="550px"/>
