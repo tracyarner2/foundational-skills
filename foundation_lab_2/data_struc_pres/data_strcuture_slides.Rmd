@@ -59,19 +59,19 @@ xaringanExtra::use_tile_view()
 ### `r format(Sys.time(), "%B %d, %Y")`
 
 ---
-
-<img src="img/team_2022.png" height="550px"/>
 # Recap from Reproducible Research
 
 - Well Documented
 - Clear Communication
-- Reproducible Research Theory
+- Reproducible Theory
 
 ???
 
 Krumm sums it up nicely on page 28, "The basic idea
 behind the open data movement is that anyone can access or use a dataset, and key to this movement is not just accessibility but usability. Making open data usable means making it accessible in machine-readable, structured, granular, and well-documented formats."
 
+---
+<img src="img/team_2022.png" height="550px"/>
 ---
 
 
@@ -80,6 +80,8 @@ class: clear, laser
 .quote[Consider what “knowledge” looks like within the analytic approach being developed asking, *What are we trying to measure?*]
 
 .author[~ Knight & Shum, 2017, p. 19]
+
+
 
 ---
 # Agenda
@@ -96,7 +98,7 @@ class: clear, laser
 
 ]
 ???
-In this sessions. for the conceptual overview we are going to learn more about the types and characteristics of data structures common in Learning Analytics. Many of these you will be familiar with and some may be new.
+In this session for the conceptual overview we are going to learn more about the types and characteristics of data structures common in Learning Analytics. Many of these you will be familiar with and some may be new.
 
 In our code-along we will continue with learning how to read in data, using the various packages from `tidyverse`. We will also learn to view data between a tibble and a data frame.
 ---
@@ -129,7 +131,7 @@ Although we are going to talk about these types of data in silo, in practice res
 In the following presentation we will introduce a workflow outlining ways which  data  from  multiple  sources  can  be  analyzed, interpreted, and  translated into change.
 
 
-The types of data show:
+The types of data like Digital Learning Environments, Sensors and Multmodal and Administrative data show:
 - Indicators of a school's success and progress.
 - Student progress, student behavior, and student learning.
 - Demographic or social media sources.
@@ -142,7 +144,7 @@ The types of data show:
 
 .panelset[
 
-.panel[.panel-name[DLE]
+.panel[.panel-name[Types]
 
 Digital learning environments include any set
 of technology-based methods that can be applied to support learning and instruction. Ifenthaler(2017).
@@ -178,7 +180,7 @@ According to Krumm et al, Digital Learning Environments have fueled data intensi
 
 .panel[.panel-name[ITS]
 
-Intelligent Tutoring Systems 
+**Intelligent Tutoring Systems **
 .pull-left[Three types: 
 1. An expert, or domain model
 2. A student model
@@ -186,9 +188,6 @@ Intelligent Tutoring Systems
 
 ]
 
-.pull-right[
-<img src="img/digital_LA.png" height="300px"/>
-]
 ]
 ???
 Intelligent Tutoring Systems is a type of DLE that applies AI to students interactions in the digital system.
@@ -215,10 +214,12 @@ Learning Management Systems
 ]
 ]
 ???
-A Learning Management System (LMS) is an online integrated software used for creating, delivering, tracking, and reporting educational courses and outcomes. Often used as student-facing repositories of digital resources and activities,
+A Learning Management System (LMS) is an online integrated software used for creating, delivering, tracking, and reporting educational courses and outcomes. Often used as student-facing repositories of digital resources and activities.
 
 
-We use Moodle at NCSU. What LMS do you use at your institution? What other types of Digital Learning environments are you using on your campus? 
+We use Moodle at NCSU. What LMS do you use at your institution? 
+
+What other types of Digital Learning environments are you using on your campus? 
 
 .panel[.panel-name[MOOCs]
 .pull-left[
@@ -236,7 +237,9 @@ We use Moodle at NCSU. What LMS do you use at your institution? What other types
 ???
 Raise your hand if you have ever participated in a MOOC? The FI has many free MOOCs available, but there are also EDx and Coursera that you can take a MOOC at. These offer a major source for data from the large numbers of participants.
 
-Have you ever pulled data from your own MOOC? What types of data?
+Have you ever pulled data from your own MOOC? or learning management system? 
+
+How was that process?
 
 ]
 
@@ -246,7 +249,7 @@ Have you ever pulled data from your own MOOC? What types of data?
 
 .panelset[
 
-.panel[.panel-name[A.D.]
+.panel[.panel-name[Types]
 
 Types of State and Federal systems used in schools and districts to collect and store information to deliver some *sort* of service.
 
@@ -257,6 +260,10 @@ Types of State and Federal systems used in schools and districts to collect and 
 ???
 Administrative Data is the second type of data fueling data intensive research.
 Used in Schools, at district level and throughout most states.
+
+There are two main types 
+- Student Information System or SIS
+- Statewide longitudinal data systems
 
 .panel[.panel-name[SIS]
 
@@ -364,6 +371,12 @@ Those data are similar but different because
 1. the tasks that students are engaged in and 
 2. how data from those tasks are collected and stored by the technology. 
 
+We identify four main types of data structures.
+- structured
+- unstructured
+- semi-structured and 
+- meta-data
+
 
 
 .panel[.panel-name[Structured]
@@ -378,7 +391,7 @@ sci_course%>%
 
 ]
 ???
-Types: Quantitative in nature
+Structured data is Quantitative in nature
 Here we see the rows and columns nice and tidy. 
 - data is tidy when each column is a variable, each row is an observation, and each cell is a single value.
 
@@ -398,9 +411,10 @@ Each field (variable) is discrete and can be accessed separately or jointly alon
 ]
 ]
 ???
-Types: Qualitative in nature
-Non-Relational Data
-sensor data, web logs, clickstreams, keystroke capture data, emails, images and videos
+Unstructured data is Qualitative in nature
+and includes:
+- Non-Relational Data
+- sensor data, web logs, clickstreams, keystroke capture data, emails, images and videos
 
 Text Heavy relationships between nodes
 IE: Audio, video, dates SQL database
@@ -441,13 +455,13 @@ plot(weighted_network,
 ]
 ???
 
-Types - Qualitative data
+semi-structured data includes Qualitative data
 Triangular Data (uses surveys and interview answers)
 Semi-structured data is a form of structured data that does not conform with the formal structure of data models associated with relational databases or other forms of data tables.
 
 self-describing structure
 contain tags
-IE: Social media, JSON and XML, Social Network
+IE: Social media, JSON and XML, Social Networkdata
 
 .panel[.panel-name[Meta-Data]
 

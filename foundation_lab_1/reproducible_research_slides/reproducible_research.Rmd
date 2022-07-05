@@ -143,14 +143,11 @@ Such a framework can be useful also in considering how best to incentive's and m
 
 "Open Science policies encourage researchers to **disclose a wide range of outputs from their work**, thereby **codifying openness as a specific set of research practices** and **guidelines that can be interpreted** and applied consistently across disciplines and geographical settings." (Levin, N., & Leonelli, S. (2017). 
 
-
-
-*How does one “open” science? Questions of value in biological research. Science, Technology, & Human Values, 42(2), 280-305.)* 
-
-
+]
 ]
 
-]
+.footnote[[1]*How does one “open” science? Questions of value in biological research. Science, Technology, & Human Values, 42(2), 280-305.]
+
 
 
 ---

@@ -56,6 +56,7 @@ new_data <- 20
 new_data
 13 <- 20 *4
 13
+x <- 20 *4
 
 # Don't ever have names like TRUE/FALSE or NaN, inf, NA
 
@@ -91,10 +92,11 @@ library(tidyverse)
 #' Run the following code to 
 #' install the readr package. 
 
-library(readr)
+
 
 #did it work? Maybe you need to install first. You can also check if you package is loaded in the package pane.
 
 #' Now use the library() function to load the readr package into R.
+library(readr)
 
 #' Use ? to check the help document for the readr package.
