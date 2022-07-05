@@ -106,16 +106,22 @@ Conceptual Overview
 .panel[.panel-name[Open Science]
 
 **Open Science - "WHY?"**
+
+
 - Accurate
 - Efficient
 - Innovative
 - Engagement
 
+
+
 ]
 
 ???
 
-According to the Organization for Economic Cooperation and Development, open science encompasses unhindered access to scientific articles, access to data from public research, and collaborative research. Open science offers a range of benefits including more accurate verification of scientific results, speeding up the process of scientific inquiry and discovery, reducing duplication of effort, increasing efficient use of financial resources, improved innovation and increased consumer choice from public research, and promotion of citizens engagement and trust in science 
+According to the Organization for Economic Cooperation and Development, open science encompasses unhindered access to scientific articles, access to data from public research, and collaborative research. 
+
+Open science offers a range of benefits including more **accurate** verification of scientific results, speeding up the process of scientific inquiry and discovery, reducing duplication of effort, increasing **efficient** use of financial resources, improved **innovation** and increased consumer choice from public research, and promotion of citizens **engagement** and trust in science 
 
 
 
@@ -139,14 +145,14 @@ Such a framework can be useful also in considering how best to incentive's and m
 
 .panel[.panel-name[Discussion]
 
-**How do you "open" science in your practice?**
+## **How do you "open" science in your practice?**
 
-"Open Science policies encourage researchers to **disclose a wide range of outputs from their work**, thereby **codifying openness as a specific set of research practices** and **guidelines that can be interpreted** and applied consistently across disciplines and geographical settings." (Levin, N., & Leonelli, S. (2017). 
+.right-column["Open Science policies encourage researchers to **disclose a wide range of outputs from their work**, thereby **codifying openness as a specific set of research practices** and **guidelines that can be interpreted** and applied consistently across disciplines and geographical settings." (Levin, N., & Leonelli, S. (2017). 
+]
 
 ]
 ]
 
-.footnote[[1]*How does one “open” science? Questions of value in biological research. Science, Technology, & Human Values, 42(2), 280-305.]
 
 
 
@@ -252,7 +258,7 @@ The last category listed here is this notion of ***reproducible theory** and ess
 
 .panel[.panel-name[Discussion]
 
-What have your experiences been with Reproducible Research?
+## What have your experiences been with Reproducible Research?
 
 ]
 
@@ -374,17 +380,17 @@ However, we already have our script created that you copied frm Github.
 
 
 ]
-.panel[.panel-name[Programming]
+.panel[.panel-name[Grammar]
 
 - Objects are the nouns of the R language
-	**owen_meany** < - mean(numeric_vector)
+	+ **owen_meany** < - mean(numeric_vector)
 - Functions are the verbs
-	owen_meany < - **mean***(numeric_vector)
+	+ owen_meany < - **mean**(numeric_vector)
 - Arguments are the adverbs or the direct object
-	owen_meany < - mean(**numeric_vector**)
+	+ owen_meany < - mean(**numeric_vector**)
 	
-As in any sentence, there is also “punctuation” 
-	+ owen_meany **< - ** mean(numeric_vector)
+As in any sentence, there is also “punctuation”
+	+ owen_meany **<-** mean(numeric_vector)
 
 
 ]
@@ -397,28 +403,24 @@ Now let's talk a little bit about some r programming basics: packages, functions
 
 **Arguments** go inside the parentheses and they are separated by commas. You can have more than one argument within the parentheses. Arguments provide extra details regarding how a function should run or what materials a function should work with. And I've included a couple of examples here. 
 
-So in the first example, “digits = 1” is an argument that provides extra information for how the round function should work. So this little bit of code is saying find the mean of a numeric vector or or a string of numbers. Round that mean to one digit. In the second example, this argument “package_name”, which by the way is a terrible name for a package, is telling R which package to load into its library.
 
 
 ]
 
 
 ---
-# Functions
+# Syntax
 
 .panelset[
 
 .panel[.panel-name[Functions]
 
-.center[
-<img src="img/functions.png" height="425px"/>
-]
+.pull-left[
+<img src="img/functions.png" height="300px"/>
 ]
 
-???
-Functions: are everything you do in R. 
 
-.panel[.panel-name[Structure]
+.column-right[
 - mean()
 - filter()
 
@@ -431,24 +433,23 @@ round(3.14) #<<
 
 ]
 ]
+
 ???
+
+Functions: are everything you do in R. 
+
 Say you want to take the mean of a number, you would write mean( )
 Suppose you want to round a number, you would use round( ) and put the number inside the parentheses. Make sure to look in the console pane to see the answer.
 - Functions always include parenthesis
 
----
-# Arguments
-
-.panelset[
-
 .panel[.panel-name[Arguments]
 
-.center[
-<img src="img/arguments.png" height="425px"/>
-]
+.pull-left[
+<img src="img/arguments.png" height="300px"/>
 ]
 
-.panel[.panel-name[Structure]
+
+.column-right[
 
 ```{r argument-block, echo = TRUE}
 #use help to look at arguments
@@ -457,6 +458,7 @@ Suppose you want to round a number, you would use round( ) and put the number in
 #round pi to two digits
 round(3.14, digits = 2) #<<
 ```
+]
 
 ]
 
@@ -466,50 +468,53 @@ round(3.14, digits = 2) #<<
 - Look for an argument that you can add to pi to round to the nearest 1 decimal places
 HINT look under USAGE in the arguments help section
 
-]
-
-
----
-# Objects
-.panelset[
+So in this example, “digits = 1” is an argument that provides extra information for how the round function should work. So this little bit of code is saying find the mean of a numeric vector or or a string of numbers. Round that mean to one digit. In the second example, this argument “package_name”, which by the way is a terrible name for a package, is telling R which package to load into its library.
 
 .panel[.panel-name[Objects]
 
-.center[
-<img src="img/objects.png" height="425px"/>
+.pull-left[
+<img src="img/objects.png" height="300px"/>
 ]
-Objects: are everything you have in R - things that you save like data frames in tabular form. Think back when you have used excel and you had to save your spread sheet and name it. That is comparable to an object. 
 
-To save something into an object we need to use the assignment operator <-.  The assignment operator is used for assignment operation. Operator that assigns a certain value to a variable and scope is within the function and outside as well. 
 
-???
-
-]
-.panel[.panel-name[Structure]
-```{r object-block, echo=TRUE}
+.column-right[
+```{r object-block, echo=TRUE, message=FALSE, warning=FALSE}
 twenty <-20 #<<
 forty <- 20 #<<
 
 ```
+]
 
 ]
-]
 ???
+Objects: are everything you have in R - things that you save like data frames in tabular form. Think back when you have used excel and you had to save your spread sheet and name it. That is comparable to an object. 
+
+To save something into an object we need to use the assignment operator <-.  The assignment operator is used for assignment operation. Operator that assigns a certain value to a variable and scope is within the function and outside as well. 
 
 
 We will save the number 20 to the word twenty. I could have easily called the new object any other name to save as the object. Then I can **call** the number by typing twenty in and running it.
 
 Don’t ever want to use TRUE/FALSE, those are reserved for testing logical variables.
 Also, NaN, inf and NA are reserved for outcomes such as whether a variable is negative or positive infinity, not a number, or missing.
----
-#Packages
-
-.panelset[
 
 .panel[.panel-name[Packages]
 
-.center[
-<img src="img/packages.png" height="425px"/>
+.pull-left[
+<img src="img/packages.png" height="300px"/>
+]
+
+
+.column-right[
+
+1.  Download packages to computer with `intall.packages("")`.
+2.  Read in package to Rstudio with `library()`
+
+```{r install-code, echo=TRUE, message=FALSE, warning=FALSE}
+
+
+# read in tidyverse, do not need quotations reading into script
+library(tidyverse) #<<
+```
 ]
 
 ]
@@ -518,25 +523,8 @@ You only install the package once, ever...mostly ever :). But, you will need to 
 
 There are about eight packages supplied with the R distribution and many more are available through the CRAN family of Internet sites covering a very wide range of modern statistics, and machine learning. If you need r to do something then there's probably a package for that.
 
-.panel[.panel-name[Structure]
-
-1.  Download packages to computer with `intall.packages("")`.
-2.  Read in package to Rstudio with `library()`
-
-```{r install-code, echo=TRUE}
-
-
-# read in tidyverse, do not need quotations reading into script
-library(tidyverse) #<<
-```
-
 
 ]
-???
-
-
-]
-
 
 
 ---
