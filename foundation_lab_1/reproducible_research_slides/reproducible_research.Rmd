@@ -106,8 +106,10 @@ Conceptual Overview
 .panel[.panel-name[Open Science]
 
 **Open Science - "WHY?"**
-.center[
-<img src="img/open_science_1.png" height="400px"/>
+- Accurate
+- Efficient
+- Innovative
+- Engagement
 
 ]
 
@@ -115,9 +117,7 @@ Conceptual Overview
 
 According to the Organization for Economic Cooperation and Development, open science encompasses unhindered access to scientific articles, access to data from public research, and collaborative research. Open science offers a range of benefits including more accurate verification of scientific results, speeding up the process of scientific inquiry and discovery, reducing duplication of effort, increasing efficient use of financial resources, improved innovation and increased consumer choice from public research, and promotion of citizens engagement and trust and science 
 
- 
 
-]
 
 .panel[.panel-name[What]
 .pull-left[
@@ -139,9 +139,11 @@ Such a framework can be useful also in considering how best to incentive's and m
 
 .panel[.panel-name[Discussion]
 
-"Open Science policies encourage researchers to disclose a wide range of outputs from their work, thereby codifying openness as a specific set of research practices and guidelines that can be interpreted and applied consistently across disciplines and geographical settings." (Levin, N., & Leonelli, S. (2017). 
+**How do you "open" science in your practice?**
 
-How do you "open" science in your practice?
+*"Open Science policies encourage researchers to disclose a wide range of outputs from their work, thereby codifying openness as a specific set of research practices and guidelines that can be interpreted and applied consistently across disciplines and geographical settings."* (Levin, N., & Leonelli, S. (2017). 
+
+
 
 *How does one “open” science? Questions of value in biological research. Science, Technology, & Human Values, 42(2), 280-305.)* 
 
@@ -166,9 +168,7 @@ class: clear, laser
 
 .panel[.panel-name[What]
 
-.center[
-<img src="img/reprod_1.png" height="400px"/>
-]
+Reproducible research means that “future you and anyone else will be able to pick up your analysis and reproduce the same results, including figures and tables.” 
 
 
 ]
