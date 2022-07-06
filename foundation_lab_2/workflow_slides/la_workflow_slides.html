@@ -42,7 +42,12 @@ class: clear, title-slide, inverse, center, top, middle
 ---
 # Recap from Data Structures Presentation
 
+--
+
 - Types of Data Used in LA (Sources)
+
+--
+
 - Characteristics of Data (Format)
 
 ???
@@ -467,7 +472,7 @@ About 45% of your time is spent in cleaning the data.
 
 In general, data wrangling involves some combination of cleaning, reshaping, transforming, and merging data (Wickham &amp; Grolemund, 2017). The importance of data wrangling is difficult to overstate, as it involves the initial steps of going from raw data to a dataset that can be explored and modeled (Krumm et al, 2018). 
 
- In the wrangle section we are going to:
+In the wrangle section we are going to:
 
 a.  **Import Data**. In this section, we introduce the `read_csv()` function for working with CSV files and revisit some key functions for inspecting our data.
 
@@ -615,59 +620,6 @@ For more on joins:
 
 ]
 
----
-.panelset[
-
-.panel[.panel-name[MODEL]
-
-
-```r
-# Add predictor variable for science
-lm(proportion_earned ~ time_spent_hours + int, 
-   data = data_to_explore)
-
-# save the model
-m1 &lt;- lm(proportion_earned ~ time_spent_hours + int, data = data_to_explore)
-```
-
-
-]
-
-.panel[.panel-name[Mathematical]
-.center[
-&lt;img src="img/apa_table.png" height="350px"/&gt;
-]
-]
-
-.panel[.panel-name[COMMUNICATE]
-
-&lt;img src="img/communicate.png" height="450px"/&gt;
-]
-
-???
-The final(ish) step in our workflow/process is sharing the results of
-analysis with wider audience. Krumm et al.(2018) have outline the
-following 3-step process for communicating with education stakeholders
-what you have learned through analysis:
-
-1.  **Select**. Communicating what one has learned involves selecting
-    among those analyses that are most important and most useful to an
-    intended audience, as well as selecting a form for displaying that
-    information, such as a graph or table in static or interactive form,
-    i.e. a "data product."
-
-2.  **Polish**. After creating initial versions of data products,
-    research teams often spend time refining or polishing them, by
-    adding or editing titles, labels, and notations and by working with
-    colors and shapes to highlight key points.
-
-3.  **Narrate**. Writing a narrative to accompany the data products
-    involves, at a minimum, pairing a data product with its related
-    research question, describing how best to interpret the data
-    product, and explaining the ways in which the data product helps
-    answer the research question.
-
-]
 
 ---
 class: inverse, clear, center
