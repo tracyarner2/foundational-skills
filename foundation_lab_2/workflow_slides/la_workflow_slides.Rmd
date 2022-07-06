@@ -1,5 +1,6 @@
 ---
   title: "Learning Analytics Workflow"
+  author: "Jeanne McClure, Jennifer Houchins"
   institute: "Instituttional Affiliation"
   date: '`r format(Sys.time(), "%B %d, %Y")`'
   output:
@@ -641,6 +642,8 @@ variables.
 
 For more on joins:
 <https://statisticsglobe.com/r-dplyr-join-inner-left-right-full-semi-anti>
+
+GREAT job on wrangling your data!
 
 ]
 

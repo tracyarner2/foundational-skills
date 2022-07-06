@@ -9,26 +9,28 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## 1. Prepare
+
+Install and load library's needed for analysis.
 ```{r}
 #load libraries
 library(tidyverse)
 library(here)
+```
 
+## 2. Wrangle
+
+Read in previously saved data
+```{r}
 # read in data to explore 
-survey <- read_csv(here("data", "survey.csv"))
-
-# using the `select()` and `filter()` functions. In the code chunk below,look at descriptive for just `proportion_earned` , `time_spent` and `gender`, but only for the "OcnA" and "PhysA" subjects.
-
+data_to_explore <- read_csv(here("data", "data_to_explore.csv"))
 
 ```
-## Prepare
-We install and load library's
 
-## Wrangle
-Put the data into tidy format
 
 ## Explore
-Look at insights using ggplot
+Looked at insights using ggplot
+What insights did we find?
 
 ## Model
 Quantify the insights using mathematical models.
@@ -53,6 +55,7 @@ m1 <- lm(proportion_earned ~ time_spent_hours + int, data = data_to_explore)
 
 ```
 
+Run a summary model for the model you just created called, `m1.`
 ```{r}
 #run the summary
 summary(m1)
@@ -60,7 +63,7 @@ summary(m1)
 ```
 
 ```{r}
-#install apaTables if this is your first time
+#install apaTables if this is your first time - do you remember how?
 
 #load packages
 library(apaTables)
@@ -70,4 +73,4 @@ apa.reg.table(m1, filename = "lm-table.doc")
 ```
 
 ## Communicate
-WHat are your findings?
+What are your findings?

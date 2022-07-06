@@ -1,5 +1,6 @@
 ---
   title: "Foundation Lab 5 slides"
+  author: "Jeanne McClure, Jennifer Houchins"
   institute: "Instituttional Affiliation"
   date: '`r format(Sys.time(), "%B %d, %Y")`'
   output:
@@ -192,6 +193,23 @@ The final(ish) step in our workflow/process is sharing the results of
 analysis with wider audience. Krumm et al.(2018) have outline the
 following 3-step process for communicating with education stakeholders
 what you have learned through analysis:
+
+1.  **Select**. Communicating what one has learned involves selecting
+    among those analyses that are most important and most useful to an
+    intended audience, as well as selecting a form for displaying that
+    information, such as a graph or table in static or interactive form,
+    i.e. a "data product."
+
+2.  **Polish**. After creating initial versions of data products,
+    research teams often spend time refining or polishing them, by
+    adding or editing titles, labels, and notations and by working with
+    colors and shapes to highlight key points.
+
+3.  **Narrate**. Writing a narrative to accompany the data products
+    involves, at a minimum, pairing a data product with its related
+    research question, describing how best to interpret the data
+    product, and explaining the ways in which the data product helps
+    answer the research question.
 
 ]
 ---

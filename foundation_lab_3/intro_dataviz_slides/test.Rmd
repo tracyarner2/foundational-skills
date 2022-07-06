@@ -1,0 +1,233 @@
+---
+  title: "Introduction to Data-Viz"
+  author: "Jeanne McClure, Jennifer Houchins"
+  institute: "Instituttional Affiliation"
+  date: '`r format(Sys.time(), "%B %d, %Y")`'
+  output:
+    xaringan::moon_reader:
+      css:
+       - default
+       - css/laser.css
+       - css/laser-fonts.css
+      lib_dir: libs                        # creates directory for libraries
+      seal: false                          # false: custom title slide
+      nature:
+        highlightStyle: default         # highlighting syntax for code
+        highlightLines: true               # true: enables code line highlighting
+        highlightLanguage: ["r"]           # languages to highlight
+        countIncrementalSlides: false      # false: disables counting of incremental slides
+        ratio: "16:9"                      # 4:3 for standard size,16:9
+        slideNumberFormat: |
+         <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+         </div>
+---
+class: clear, title-slide, inverse, center, top, middle
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, echo=FALSE}
+# then load all the relevant packages
+pacman::p_load(pacman, knitr)
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+# these allow any code snippets to be copied to the clipboard so they 
+# can be pasted easily
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D\"></i>",
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+```
+```{r xaringan-extras, echo=FALSE}
+xaringanExtra::use_tile_view()
+
+```
+
+# `r rmarkdown::metadata$title`
+----
+### `r rmarkdown::metadata$author`
+### `r format(Sys.time(), "%B %d, %Y")`
+
+---
+# Recap from Learning Analytics Workflow
+
+--
+
+- Learning Analytics workflow
+
+--
+
+- Characteristics of Data (Format)
+???
+
+Learning Analytics uses a five phase workflow
+Prepare
+Wrangle
+Explore
+Model
+Communicate
+
+Scholars often add an **Introduction** portion at phase "0" that might include: 
+- what the analysis is about, 
+- the reason for it and 
+- the research questions.
+
+
+We already worked in the prepare section and also in the Wrangle section
+We were introduced to the `dplyr` package and a few popular functions in `dplyr`: separate, mutate and join.`
+
+Also, for the first time we used the `janitor` package which uses functions for examining and cleaning dirty data.
+
+Finally, we we saw the pipe operator in action and the renaming with the assignment operator. You will find both these operators to be invaluable with tidyverse packages (and tidyverse friendly packages).
+
+---
+# Agenda
+
+.pull-left[**Part-1  Conceptual Overview**
+- Purpose of Visualizations
+- Principles
+  + Perception
+  + Color
+  + Cognitive Processing
+  ]
+
+
+
+---
+
+class: clear, inverse, middle, center
+
+Part 1:
+
+----
+
+Intro to Data Visualization: Conceptual Overview
+
+
+---
+
+
+# Purpose of Data Visualizations
+
+.panelset[
+
+.panel[.panel-name[Why?]
+
+.center[
+<img src="img/dataviz_ex1.png" height="400px"/>
+]
+]
+
+???
+
+Looking at data graphed visualization may be easy to understand but it can be messy.
+This visualization looks at Twitter sentiment of four popular Learning Management Systems. 
+
+Looking at the the frequency table on the left it is hard to get a good sense of the twitter sentiment for each LMS.
+
+In the the visualization on the right we can quickly see that it looks as though Blackboard had the most positive scores. However, when really diving in and reading the analysis you know that the Twitter counts for Blackboard were the lowest. So, this graph is very informative but requires you to look at all of the analysis for understanding.
+
+In "Data Science for Education," Estrellado et al. (2020) states," that while this relationship might seem intuitive, you can’t draw a definitive conclusion just from the visualization, because it doesn’t tell you whether the relationship between those variables is meaningful." In the proceeding session we will talk about modeling. 
+
+The authors explain that, while descriptive statistics and data visualization during the**Explore** step can help us to identify patterns and relationships in our data, statistical models can be used to help us determine if relationships, patterns and trends are actually meaningful.
+
+
+
+.panel[.panel-name[Who?]
+.center[
+<img src="img/who.png" height="400px"/>
+]
+]
+
+
+???
+
+Healy, 2018 explains that knowing who you are creating the visualization for is as important as how it looks in an abstract. Taking large sets of data and having an idea of what sort of visual work is most effective to deliberately simplify things in a way that lets us see past a cloud of data points shown in a figure.
+
+Knowing(who the stakeholders are) is just as important as tidying the data. Having an image for an audience of experts reading a professional journal is going to differ from having one to be interpreted by the public.
+
+
+.panel[.panel-name[What?]
+
+.center[
+<img src="img/tidy.png" height="400px"/>
+]
+]
+
+]
+
+
+---
+# Principles
+
+.panelset[
+
+.panel[.panel-name[Graph Construction]
+
+
+.center[
+<img src="img/bad_graph.png" height="400px"/>
+]
+]
+
+
+
+.panel[.panel-name[Perception]
+
+<img src="img/perception.png" height="400px"/>
+]
+
+.panel[.panel-name[Color]
+
+<img src="img/color.png" height="400px"/>
+]
+
+.panel[.panel-name[Relationships]
+
+.pull-left[
+- **Proximity**
+- **Similarity**
+- **Connection**
+- **Continuity**
+- **Closure**
+- **Figure and Ground**
+- **Common Fate**
+
+]
+
+
+.pull-right[
+
+<img src="img/structure.png" height="400px"/>
+
+]
+]
+
+
+]
+---
+
+
+class: clear, inverse, middle, center
+Part 2:
+
+----
+
+Code-Along
+
+
+---
+
+
+

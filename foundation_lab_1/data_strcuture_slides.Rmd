@@ -1,5 +1,6 @@
 ---
   title: "Foundations - Data Structures"
+  author: "Jeanne McClure, Jennifer Houchins"
   institute: "Instituttional Affiliation"
   date: '`r format(Sys.time(), "%B %d, %Y")`'
   output:

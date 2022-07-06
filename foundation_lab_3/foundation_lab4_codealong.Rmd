@@ -9,15 +9,23 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
+## 1. Prepare
 ```{r}
 #load libraries
 library(tidyverse)
 library(here)
 
-#read in data from lab3 data to explore
 
 ```
 
+## 2. Wrangle
+Read in survey data from the previous session
+```{r}
+survey <- read_csv(here("data", "survey.csv"))
+
+# Choose a way to inspect your datat with what ever function you wish
+```
 
 
 ## Explore
@@ -51,7 +59,6 @@ data_to_explore %>%
 #### B. DATA VIZ
 
 ggplot grammar - with layers
-
 
 
 ##### layers - Scatter Plot
