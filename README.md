@@ -1,5 +1,5 @@
 
-# Foundational code-a-longs in STEM Education Research
+# Foundational labs and code-along in STEM Education Research
 
 
 **Foundation lab 1** - Data Structures
