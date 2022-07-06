@@ -21,7 +21,7 @@ Let's get familiar with the R Markdown layout and syntax.
     
 ### 1.1 YAML Heading
 
-Yaml is not a markup language. It contains, title, author, dates, type of document etc. YAML is picky!
+Yaml is a data serialization language. It contains, title, author, dates, type of document etc. YAML is picky!
 
 Check out this site on[Yamll heading](https://zsmith27.github.io/rmarkdown_crash-course/lesson-4-yaml-headers.html) by @Smith.
 
@@ -104,7 +104,7 @@ this analysis:
 
 ```{r}
 #load with read_csv package
-time_spent <- read_csv("~/RProj22/foundation_labs_2022/foundation_lab_3/data/log-data.csv")
+time_spent <- read_csv("~/RProj22/foundation_labs_2022/foundation_lab_2/data/log-data.csv")
 ```
 
 Now let's load it with the {here} package.

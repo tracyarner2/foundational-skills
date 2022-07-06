@@ -57,10 +57,7 @@ xaringanExtra::use_tile_view()
 ----
 ### `r rmarkdown::metadata$author`
 ### `r format(Sys.time(), "%B %d, %Y")`
----
 
-
-<img src="img/team_2022.png" height="550px"/>
 
 ---
 # Recap from Data Structures Presentation
@@ -71,7 +68,7 @@ xaringanExtra::use_tile_view()
 ???
 
 Before we go on lets take just a few minutes, how are you all feeling so far?
-On a quick recap from our data structures presentation we discussed the different types of fata found commonly in Learning Analytics. 
+On a quick recap from our data structures presentation we discussed the different types of data found commonly in Learning Analytics. 
 
 **Types of Data** included:
 
@@ -85,7 +82,7 @@ On a quick recap from our data structures presentation we discussed the differen
   + statewide longitudinal data systems
 - Sensors and Multimodal
   + Sensors
-  + Combination and Research
+  + Speech and video analysis
 
 **Characteristics of Data** included:
 - Structured
@@ -155,6 +152,7 @@ Learning Analytics Workflow: Conceptual Overview
 Krumm et al postulates "a workflow is a set of processes that transform inputs into outputs across multiple steps and decisions." 
 Documented from Guo, 2012; Wickham & Grolemund, 2017; and Marsh 2012, this generic workflow is intended to support *researchers, practitioners, and data scientists* prepare for a data-intensive analysis and communicate one’s findings.
 
+ADD information about code-along
 
 .panel[.panel-name[Prepare]
 .pull-left[
@@ -169,12 +167,15 @@ Documented from Guo, 2012; Wickham & Grolemund, 2017; and Marsh 2012, this gener
 ]
 ]
 ???
-Being prepared for a data-intensive analysis involves clear and refined research questions with an understanding of where the data came from. 
+
+
+**Prepare** for a data-intensive analysis with clear and refined research questions with an understanding of where the data came from. 
 For example, Krumm et al uses the example surrounding an activity system for which the technology was used. 
 
 You may ask yourself - Is it for instructional, reward or even a social collaborative context? Having that understanding will allow for more refined understanding when formulating guiding research questions for the analysis. Identify what gets collected and stored by technology is important for the development of the research question.
 
 Here you may even refine your research question after having a better idea of where the data came from. The question may also be refined and redeveloped after you have started the data intensive analysis.
+
 The Learning Analysis Cycle is not a linear process but rather a process of phases that can be moved around.
 
 .panel[.panel-name[Wrangle]
@@ -190,13 +191,20 @@ The Learning Analysis Cycle is not a linear process but rather a process of phas
 ???
 Wrangling or sometimes called "munging or pre-processing" entails the work of manipulating, cleaning, transforming, and merging data.
 - **manipulating** involves identifying, acquiring, and importing data into analysis software.
+
 - Wickham & Grolemund suggest cleaning data involves ensuring that each variable is in its own column, each observation is in its own row, and each value
+
 is in its own cell within a dataset.
-  + Krumm et al add that **data cleaning** also involves identifying and remediating missing data, extreme values, and ensuring consistent use of identifier, key, or linking variables.
+This is called Tidying your data and is part of the philosophy that informs the tidyvers suite.
+
+  + Krumm et al adds that **data cleaning** also involves identifying and remediating missing data, extreme values, and ensuring consistent use of identifier, key, or linking variables.
 -  transforming variables, such as recoding
-categorical variables and rescaling continuous variables.   + These types of transformations are the initial building blocks for exploratory data analysis
--  One of the biggest value add ons is merging once disparate data sources is 
-  + EX: merging data from a student information system that stores student grades with data from a digital learning environment that stores students’ longitudinal interactions can unlock what student do and do not do on a day to day basis.
+categorical variables and rescaling continuous variables.   
++ These types of transformations are the initial building blocks for **exploratory data analysis**
+
+-  One of the biggest value add ons is merging once disparate data sources.
+
+  + FOr example: merging data from a student information system that stores student grades with data from a digital learning environment that stores students’ longitudinal interactions can unlock what student do and do not do on a day to day basis.
 
 .panel[.panel-name[Explore]
 .pull-left[
@@ -209,14 +217,16 @@ categorical variables and rescaling continuous variables.   + These types of tra
 ]
 ]
 ???
-In the reading and according to Behren's, 
+In the reading Behren's asks 
 
 *How do we build rich mental models of the phenomena being examined?*
 
-Right, by discovering patterns in the data and graphically representing the variables.
+Krumm et al explains the **explore phase** of the workflow is defined by discovering patterns in the data and graphically representing the variables.
+
 The exploratory data analysis phase includes:
 - Data visualization:
-  + Graphically representing one or more variables
+THis is where we
+  + Graphically represent one or more variables
   + Allows for discovery of patterns in data and formation of mental models
 - Feature engineering
   + Creating new variables within a data set
@@ -245,7 +255,7 @@ Two general models used - **Unsupervised** and **Supervised**.
 
 - Supervised learning
   + uses inference and Predictive modeling
-    + this are similar but distinct where the researcher uses a model to interpret the relationships among features and an outcome (inference) or  whether a researcher uses a model to make predictions or classifications (prediction).
+    + these are similar but distinct where the researcher uses a model to interpret the relationships among features and an outcome (inference) or  whether a researcher uses a model to make predictions or classifications (prediction).
     + Inference involves paying particular attention to the specific relationships between features and an outcome.
     + prediction relies on a known outcome where the ultimate task of a researcher is to find the right combination of features and an algorithm to predict or classify unseen data.
   + Quantifies relationships between features and a known outcome
@@ -284,6 +294,12 @@ _ Narrate
 ]
 ]
 ???
+As was mentioned in the orientation lab communication should not be an afterthought and should be continuous throughout the workflow project according to principles of reproducible research.
+
+Here in the final phase is where you communicate your findings to stakeholders. Stakeholders interest may only be in the findings and call to action. 
+
+Within communication you will use select, polish and narrate flow.
+
 1.  **Select.** Communicating what one has learned involves selecting among those analyses that are most important and most useful to an intended audience, as well as selecting a form for displaying that information, such as a graph or table in static or interactive form,
     i.e. a "data product."
 
@@ -370,7 +386,6 @@ I've included a link to learn more about yaml heading on your own time.
 
 
 
-
 ]
 ???
 
@@ -404,6 +419,14 @@ To view in visual editor on desktop click on the gear and then visual editor, yo
 .pull-right[
 <img src="img/code_chunk.png" height="425px"/>
 
+```{r}
+
+```
+
+```{r}
+
+```
+
 ]
 
 ]
@@ -426,7 +449,7 @@ add here to run you can click the green arrow, sun everything above by clicking 
 ]
 ???
 
-Again this is the general workflow. It is not a linear process and can flow to answer your research questions, or revise them depending on your needs. The next few sessions will take us through the entire workflow. Today we will focus on the *Prepare* and *Wrangle* phases.
+Again this is the general workflow. It is not a linear process and can flow to answer your research questions, or revise them depending on your needs. The next few sessions will take us through the entire workflow. 
 
 1.  **Prepare**: Prior to analysis, it's critical to understand the context and data sources you're working with so you can formulate useful and answerable        questions. You'll also need to become familiar with and load essential packages for analysis.
 
@@ -439,6 +462,8 @@ Again this is the general workflow. It is not a linear process and can flow to a
 5.  **Communicate:** To wrap up our case study, we'll develop our first "data product" and share our analyses and findings by creating our first web page using R Markdown.
 
 Additionally you may add a section 0. that offers insight into a case study, research questions, and the reason for your analysis. What sparked you to collect data on this particular topic? What's the background?
+
+Today we will focus on the *Prepare* and *Wrangle* phases.
 
 .panel[.panel-name[PREPARE]
 
@@ -482,7 +507,7 @@ c.  **Join Data**. We conclude our data wrangling by introducing  a`join()` func
 library(tidyverse)
 library(here)
 #load with read_csv package
-time_spent <- read_csv("~/RProj22/foundation_labs_2022/foundation_lab_3/data/log-data.csv")#<<
+time_spent <- read_csv("~/RProj22/foundation_labs_2022/foundation_lab_2/data/log-data.csv")#<<
 
 #load with here package
 time_spent <- read_csv(here(
@@ -692,3 +717,6 @@ class: inverse, clear, center
 This work was supported by countless cups of hot tea, cookies, and the RStats Xaringan community willingness to post of plethora of tutorials. But you may wish to thank your funding agency (e.g., the National Science Foundation) and put their logo on the left as shown here.
 ]]
 ]
+---
+
+<img src="img/team_2022.png" height="550px"/>
