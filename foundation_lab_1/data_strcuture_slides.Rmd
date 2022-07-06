@@ -262,21 +262,22 @@ At North Carolina State University we use Moodle. What LMS do you use at your in
 ???
 Raise your hand if you have ever participated in a MOOC? The FI has many free MOOCs available, but there are also EDx and Coursera that you can take a MOOC at. These offer a major source for data from the large numbers of participants.
 
+Friday Insitutes free Moocs offer professional Development for in-service and pre-service K12 educators. For more information check out the website include in the speaker notes. https://place.fi.ncsu.edu/
+
+Data from MOOCs can take a closer look at how participants are interacting within the classroom social network.
+
 Have you ever pulled data from your own MOOC? or learning management system? 
 
-How was that process?
-
+What types of insights were analyzed?
 ]
-
-
 ---
 # Administrative Data
 
 .panelset[
 
-.panel[.panel-name[Types]
+.panel[.panel-name[Definition]
 
-Types of State and Federal systems used in schools and districts to collect and store information to deliver some *sort* of service.
+.pull-left[Types of State and Federal systems used in schools and districts to collect and store information to deliver some *sort* of service.]
 
 .pull-right[
 <img src="img/Admin_LA.png" height="300px"/>
@@ -292,7 +293,7 @@ There are two main types
 
 .panel[.panel-name[SIS]
 
-.pull-left[
+.pull-left[Student Information Systems:
 - Student level - Academic Performance
 - Teacher & Administrator facing repository
 - Technology-based intervention
@@ -300,7 +301,7 @@ There are two main types
 ]
 
 .pull-right[
-<img src="img/Admin_LA.png" height="300px"/>
+<img src="img/powerschool.png" height="300px"/>
 ]
 ]
 ???
@@ -319,18 +320,28 @@ Can be at the Student level or Teacher and Administrator level of student demogr
 ]
 
 .pull-right[
-<img src="img/Admin_LA.png" height="300px"/>
+<img src="img/slds.png" height="300px"/>
 ]
 ]
 ???
-**statewide longitudinal data systems**
-- standardized test performances, attendance, and major behavioral infractions.
-- unique statewide identifier for every student
-- Ability to link state K12 with HEd system; storage of each student’s demographic characteristics and enrollment history and scores on state accountability tests
-- Data infrastructure to examine “educational outcomes at the scale of an entire state” p.34
+**statewide longitudinal data systems** are a continuum of data that includes standardized test performances, attendance, and major behavioral infractions.
 
-State  level  and  university-based  researchers  increasingly  leveraged  these  data  for  both  accountability  and  reporting  purposes  as  well  as  district-and  school-improvement purposes.
 
+Which carries a unique statewide identifier for every student.
+
+The SLDS has the ability to link state K12 with HEd system includes the storage of each student’s demographic characteristics and enrollment history. Includes all scores on state accountability tests
+
+Krumm et al., additionally mentions the importance of the data infrastructure to examine “educational outcomes at the scale of an entire state” p.34
+
+State  level  and  university-based  researchers  increasingly  leveraged  these  data  for  both  accountability  and  reporting  purposes  as  well  as  district-and  school-improvement purposes. Typically they are not available to the public rather threw an IRB and MOA through DPI. (Lots of acronyms)
+
+North Carolina public education state longitudinal data system (SLDS) as presented through publicly available resources of public primary, secondary and higher education, information made available to the public through the National Center for Education Statistics (NCES).
+
+https://childandfamilypolicy.duke.edu/north-carolina-education-research-data/
+
+Or a free version through EPIC at UNC. 
+
+https://childandfamilypolicy.duke.edu/north-carolina-education-research-data/
 
 ]
 
@@ -339,37 +350,37 @@ State  level  and  university-based  researchers  increasingly  leveraged  these
 
 .panelset[
 
-.panel[.panel-name[Sensors+]
-
-Location, physical movement and speech data.
-
-.pull-right[
-<img src="img/Sensor_LA.png" height="300px"/>
-]
-]
-???
-How many of you have an apple watch, or a fitbit or Samsung? These watches measure different things surrounding our health and fitness. The data can then be used to explain or predict our **health**
-
-.panel[.panel-name[Research]
+.panel[.panel-name[Sensors and recording devices]
 
 .pull-left[
-- capture biometric data
-- parse audio and video recordings using machine learning and artificial intelligence techniques
-- Fitness devices
-- Multimodal investigation
+- Location 
+- Physical movement 
+- Speech data
 ]
 
 .pull-right[
-<img src="img/Sensor_LA.png" height="300px"/>
+- Capture biometric data
+- Parse audio  
+- Video recordings using machine learning and artificial intelligence techniques.
 ]
+]
+???
+How many of you have an apple watch, or a fitbit or Samsung? These watches measure different metrics surrounding our health and fitness. The data can then be used to explain or predict our **health**
+
+Senors and video recordings collect data by capturing biometric data, parse audio and from video recordings using machine learning and artificial intelligence techniques.
+
+.panel[.panel-name[Multimodal]
+
+- Identifying multiple affective 
+- Engagement-related states
+- Detect facial expressions(audio, video)
+- Speech recognition
+- Speech prosody
+
 
 ]
 ???
-
-identifying multiple affective and engagement-related states
-detect facial expressions(audio, video)
-speech recognition
-speech prosody
+Krumm et al. suggest that multimodal  investigation identify multiple affective and engagement-related states, detect facial expressions like audio, video, speech recognition and speech prosody.
 
 - Understanding  what  learners  do  as  they  engage  in  learning  tasks  can  drive  digital  learning  environment adaptations.
 
@@ -410,8 +421,8 @@ We identify four main types of data structures.
 #show first 5 rows
 library(tidyverse)
 sci_course <- read_csv("data/sci-online-classes.csv")
-sci_course%>%
-  head(n=5)
+
+knitr::kable(head(sci_course), format = 'html')
 ```
 
 ]
@@ -447,46 +458,19 @@ IE: Audio, video, dates SQL database
 .panel[.panel-name[Semi-Structured]
 
 .center[
-
-```{r sna_plot, message=FALSE, echo=FALSE, warning=FALSE}
-library(igraph)
-ties <- read_csv("data/dlt1-edgelist.csv", 
-                 col_types = cols(Sender = col_character(),
-                                  Receiver = col_character(), 
-                                  `Category Text` = col_skip(), 
-                                  `Comment ID` = col_character(), 
-                                  `Discussion ID` = col_character()))
-actors <- read_csv("data/dlt1-nodes.csv", 
-                   col_types = cols(UID = col_character(), 
-                                    Facilitator = col_character(), 
-                                    expert = col_character(), 
-                                    connect = col_character()))
-network <- graph_from_data_frame(d = ties, 
-                                 vertices = actors, 
-                                 directed = T) 
-E(network)$weight <- 1 
-weighted_network <- simplify(network,
-                             edge.attr.comb = list(weight="sum")
-                             )
-node_degree <- degree(weighted_network, mode = "all")
-plot(weighted_network,
-     vertex.label = NA,
-     vertex.size = node_degree*.1,
-     edge.arrow.size = .04)
-```
-
-
+<img src="img/semi.png" height="400px"/>          
 ]
 ]
 ???
 
-semi-structured data includes Qualitative data
+Semi-structured data includes Qualitative 
 Triangular Data (uses surveys and interview answers)
 Semi-structured data is a form of structured data that does not conform with the formal structure of data models associated with relational databases or other forms of data tables.
 
-self-describing structure
-contain tags
-IE: Social media, JSON and XML, Social Networkdata
+Semi structured can also include log data.
+
+It is a self-describing structure that contains tags
+examples: Social media, JSON and XML, Social Networkdata
 
 .panel[.panel-name[Meta-Data]
 
@@ -499,7 +483,7 @@ IE: Social media, JSON and XML, Social Networkdata
 Not in the readings but something to think about is Meta-data collection, such as the field dates, times and locations of photos, videos and other structured data about data.
  - contexts and purposes for why the data was collected
  
-You can read more about the meta data standards on Canada's heritage information network. https://www.canada.ca/en/heritage-information-network/services/collections-documentation-standards/chin-guide-museum-standards/metadata-data-structure.html
+You can read more about the meta data standards on Canada's heritage information network. The link is in the presenters notes. https://www.canada.ca/en/heritage-information-network/services/collections-documentation-standards/chin-guide-museum-standards/metadata-data-structure.html
 
 
 ]

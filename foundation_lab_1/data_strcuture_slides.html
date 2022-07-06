@@ -242,21 +242,22 @@ At North Carolina State University we use Moodle. What LMS do you use at your in
 ???
 Raise your hand if you have ever participated in a MOOC? The FI has many free MOOCs available, but there are also EDx and Coursera that you can take a MOOC at. These offer a major source for data from the large numbers of participants.
 
+Friday Insitutes free Moocs offer professional Development for in-service and pre-service K12 educators. For more information check out the website include in the speaker notes. https://place.fi.ncsu.edu/
+
+Data from MOOCs can take a closer look at how participants are interacting within the classroom social network.
+
 Have you ever pulled data from your own MOOC? or learning management system? 
 
-How was that process?
-
+What types of insights were analyzed?
 ]
-
-
 ---
 # Administrative Data
 
 .panelset[
 
-.panel[.panel-name[Types]
+.panel[.panel-name[Definition]
 
-Types of State and Federal systems used in schools and districts to collect and store information to deliver some *sort* of service.
+.pull-left[Types of State and Federal systems used in schools and districts to collect and store information to deliver some *sort* of service.]
 
 .pull-right[
 &lt;img src="img/Admin_LA.png" height="300px"/&gt;
@@ -272,7 +273,7 @@ There are two main types
 
 .panel[.panel-name[SIS]
 
-.pull-left[
+.pull-left[Student Information Systems:
 - Student level - Academic Performance
 - Teacher &amp; Administrator facing repository
 - Technology-based intervention
@@ -280,7 +281,7 @@ There are two main types
 ]
 
 .pull-right[
-&lt;img src="img/Admin_LA.png" height="300px"/&gt;
+&lt;img src="img/powerschool.png" height="300px"/&gt;
 ]
 ]
 ???
@@ -299,18 +300,28 @@ Can be at the Student level or Teacher and Administrator level of student demogr
 ]
 
 .pull-right[
-&lt;img src="img/Admin_LA.png" height="300px"/&gt;
+&lt;img src="img/slds.png" height="300px"/&gt;
 ]
 ]
 ???
-**statewide longitudinal data systems**
-- standardized test performances, attendance, and major behavioral infractions.
-- unique statewide identifier for every student
-- Ability to link state K12 with HEd system; storage of each student’s demographic characteristics and enrollment history and scores on state accountability tests
-- Data infrastructure to examine “educational outcomes at the scale of an entire state” p.34
+**statewide longitudinal data systems** are a continuum of data that includes standardized test performances, attendance, and major behavioral infractions.
 
-State  level  and  university-based  researchers  increasingly  leveraged  these  data  for  both  accountability  and  reporting  purposes  as  well  as  district-and  school-improvement purposes.
 
+Which carries a unique statewide identifier for every student.
+
+The SLDS has the ability to link state K12 with HEd system includes the storage of each student’s demographic characteristics and enrollment history. Includes all scores on state accountability tests
+
+Krumm et al., additionally mentions the importance of the data infrastructure to examine “educational outcomes at the scale of an entire state” p.34
+
+State  level  and  university-based  researchers  increasingly  leveraged  these  data  for  both  accountability  and  reporting  purposes  as  well  as  district-and  school-improvement purposes. Typically they are not available to the public rather threw an IRB and MOA through DPI. (Lots of acronyms)
+
+North Carolina public education state longitudinal data system (SLDS) as presented through publicly available resources of public primary, secondary and higher education, information made available to the public through the National Center for Education Statistics (NCES).
+
+https://childandfamilypolicy.duke.edu/north-carolina-education-research-data/
+
+Or a free version through EPIC at UNC. 
+
+https://childandfamilypolicy.duke.edu/north-carolina-education-research-data/
 
 ]
 
@@ -319,37 +330,37 @@ State  level  and  university-based  researchers  increasingly  leveraged  these
 
 .panelset[
 
-.panel[.panel-name[Sensors+]
-
-Location, physical movement and speech data.
-
-.pull-right[
-&lt;img src="img/Sensor_LA.png" height="300px"/&gt;
-]
-]
-???
-How many of you have an apple watch, or a fitbit or Samsung? These watches measure different things surrounding our health and fitness. The data can then be used to explain or predict our **health**
-
-.panel[.panel-name[Research]
+.panel[.panel-name[Sensors and recording devices]
 
 .pull-left[
-- capture biometric data
-- parse audio and video recordings using machine learning and artificial intelligence techniques
-- Fitness devices
-- Multimodal investigation
+- Location 
+- Physical movement 
+- Speech data
 ]
 
 .pull-right[
-&lt;img src="img/Sensor_LA.png" height="300px"/&gt;
+- Capture biometric data
+- Parse audio  
+- Video recordings using machine learning and artificial intelligence techniques.
 ]
+]
+???
+How many of you have an apple watch, or a fitbit or Samsung? These watches measure different metrics surrounding our health and fitness. The data can then be used to explain or predict our **health**
+
+Senors and video recordings collect data by capturing biometric data, parse audio and from video recordings using machine learning and artificial intelligence techniques.
+
+.panel[.panel-name[Multimodal]
+
+- Identifying multiple affective 
+- Engagement-related states
+- Detect facial expressions(audio, video)
+- Speech recognition
+- Speech prosody
+
 
 ]
 ???
-
-identifying multiple affective and engagement-related states
-detect facial expressions(audio, video)
-speech recognition
-speech prosody
+Krumm et al. suggest that multimodal  investigation identify multiple affective and engagement-related states, detect facial expressions like audio, video, speech recognition and speech prosody.
 
 - Understanding  what  learners  do  as  they  engage  in  learning  tasks  can  drive  digital  learning  environment adaptations.
 
@@ -386,23 +397,236 @@ We identify four main types of data structures.
 
 .panel[.panel-name[Structured]
 
-
-```
-## # A tibble: 5 × 30
-##   student_id course_id     total_points_possi… total_points_ea… percentage_earn…
-##        &lt;dbl&gt; &lt;chr&gt;                       &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
-## 1      43146 FrScA-S216-02                3280             2220            0.677
-## 2      44638 OcnA-S116-01                 3531             2672            0.757
-## 3      47448 FrScA-S216-01                2870             1897            0.661
-## 4      47979 OcnA-S216-01                 4562             3090            0.677
-## 5      48797 PhysA-S116-01                2207             1910            0.865
-## # … with 25 more variables: subject &lt;chr&gt;, semester &lt;chr&gt;, section &lt;chr&gt;,
-## #   Gradebook_Item &lt;chr&gt;, Grade_Category &lt;lgl&gt;, FinalGradeCEMS &lt;dbl&gt;,
-## #   Points_Possible &lt;dbl&gt;, Points_Earned &lt;dbl&gt;, Gender &lt;chr&gt;, q1 &lt;dbl&gt;,
-## #   q2 &lt;dbl&gt;, q3 &lt;dbl&gt;, q4 &lt;dbl&gt;, q5 &lt;dbl&gt;, q6 &lt;dbl&gt;, q7 &lt;dbl&gt;, q8 &lt;dbl&gt;,
-## #   q9 &lt;dbl&gt;, q10 &lt;dbl&gt;, TimeSpent &lt;dbl&gt;, TimeSpent_hours &lt;dbl&gt;,
-## #   TimeSpent_std &lt;dbl&gt;, int &lt;dbl&gt;, pc &lt;dbl&gt;, uv &lt;dbl&gt;
-```
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; student_id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; course_id &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; total_points_possible &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; total_points_earned &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; percentage_earned &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; subject &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; semester &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; section &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Gradebook_Item &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Grade_Category &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; FinalGradeCEMS &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Points_Possible &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Points_Earned &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Gender &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; q1 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; q2 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; q3 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; q4 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; q5 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; q6 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; q7 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; q8 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; q9 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; q10 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; TimeSpent &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; TimeSpent_hours &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; TimeSpent_std &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; int &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; pc &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; uv &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 43146 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; FrScA-S216-02 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3280 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2220 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6768293 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; FrScA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; S216 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 02 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; POINTS EARNED &amp;amp; TOTAL COURSE POINTS &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 93.45372 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1555.1667 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.9194450 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.1805150 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.333333 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 44638 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; OcnA-S116-01 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3531 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2672 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7567261 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; OcnA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; S116 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ATTEMPTED &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 81.70184 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1382.7001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23.0450017 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.3078031 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.000000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 47448 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; FrScA-S216-01 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2870 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1897 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6609756 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; FrScA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; S216 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; POINTS EARNED &amp;amp; TOTAL COURSE POINTS &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 88.48758 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 860.4335 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14.3405583 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.6932595 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.666667 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 47979 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; OcnA-S216-01 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4562 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3090 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6773345 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; OcnA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; S216 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; POINTS EARNED &amp;amp; TOTAL COURSE POINTS &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 81.85260 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1598.6166 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.6436100 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.1484470 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.000000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 48797 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; PhysA-S116-01 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2207 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1910 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.8654282 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; PhysA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; S116 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; POINTS EARNED &amp;amp; TOTAL COURSE POINTS &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 84.00000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 438 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 399 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1481.8000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 24.6966667 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.2346629 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.500000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 51943 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; FrScA-S216-03 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4208 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3596 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.8545627 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; FrScA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; S216 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 03 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; POINTS EARNED &amp;amp; TOTAL COURSE POINTS &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.4501 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0575017 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -1.3257521 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.000000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 ]
 ???
@@ -437,21 +661,19 @@ IE: Audio, video, dates SQL database
 .panel[.panel-name[Semi-Structured]
 
 .center[
-
-![](data_strcuture_slides_files/figure-html/sna_plot-1.png)&lt;!-- --&gt;
-
-
+&lt;img src="img/semi.png" height="400px"/&gt;          
 ]
 ]
 ???
 
-semi-structured data includes Qualitative data
+Semi-structured data includes Qualitative 
 Triangular Data (uses surveys and interview answers)
 Semi-structured data is a form of structured data that does not conform with the formal structure of data models associated with relational databases or other forms of data tables.
 
-self-describing structure
-contain tags
-IE: Social media, JSON and XML, Social Networkdata
+Semi structured can also include log data.
+
+It is a self-describing structure that contains tags
+examples: Social media, JSON and XML, Social Networkdata
 
 .panel[.panel-name[Meta-Data]
 
@@ -464,7 +686,7 @@ IE: Social media, JSON and XML, Social Networkdata
 Not in the readings but something to think about is Meta-data collection, such as the field dates, times and locations of photos, videos and other structured data about data.
  - contexts and purposes for why the data was collected
  
-You can read more about the meta data standards on Canada's heritage information network. https://www.canada.ca/en/heritage-information-network/services/collections-documentation-standards/chin-guide-museum-standards/metadata-data-structure.html
+You can read more about the meta data standards on Canada's heritage information network. The link is in the presenters notes. https://www.canada.ca/en/heritage-information-network/services/collections-documentation-standards/chin-guide-museum-standards/metadata-data-structure.html
 
 
 ]
