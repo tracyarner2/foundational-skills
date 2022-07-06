@@ -4,7 +4,8 @@
 
 # Set from Session or...
 
-setwd("C:/Users/User/Documents/RProj22/foundation_labs_2022/foundation_lab_2")
+setwd("C:/Users/User/Documents/RProj22/foundation_labs_2022/foundation_lab_1")
+
 
 
 
@@ -21,6 +22,7 @@ library(tidyverse)
 #############################
 
 online_classes <- read_csv("data/sci-online-classes.csv")
+
 view(online_classes)
 head(online_classes, n=5)
 tail(online_classes, n =5)
@@ -31,9 +33,9 @@ tail(online_classes, n =5)
 
 library(readxl)
 
-csss_tweets <- read_excel("data/csss_tweets.xlsx")
+ccss_tweets <- read_excel("data/csss_tweets.xlsx")
 view(ccss_tweets)
-head(csss_tweets, n = 5L)
+head(csss_tweets, n = 5)
 tail(ccss_tweets, n = 5)
 
 ###### Excel Function ######## 
@@ -43,15 +45,14 @@ tail(ccss_tweets, n = 5)
 excel_sheets("data/csss_tweets.xlsx")
 csss_tweets <- read_excel("data/csss_tweets.xlsx", sheet = "Sheet1")
 
-
+view(csss_tweets)
 
 
 ############################
 ####### From Path ##########
 ############################
 
-sci_ol_classes <- read_csv("C:/Users/User/Documents/RProj22/foundation_labs_2022/foundation_lab_2/data/sci-online-classes.csv")
-
+sci_ol_classes <- read_csv("C:/Users/User/Documents/RProj22/foundation_labs_2022/foundation_lab_1/data/sci-online-classes.csv")
 
 sci_ol_classes
 
@@ -68,17 +69,21 @@ air_quality
 ######## Stata ##########
 #########################
 
+
 library(haven)
 
 gpa_dt <- read_dta("data/GPA3.dta")
 
-gpa_dt
+view(gpa_dt)
 
 #########################
 ######## Tibble #########
 #########################
 
-class(sci_ol_classes)
+# create a data frame
+data <- data.frame(a = 1:3, b = letters[1:3], c = Sys.Date() - 1:3)
+# print a data frame
+data
 
-str(sci_ol_classes)
-
+#print a dataframe as a tibble
+as_tibble(data)
