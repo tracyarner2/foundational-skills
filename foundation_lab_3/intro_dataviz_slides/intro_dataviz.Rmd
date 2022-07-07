@@ -31,7 +31,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```{r, echo=FALSE}
 # then load all the relevant packages
-pacman::p_load(pacman, knitr)
+pacman::p_load(pacman, knitr, tidyverse, here)
+
 ```
 
 ```{r xaringan-panelset, echo=FALSE}
@@ -316,7 +317,7 @@ data_to_explore %>%
 ]
 ---
 
-# GGplot2
+# GGplot2 - Scatter plot
 
 .panelset[
 
@@ -414,7 +415,7 @@ ggplot(data_to_explore,
            color = enrollment_status)) +
 #layer 2: +  geom function type
   geom_point() +
-#layer 4: add lables
+#layer 4: add labels
   xlab  labs(title="How Time Spent on Course LMS is Related to Points Earned in the Course", #<<
        x="Time Spent (Hours)", #<<
        y = "MProportion of Points Earned")  #<<
@@ -435,7 +436,7 @@ ggplot(data_to_explore,
 ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color = enrollment_status)) +
 #layer 2: +  geom function type
   geom_point() +
-#layer 4: add lables
+#layer 4: add labels
     xlab  labs(title="How Time Spent on Course LMS is Related to Points Earned in the Course", 
        x="Time Spent (Hours)",
        y = "Proportion of Points Earned")
@@ -450,27 +451,130 @@ ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color =
 ]
 ]
 ---
-# ggplot continue
+# GGplot2 - Histogram
 .panelset[
 
-.panel[.panel-name[Viz - histogram]
+.panel[.panel-name[Grammar 101]
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+data_to_explore <- read_csv(here("data", "data_to_explore.csv"))
+```
+
 
 .pull-left[
 
-```{r eval = FALSE, echo = TRUE}
-data_to_explore %>% 
+```{r hist1, echo=TRUE, fig.show='hide', message=FALSE, warning=FALSE}
+
+# Layer 1: add data and aesthetic mapping
+data_to_explore %>% #<<
   ggplot(aes(x = time_spent_hours)) +
-  geom_histogram(bins = 30)
+# layer 2: add histogram geom
+  geom_histogram()
 ```
 ]
 .pull-right[
-<img src="img/hist.png" height="250px"/>
+
+```{r, ref.label="hist1", echo=FALSE, message=FALSE, warning=FALSE,  out.width = '300px'}
+# Layer 1: add data and aesthetic mapping
+data_to_explore %>% ##<
+  ggplot(aes(x = time_spent_hours)) +
+# layer 2: add histogram geom
+  geom_histogram()
+```
 
 ]
 
 
 ]
 
+.panel[.panel-name[Bin]
+.pull-left[
+```{r hist2, echo=TRUE, fig.show='hide', message=FALSE, warning=FALSE}
+# Layer 1: add data and aesthetic mapping
+data_to_explore %>% 
+  ggplot(aes(x = time_spent_hours)) +
+# layer 2: add histogram geom 
+# layer 3a: add bin size
+  geom_histogram(bins = 10)#<<
+```
+]
+
+.pull-right[
+```{r ref.label="hist2", echo=FALSE, message=FALSE, warning=FALSE,  out.width = '300px'}
+
+# Layer 1: add data and aesthetic mapping
+data_to_explore %>% 
+  ggplot(aes(x = time_spent_hours)) +
+# layer 2: add histogram geom 
+# layer 3a: add bin size
+  geom_histogram(bins = 10)#<<
+
+```
+]
+]
+
+.panel[.panel-name[Color]
+.pull-left[
+```{r hist3, echo=TRUE, fig.show='hide', message=FALSE, warning=FALSE}
+# Layer 1: add data and aesthetic mapping
+data_to_explore %>% 
+  ggplot(aes(x = time_spent_hours)) +
+# layer 2: add histogram geom 
+# layer 3a: add bin size
+#layer 3b: add color
+  geom_histogram(bins = 30,
+                 fill = "red", #<<
+                 colour = "black") #<<
+```
+]
+
+.pull-right[
+```{r ref.label="hist3", echo=FALSE, message=FALSE, warning=FALSE,  out.width = '300px'}
+# Layer 1: add data and aesthetic mapping
+data_to_explore %>% 
+  ggplot(aes(x = time_spent_hours)) +
+# layer 2: add histogram geom 
+# layer 3a: add bin size
+#layer 3b: add color
+  geom_histogram(bins = 30, 
+                 fill = "red", 
+                 colour = "black")
+```
+]
+]
+
+.panel[.panel-name[Labels]
+
+.pull-left[
+```{r hist4, echo=TRUE, fig.show='hide', message=FALSE, warning=FALSE}
+# Layer 1: add data and aesthetic mapping
+data_to_explore %>% 
+  ggplot(aes(x = time_spent_hours)) +
+# layer 2: add histogram geom 
+# layer 3a: add bin size
+# layer 3b: add color
+  geom_histogram(bins = 30, fill = "red", colour = "black")+
+#layer 4: add Labels
+  labs(title="Time Spent on LMS histogram plot",x="Time Spent(hours)", y = "Density")+
+  theme_classic()
+```
+]
+
+.pull-right[
+```{r ref.label="hist4", echo=FALSE, message=FALSE, warning=FALSE,  out.width = '300px'}
+# Layer 1: add data and aesthetic mapping
+data_to_explore %>% 
+  ggplot(aes(x = time_spent_hours)) +
+# layer 2: add histogram geom 
+# layer 3a: add bin size
+# layer 3b: add color
+  geom_histogram(bins = 30, fill = "red", colour = "black")+
+  labs(title="Time Spent on LMS histogram plot",x="Weight(kg)", y = "Density")+
+  theme_classic()
+
+```
+]
+
+]
 ]
 
 

@@ -4,7 +4,7 @@
     <title>Introduction to Data-Viz</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jeanne McClure, Jennifer Houchins" />
-    <meta name="date" content="2022-07-06" />
+    <meta name="date" content="2022-07-07" />
     <script src="libs/header-attrs-2.14/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
@@ -37,7 +37,7 @@ class: clear, title-slide, inverse, center, top, middle
 # Introduction to Data-Viz
 ----
 ### Jeanne McClure, Jennifer Houchins
-### July 06, 2022
+### July 07, 2022
 
 ---
 # Recap from Learning Analytics Workflow
@@ -298,7 +298,7 @@ data_to_explore %&gt;%
 ]
 ---
 
-# GGplot2
+# GGplot2 - Scatter plot
 
 .panelset[
 
@@ -399,7 +399,7 @@ ggplot(data_to_explore,
            color = enrollment_status)) +
 #layer 2: +  geom function type
   geom_point() +
-#layer 4: add lables
+#layer 4: add labels
 * xlab  labs(title="How Time Spent on Course LMS is Related to Points Earned in the Course",
 *      x="Time Spent (Hours)",
 *      y = "MProportion of Points Earned")
@@ -421,7 +421,7 @@ ggplot(data_to_explore,
 ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color = enrollment_status)) +
 #layer 2: +  geom function type
   geom_point() +
-#layer 4: add lables
+#layer 4: add labels
     xlab  labs(title="How Time Spent on Course LMS is Related to Points Earned in the Course", 
        x="Time Spent (Hours)",
        y = "Proportion of Points Earned")
@@ -436,28 +436,95 @@ ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color =
 ]
 ]
 ---
-# ggplot continue
+# GGplot2 - Histogram
 .panelset[
 
-.panel[.panel-name[Viz - histogram]
+.panel[.panel-name[Grammar 101]
+
+
 
 .pull-left[
 
 
 ```r
-data_to_explore %&gt;% 
+# Layer 1: add data and aesthetic mapping
+*data_to_explore %&gt;%
   ggplot(aes(x = time_spent_hours)) +
-  geom_histogram(bins = 30)
+# layer 2: add histogram geom
+  geom_histogram()
 ```
 ]
 .pull-right[
-&lt;img src="img/hist.png" height="250px"/&gt;
+
+&lt;img src="intro_dataviz_files/figure-html/unnamed-chunk-9-1.png" width="300px" /&gt;
 
 ]
 
 
 ]
 
+.panel[.panel-name[Bin]
+.pull-left[
+
+```r
+# Layer 1: add data and aesthetic mapping
+data_to_explore %&gt;% 
+  ggplot(aes(x = time_spent_hours)) +
+# layer 2: add histogram geom 
+# layer 3a: add bin size
+* geom_histogram(bins = 10)
+```
+]
+
+.pull-right[
+&lt;img src="intro_dataviz_files/figure-html/unnamed-chunk-10-1.png" width="300px" /&gt;
+]
+]
+
+.panel[.panel-name[Color]
+.pull-left[
+
+```r
+# Layer 1: add data and aesthetic mapping
+data_to_explore %&gt;% 
+  ggplot(aes(x = time_spent_hours)) +
+# layer 2: add histogram geom 
+# layer 3a: add bin size
+#layer 3b: add color
+  geom_histogram(bins = 30,
+*                fill = "red",
+*                colour = "black")
+```
+]
+
+.pull-right[
+&lt;img src="intro_dataviz_files/figure-html/unnamed-chunk-11-1.png" width="300px" /&gt;
+]
+]
+
+.panel[.panel-name[Labels]
+
+.pull-left[
+
+```r
+# Layer 1: add data and aesthetic mapping
+data_to_explore %&gt;% 
+  ggplot(aes(x = time_spent_hours)) +
+# layer 2: add histogram geom 
+# layer 3a: add bin size
+# layer 3b: add color
+  geom_histogram(bins = 30, fill = "red", colour = "black")+
+#layer 4: add Labels
+  labs(title="Time Spent on LMS histogram plot",x="Time Spent(hours)", y = "Density")+
+  theme_classic()
+```
+]
+
+.pull-right[
+&lt;img src="intro_dataviz_files/figure-html/unnamed-chunk-12-1.png" width="300px" /&gt;
+]
+
+]
 ]
 
 

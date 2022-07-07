@@ -22,7 +22,7 @@ library(here)
 ## 2. Wrangle
 Read in survey data from the previous session
 ```{r}
-survey <- read_csv(here("data", "survey.csv"))
+data_to_explore <- read_csv(here("data", "data_to_explore.csv"))
 
 # Choose a way to inspect your datat with what ever function you wish
 ```
@@ -102,7 +102,7 @@ ggplot(data_to_explore,
 #layer 2: +  geom function type
   geom_point() +
 #layer 4: add lables
-  x_lab(title="How Time Spent on Course LMS is Related to Points Earned in the Course", x="Time Spent (Hours)", y = "MProportion of Points Earned")
+  labs(title="How Time Spent on Course LMS is Related to Points Earned in the Course", x="Time Spent (Hours)", y = "Proportion of Points Earned")
 ```
 
 
@@ -125,11 +125,115 @@ ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color =
 
 
 ##### layers- Histogram
-```{r}
-# create a histogram
+
+Create a basic histogram using the 'geom_hist()' function
+```{r hist1, message=FALSE, warning=FALSE}
+
+# Layer 1: add data and aesthetic mapping
+data_to_explore %>% #<<
+  ggplot(aes(x = time_spent_hours)) +
+# layer 2: add histogram geom
+  geom_histogram()
+```
+
+
+Change bin size
+
+```{r hist2, message=FALSE, warning=FALSE}
+# Layer 1: add data and aesthetic mapping
 data_to_explore %>% 
   ggplot(aes(x = time_spent_hours)) +
-  geom_histogram(bins = 30)
-
+# layer 2: add histogram geom 
+# layer 3a: add bin size
+  geom_histogram(bins = 10)
 ```
+
+
+Add color label to make bins stand out
+
+```{r hist3,message=FALSE, warning=FALSE}
+# Layer 1: add data and aesthetic mapping
+data_to_explore %>% 
+  ggplot(aes(x = time_spent_hours)) +
+# layer 2: add histogram geom 
+# layer 3a: add bin size
+#layer 3b: add color
+  geom_histogram(bins = 10,
+                 fill = "red", 
+                 colour = "black") 
+```
+
+
+Add labels and add a theme for a clean aesthetic
+
+
+```{r hist4, message=FALSE, warning=FALSE}
+# Layer 1: add data and aesthetic mapping
+data_to_explore %>% 
+  ggplot(aes(x = time_spent_hours)) +
+# layer 2: add histogram geom 
+# layer 3a: add bin size
+# layer 3b: add color
+  geom_histogram(bins = 10, fill = "red", colour = "black")+
+#layer 4: add Labels
+  labs(title="Time Spent on LMS histogram plot",x="Time Spent(hours)", y = "Count")+
+  theme_classic()
+```
+
+Create a histogram with density plot
+
+```{r hist5, message=FALSE, warning=FALSE}
+data_to_explore%>%
+  ggplot(aes(x=time_spent_hours)) +
+  geom_histogram(aes(y=..density..), colour="black", fill="white", bins = 10)+
+ geom_density(alpha=.2, fill="#FF6666") 
+  labs(title="Time Spent on LMS histogram/density plot",x="Time Spent(hours)", y = "Density")+
+  theme_classic()
+```
+
+## Putting it all together
+
+Make a scatterplot using the sci_classes data to examine the relationship between 
+ - TimeSpent_hours (i.e. hours spent online by studnets)
+ - and FinalGradeCEMS (i.e final course grade).
+ - Map color to course subject.
+ - Set the alpha (transparency) to 0.5.   
+
+```{r}
+ggplot(data = sci_classes, mapping = aes(x = TimeSpent_hours, y = FinalGradeCEMS)) +
+  geom_point(alpha=0.5) +
+  geom_smooth(mapping = aes(color = subject), se = FALSE)
+```
+
+
+Use a bar chat to answer the question...
+
+**RQ1**: Do males outperform females in online STEM courses?
+
+```{r warning=FALSE, message=FALSE}
+data_viz <- data_to_explore %>%
+  select(subject, gender, proportion_earned) %>%  # reduced 
+  mutate(subject = recode(subject, 
+                          "AnPhA" = "Anatomy",
+                          "BioA" = "Biology", 
+                          "FrScA" = "Forensics", 
+                          "OcnA" =  "Oceanography", 
+                          "PhysA" = "Physics")) %>%
+  mutate(grade = proportion_earned * 100) %>%
+  # filter(!is.na(gender)) %>%
+  na.omit() %>% # removed all NAs instead of just those for gender
+  group_by(subject, gender) %>% # grouped by subject and gender
+  summarise(grade = mean(grade), 
+            sd = sd(grade))# calculated mean and sd for grade and saved as grade again  
+
+  ggplot(data_viz, aes(x = subject, y = grade, 
+                          fill = gender)) +
+  geom_bar(stat = "identity", 
+           position = position_dodge()) +
+  labs(title = "Do Males out-preform Females in online STEM courses?",
+       caption = "Online STEM course performance, why is there still a gender gap?",
+       y = "Average Grade",
+       x = "Online STEM Course")
+```
+
 
