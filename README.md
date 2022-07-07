@@ -1,4 +1,4 @@
-<img src="data/FLA_Primary.png" width="40%"/>
+<img src="foundation_lab_1/img/FLA_Primary.png" width="40%"/>
 
 
 # Foundational labs and code-along in STEM Education Research
