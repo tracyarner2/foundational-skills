@@ -212,6 +212,7 @@ of technology-based methods that can be applied to support learning and instruct
 <img src="img/fi_mooc.png" height="300px"/>
 ]
 ]
+]
 ???
 
 **Definition tab**
@@ -284,7 +285,7 @@ Data from MOOCs can take a closer look at how participants are interacting withi
 Have you ever pulled data from your own MOOC? or learning management system? 
 
 What types of insights were analyzed?
-]
+
 ---
 # Administrative Data
 
