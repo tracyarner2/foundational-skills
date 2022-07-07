@@ -1,3 +1,4 @@
+<img src="img/FLA_Primary.png" height="400px"/>
 
 # Foundational labs and code-along in STEM Education Research
 
