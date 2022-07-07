@@ -1,0 +1,338 @@
+---
+  title: "Foundation Lab 4 - Data Products"
+  author: "Jeanne McClure, Jennifer Houchins"
+  institute: "Instituttional Affiliation"
+  date: '`r format(Sys.time(), "%B %d, %Y")`'
+  output:
+    xaringan::moon_reader:
+      css:
+       - default
+       - css/laser.css
+       - css/laser-fonts.css
+      lib_dir: libs                        # creates directory for libraries
+      seal: false                          # false: custom title slide
+      nature:
+        highlightStyle: default         # highlighting syntax for code
+        highlightLines: true               # true: enables code line highlighting
+        highlightLanguage: ["r"]           # languages to highlight
+        countIncrementalSlides: false      # false: disables counting of incremental slides
+        ratio: "16:9"                      # 4:3 for standard size,16:9
+        slideNumberFormat: |
+         <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+         </div>
+---
+class: clear, title-slide, inverse, center, top, middle
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, echo=FALSE}
+# then load all the relevant packages
+pacman::p_load(pacman, knitr, tidyverse, here)
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+# these allow any code snippets to be copied to the clipboard so they 
+# can be pasted easily
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D\"></i>",
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+```
+```{r xaringan-extras, echo=FALSE}
+xaringanExtra::use_tile_view()
+
+```
+
+# `r rmarkdown::metadata$title`
+----
+### `r rmarkdown::metadata$author`
+### `r format(Sys.time(), "%B %d, %Y")`
+
+
+---
+# Recap from Learning Analytics Workflow
+
+--
+
+- Purpose of Visualizations
+
+--
+
+- Basic Principles of Visualizations
+
+--
+
+- ggplot2 grammar and visualizations
+
+
+???
+
+Again we finished our last session in the Explore phase of our LA Cycle. Using GGplot and its layers to create data visualizations.
+---
+
+# Agenda
+
+.pull-left[**Part-1  Conceptual Overview**
+- Storytelling
+- Publication-ready products
+]
+
+
+.pull_right[**Part-2  Code-Along**
+- Model
+- Communicate
+- RMarkdown File formats
+- Citation Manager in R
+- Journal Submission
+]
+
+.footnote[Pre-Reading:
+R for Data Science, (Ch. 21 & 23) by Hadley Wickham & Garrett Grolemund(https://slides.yihui.org/xaringan/zh-CN.html)
+
+]
+???
+In this presentation we are going to focus on communicating your data and findings effectively with education stakeholders. We'll also talk about how to create publication-ready products in R markdown. 
+
+For the code along, we will continue on in our Learning Analytics workflow to finish up with Model and Communication. Where we will be  converting R markdown files into a variety of formats and experiment a little bit with setting up a bibliography and formatting in-text citations. And if we have time you may have the opportunity to also experiment with the rticles package to tailor a publication or a document for a specific journal.
+
+So the pre-reading for this module was chapters 21 and 23 in the R for Data Science book by Hadley Wickham and Garrett Grolemund. Both of these chapters are a really great introduction to this module. The information is presented really clearly and succinctly, and each section of these chapters also has a number of small very manageable exercises that will enable you to practice some of these skills. And I think we may be incorporating a few of these exercises into the code-along, but I just want to reiterate that this is a really high quality resource. So, if you didn't have time to look at these chapters before today's session, I really recommend that you get this book and have it on your bookshelf to aid you as you continue to practice with data analytics in R.
+
+---
+
+
+class: clear, inverse, middle, center
+
+Part 1:
+
+----
+
+Learning Analytics Workflow: Conceptual Overview
+
+---
+
+
+# Communicating Effectively with Stakeholders
+
+.panelset[
+
+.panel[.panel-name[Data storytelling]
+
+.pull-left[
+“**Data storytelling** is a method of communicating information that pairs data with visualization and narrative tailored to a particular audience” (Anderson, 2020).
+]
+
+.pull-right[Education stakeholders
+- Administrators
+- Teachers
+- Other practitioners
+- Students & their families
+
+]
+]
+???
+
+First let's talk about communicating effectively with stakeholders. In the education setting you are going to have a variety of stakeholders that you're working with and for. If you have actively been engaging in research and scholarship, you're probably fairly comfortable at this juncture tailoring a message to fellow scholars. But oftentimes in the field of education we want to craft and explain our message for people who are not necessarily in academia–people like administrators, teachers, other types of practitioners, and of course, students and their families. 
+
+One of the most effective ways that we can communicate is by telling a story. We tend to remember stories and we find them relatable. So one of the things I want you to think about as you're going through this module, and as you are going through the code-along, and later as you try to carry these skills and this knowledge over to your own practice, is, How can I take what I'm working on or what I'm investigating and turn it into a story that will captivate and inform and perhaps persuade people? 
+
+I have linked this Anderson source at the end of this presentation, along with all the other sources that I've used to compile this presentation. But this quote from Anderson is a nice explanation of this concept of data storytelling. It says "data storytelling is a method of communicating information that pairs data with visualization and narrative tailored to a particular audience.” 
+
+There's a lot in this quote. First, is this idea that we're telling a story, and that the data is only effective insofar as it is helping us tell the story or craft the message. It should be informative and so as you get into the next module where you talk about data visualization, part of what you can be thinking about is, How can I effectively communicate this information and what is the story that I'm trying to tell with this visualization? And then the last piece that I think is really important is that your narrative is tailored to a particular audience. So your message, or the way that you communicate your message, is probably going to be different if you are conveying that message to, say, a school principal versus if you are conveying it to a group of parents of middle school students. So that's really important too. As you are crafting your presentation or your website page or your article or your white paper or your letter, be thinking about your audience and what they may know or not know, what their concerns are likely to be, what information they need to make informed decisions, what's important to them, and so on.
+
+.panel[.panel-name[more points]
+
+- Tell a story (characters, setting, conflict, resolution)
+- Use “signposts”
+- Explain the data and why it matters
+- Add graphs and visualizations (but not too much!) to enhance understanding
+- Make it possible to dig deeper
+
+]
+???
+
+I also just want to add that in the references at the end of the presentation there is a really nice blog post that I have linked from a site called Storytelling with Data. And the specific post is entitled “visualizing education”. It's a really nice example of ways in which different participants have crafted visualizations to tell a particular story related to education, and specifically many of these visualizations have to do with equity in education. So I really recommend that. 
+
+Okay so continuing in this theme of communicating effectively with stakeholders, we've already talked about the importance of telling a story. One of the other references that I've linked to at the end of this presentation is from the Harvard Business School online and this is a nice web page that talks about data storytelling as well. They elaborate a little bit on this concept of the story and actually talk about these elements of story that we typically think of more in the context of maybe journalism or creative writing. They emphasize the characters, the setting, the conflict, and the resolution. Your “characters” are your audience, who the message is being delivered to. “Setting” really refers to the context of the larger issue. So let's just say that maybe your research is about women and girls participating in STEM fields, and so part of your setting or context might be to say that there's been a significant increase in women’s and girls’ participation in STEM education programs but in the professional realm, especially in technical roles, there's still few women working in the field. That’s your “setting.” All right, so then there's the “conflict,” which they describe as the root issue. So this might be the specific research question you posed and investigated. The last element is the “resolution.” This part is particularly meaningful if your research has generated some clear dos or don'ts. Or perhaps if you're trying to influence policy. What does your research show and what is the solution or the resolution that you are recommending to your audience? For example, maybe continuing with that previous example of women in STEM fields, perhaps you have found that women who participate in internships in their last two years of undergraduate education are more likely to enter technology professions. So that would be kind of your “call to action” or resolution. 
+
+All right, so let's talk about some of these other points.  I have gleaned these recommendations from the Anderson, Ball, Cote, and Knaflic sources cited at the end of this presentation.  Some of these latter points really speak to what your product looks like, so I think this is a nice transition because in just a slide or two we're going to start talking about using R markdown to actually put some of these concepts into practice. 
+
+On the page from the data quality campaign, that’s the Ball citation, they talk about pointing audience members in the right direction. So I've rephrased that a little bit to say include signposts. And what I mean by that is that you're going to include elements in your final product–whether that's a presentation or a web page or a written document–you're going to include visual cues that help direct the reader or the viewer to the overall organization of the document as well as major concepts and points. You probably do this intuitively in many ways but what we're talking about here is using things like headers, bold text, perhaps different sizes or types of font, etc, to alert your audience to major points or transitions to new topics. This means that someone who's viewing your report can easily and quickly go to the relevant information that they're seeking. 
+
+The next point from the data quality campaign is to help your audience make sense of the data. So I think this is really important because I think sometimes data can be confusing to people. Having someone talk them through it is going to make it much more clear to them and help them understand and also make the topic more approachable. So take a moment, whether you're communicating your data in person or in written form, to explain the data that you're presenting. Don't just present it but also explain what it means and how someone might interpret for example your visualization. And then you also want to explain why it matters. So I'm sharing the data with you, this is what it's showing, and this is why it's important to this topic. 
+
+Well that's a nice segue to the next point, which is that we want to add graphs and visualizations to enhance understanding. Some people are going to be very drawn to the words and the text of your message whereas others are going to be drawn to the visualizations, so it's important to have a blend of both. And each should enhance the other. I think that's an important point, your graphs and your tables and your visualizations are not just there to look pretty, they're actually there to enhance and better convey the message. An additional point that was brought up on the Storytelling with Data website is also to just be careful about the number of visualizations you have, and the amount of information you have in general. Everything that is there should be serving a specific purpose, it should be absolutely necessary, and there really shouldn't be any more information than what is absolutely necessary. So kind of a “if the house was burning down what would you take” sort of mentality. This allows your audience to understand and process the major points of your report and makes it manageable for them to actually consume the information that you're giving them. 
+
+A really important caveat though is that you are going to also make a plan for and provide a method for enabling your audience members to dig deeper should they wish to. So that could be accomplished by maybe including links in your presentation or site, including an additional list of relevant readings, or even providing other opportunities to speak with you or hear presentations about the topics in greater depth. So ideally you want to provide opportunities for people to delve as deeply into the data as they wish to, but you also want to avoid the “fire hose”, and so for that initial presentation should include a digestible amount of information that clearly conveys your data story. 
+]
+
+---
+# Communicating Your Message with R Markdown
+
+.panelset[ 
+
+.panel[.panel-name[RMarkdown]
+
+.pull-left[
+**Supports many output formats**:
+- PDF
+- Html
+- Word
+- Slideshows…and more
+
+]
+
+.pull-right[
+**Designed for communicating with**:
+- Decision makers
+- Other data scientists
+- Future you
+
+
+]
+]
+???
+According to Wickam et al. "R Markdown provides a unified authoring framework for data science, combining your code, its results, and your prose commentary”p.423
+
+All right so we're going to step away from sort of the conceptual piece here and now talk about how you would actually accomplish some of these things in R markdown. So I started out here with a quote from Wickham and Grolemund from the R for Data Science book, it says “R markdown provides a unified authoring framework for data science, combining your code, its results, and your prose commentary.” So R markdown has some really nice features, and one of them is that you can use it to create reports in a variety of formats, including HTML, PDF, word, slideshows, websites, book formats, and more. And R markdown is designed for communicating with lots of different types of audience members, so it's really a good fit for communicating data to education stakeholders.
+
+.panel[.panel-name[Basics]
+
+- Plain text file with extension .Rmd
+- Code and its output appear together in the file/report*
+- Contains 3 types of content:
+  + Optional YAML header
+  + Chunks of R code
+  + Text with simple formatting text
+- “Knit” to produce a complete report
+
+]
+???
+As a reminder on the RMarkdown basics from Foundation lab 2 - 
+
+When you go into the R IDE, you will have different options for the type of file that you can open or create and R Markdown files are files with the extension.rmd. An R markdown file allows you to combine your code and the output of that code together in a single file or report. By default that your code and the code’s output are going to show up together in your report, however there are ways to adjust that. For example you can suppress the code, you can suppress the output, you can include things that you don't necessarily want to run every time, you can even set it so that the code is visible but only if your viewer clicks a button to sort of unfold or show that code. So there are some options there. 
+
+The R markdown file contains three basic types of content: your YAML header, your chunks of our code, and interspersed with these chunks of code you have your text with some simple formatting. When you are done composing your report you are then going to knit it, which will convert your report to the format you choose, using a package called Pandoc. When you knit the file, you'll have the opportunity to choose the format of your output and we’ll talk more about that in a bit.
+
+.panel[.panel-name[Yaml]
+
+.pull-left[
+- Controls “whole document” settings
+- Here, we’ll focus on just two types of settings:
+  + output:
+  + bibliography:
+]
+.pull-right[
+<img src="img/yaml.png" height="300px"/>
+]
+???
+ 
+
+
+]
+
+
+So let's talk about the yaml header first. YAML stands for yet another markdown language. The YAML header allows you to create settings that affect your whole document. And there are a number of settings and parameters that you can set in the YAML header but for today we're really just going to talk about two primary ones, output and bibliography, and then a brief mention for citation styles as well. So off to the right here I just have a quick example, and this is from the Wickham and Grolemund text, of a very brief YAML header. And you can see in this header there is a title for the file, the date of creation, and then it specifies how you would like this report to be knitted. So in this case, the final product of this report once we knit it is going to be an HTML document.
+]
+---
+
+
+class: clear, inverse, middle, center
+Part 2:
+
+----
+
+Code-Along
+
+---
+
+.panelset[
+
+.panel[.panel-name[MODEL]
+
+```{r echo = TRUE, eval=FALSE}
+# Add predictor variable for science
+lm(proportion_earned ~ time_spent_hours + int, 
+   data = data_to_explore)
+
+# save the model
+m1 <- lm(proportion_earned ~ time_spent_hours + int, data = data_to_explore)
+
+
+```
+
+
+
+]
+
+.panel[.panel-name[Mathematical]
+.center[
+<img src="img/apa_table.png" height="350px"/>
+]
+]
+
+.panel[.panel-name[COMMUNICATE]
+
+<img src="img/communicate.png" height="450px"/>
+]
+
+???
+The final(ish) step in our workflow/process is sharing the results of
+analysis with wider audience. Krumm et al.(2018) have outline the
+following 3-step process for communicating with education stakeholders
+what you have learned through analysis:
+
+1.  **Select**. Communicating what one has learned involves selecting
+    among those analyses that are most important and most useful to an
+    intended audience, as well as selecting a form for displaying that
+    information, such as a graph or table in static or interactive form,
+    i.e. a "data product."
+
+2.  **Polish**. After creating initial versions of data products,
+    research teams often spend time refining or polishing them, by
+    adding or editing titles, labels, and notations and by working with
+    colors and shapes to highlight key points.
+
+3.  **Narrate**. Writing a narrative to accompany the data products
+    involves, at a minimum, pairing a data product with its related
+    research question, describing how best to interpret the data
+    product, and explaining the ways in which the data product helps
+    answer the research question.
+
+]
+---
+class: inverse, clear, center
+
+## .font130[.center[**Thank you!**]]
+
+.left-col[
+.center[<img style="border-radius: 50%;" src="img/author1.jpeg" height="120px"/><br/>**First Author**<br/><mailto:author1@email.com>]
+]
+.center-col[
+.center[<img style="border-radius: 50%;" src="img/author2.jpeg" height="120px"/><br/>**Second Author**<br/><mailto:author2@email.com>]
+]
+.right-col[
+.center[<img style="border-radius: 50%;" src="img/author3.jpeg" height="120px"/><br/>**Third Author**<br/><mailto:author3@email.com>]
+]
+<br/><br/><br/><br/><br/>
+
+.pull-left-narrow[<br/>.center[<img style="border-radius: 50%;" src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png" height="100px"/> ]]
+
+.pull-right-wide[
+.left[.font70[
+This work was supported by countless cups of hot tea, cookies, and the RStats Xaringan community willingness to post of plethora of tutorials. But you may wish to thank your funding agency (e.g., the National Science Foundation) and put their logo on the left as shown here.
+]]
+]
+
+---
+<img src="img/team_2022.png" height="550px"/>

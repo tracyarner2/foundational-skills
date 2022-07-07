@@ -66,9 +66,13 @@ class: clear, title-slide, inverse, center, top, middle
 - Explore phase
 - `ggplot2` grammar
 - Scatter plot
+- Histogram
 ]
 
+.footnote[Pre-Readings
+[Data Visualization: A practical Introduction(Ch. 1 &amp; 3) by Kieren Healy](https://socviz.co/)
 
+[R for Data Science, (Ch. 3) by Hadley Wickham &amp; Garrett Grolemund](https://r4ds.had.co.nz/index.html)
 ]
 
 ---
@@ -400,9 +404,9 @@ ggplot(data_to_explore,
 #layer 2: +  geom function type
   geom_point() +
 #layer 4: add labels
-* xlab  labs(title="How Time Spent on Course LMS is Related to Points Earned in the Course",
+* labs(title="How Time Spent on Course LMS is Related to Points Earned in the Course",
 *      x="Time Spent (Hours)",
-*      y = "MProportion of Points Earned")
+*      y = "Proportion of Points Earned")
 ```
 ]
 .pull-right[
@@ -422,7 +426,7 @@ ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color =
 #layer 2: +  geom function type
   geom_point() +
 #layer 4: add labels
-    xlab  labs(title="How Time Spent on Course LMS is Related to Points Earned in the Course", 
+    labs(title="How Time Spent on Course LMS is Related to Points Earned in the Course", 
        x="Time Spent (Hours)",
        y = "Proportion of Points Earned")
 #layer 5: add facet wrap
@@ -515,7 +519,7 @@ data_to_explore %&gt;%
 # layer 3b: add color
   geom_histogram(bins = 30, fill = "red", colour = "black")+
 #layer 4: add Labels
-  labs(title="Time Spent on LMS histogram plot",x="Time Spent(hours)", y = "Density")+
+  labs(title="Time Spent on LMS histogram plot",x="Time Spent(hours)", y = "Count")+
   theme_classic()
 ```
 ]

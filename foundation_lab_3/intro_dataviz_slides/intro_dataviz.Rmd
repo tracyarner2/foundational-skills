@@ -87,9 +87,13 @@ xaringanExtra::use_tile_view()
 - Explore phase
 - `ggplot2` grammar
 - Scatter plot
+- Histogram
 ]
 
+.footnote[Pre-Readings
+[Data Visualization: A practical Introduction(Ch. 1 & 3) by Kieren Healy](https://socviz.co/)
 
+[R for Data Science, (Ch. 3) by Hadley Wickham & Garrett Grolemund](https://r4ds.had.co.nz/index.html)
 ]
 
 ---
