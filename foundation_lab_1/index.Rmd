@@ -303,13 +303,6 @@ What types of insights were analyzed?
 <img src="img/Admin_LA.png" height="300px"/>
 ]
 ]
-???
-Administrative Data is the second type of data fueling data intensive research.
-Used in Schools, at district level and throughout most states.
-
-There are two main types 
-- Student Information System or SIS
-- Statewide longitudinal data systems
 
 .panel[.panel-name[SIS]
 
@@ -324,11 +317,6 @@ There are two main types
 <img src="img/powerschool.png" height="300px"/>
 ]
 ]
-???
-**Student information systems**
-Can be at the Student level or Teacher and Administrator level of student demographic and learning-outcome data.
-
-- A ready source of data on educational outcomes (e.g., grades) and demographic information, which can play a role in evaluations of technology-based interventions as well as early warning system research 
 
 
 .panel[.panel-name[SLDS]
@@ -343,7 +331,32 @@ Can be at the Student level or Teacher and Administrator level of student demogr
 <img src="img/slds.png" height="300px"/>
 ]
 ]
+
 ???
+
+**Definition-tab**
+
+Administrative Data is the second type of data fueling data intensive research.
+Used in Schools, at district level and throughout most states.
+
+There are two main types 
+- Student Information System or SIS
+- Statewide longitudinal data systems
+
+
+
+
+**Student information systems - tab**
+
+Can be at the Student level or Teacher and Administrator level of student demographic and learning-outcome data.
+
+- A ready source of data on educational outcomes (e.g., grades) and demographic information, which can play a role in evaluations of technology-based interventions as well as early warning system research 
+
+
+
+**statewide longitudinal data systems - tab**
+
+
 **statewide longitudinal data systems** are a continuum of data that includes standardized test performances, attendance, and major behavioral infractions.
 
 
@@ -384,10 +397,7 @@ https://childandfamilypolicy.duke.edu/north-carolina-education-research-data/
 - Video recordings using machine learning and artificial intelligence techniques.
 ]
 ]
-???
-How many of you have an apple watch, or a fitbit or Samsung? These watches measure different metrics surrounding our health and fitness. The data can then be used to explain or predict our **health**
 
-Senors and video recordings collect data by capturing biometric data, parse audio and from video recordings using machine learning and artificial intelligence techniques.
 
 .panel[.panel-name[Multimodal]
 
@@ -400,6 +410,19 @@ Senors and video recordings collect data by capturing biometric data, parse audi
 
 ]
 ???
+
+**sensor and recording tab**
+
+How many of you have an apple watch, or a fitbit or Samsung? These watches measure different metrics surrounding our health and fitness. The data can then be used to explain or predict our **health**
+
+Senors and video recordings collect data by capturing biometric data, parse audio and from video recordings using machine learning and artificial intelligence techniques.
+
+
+
+
+
+**Multimodal-tab**
+
 Krumm et al. suggest that multimodal  investigation identify multiple affective and engagement-related states, detect facial expressions and use audio, and video, for speech recognition and speech prosody.
 
 - Understanding  what  learners  do  as  they  engage  in  learning  tasks  can  drive  digital  learning  environment adaptations.
@@ -419,8 +442,47 @@ Krumm et al. suggest that multimodal  investigation identify multiple affective 
 ]
 ]
 
+
+
+.panel[.panel-name[Structured]
+
+```{r round-block, echo=FALSE, warning=FALSE, message=FALSE}
+#show first 5 rows
+library(tidyverse)
+sci_course <- read_csv("data/sci-online-classes.csv")
+
+knitr::kable(head(sci_course), format = 'html')
+```
+
+]
+
+
+.panel[.panel-name[Unstructured]
+
+.center[
+<img src="img/unstructured.png" height="400px"/>
+]
+]
+
+.panel[.panel-name[Semi-Structured]
+
+.center[
+<img src="img/semi.png" height="400px"/>          
+]
+]
+
+
+
+.panel[.panel-name[Meta-Data]
+
+.center[
+<img src="img/meta_dat.png" height="300px"/>
+]
+
+]
 ???
 
+***TYPES-TAB**
 In data-intensive research we might acquire data from LMS, SIS or another source. Data maybe to big for a typical  database  software  tools  to  capture,  store,  manage,  and  analyze”
 
 Those data are similar but different because 
@@ -435,18 +497,8 @@ We identify four main types of data structures.
 
 
 
-.panel[.panel-name[Structured]
+**STRUCTURED - TAB**
 
-```{r round-block, echo=FALSE, warning=FALSE, message=FALSE}
-#show first 5 rows
-library(tidyverse)
-sci_course <- read_csv("data/sci-online-classes.csv")
-
-knitr::kable(head(sci_course), format = 'html')
-```
-
-]
-???
 Structured data is Quantitative in nature
 Here we see the rows and columns nice and tidy. 
 - data is tidy when each column is a variable, each row is an observation, and each cell is a single value.
@@ -460,13 +512,8 @@ Examples might include:
 
 Each field (variable) is discrete and can be accessed separately or jointly along with data from other fields (variables).
 
-.panel[.panel-name[Unstructured]
+**UNSTRUCTURED TAB**
 
-.center[
-<img src="img/unstructured.png" height="400px"/>
-]
-]
-???
 Unstructured data is Qualitative in nature
 and includes:
 - Non-Relational Data
@@ -475,14 +522,9 @@ and includes:
 Text Heavy relationships between nodes
 IE: Audio, video, dates SQL database
 
-.panel[.panel-name[Semi-Structured]
 
-.center[
-<img src="img/semi.png" height="400px"/>          
-]
-]
-???
 
+**SEMI-*STRUCTURED-TAB**
 Semi-structured data includes Qualitative 
 Triangular Data (uses surveys and interview answers)
 Semi-structured data is a form of structured data that does not conform with the formal structure of data models associated with relational databases or other forms of data tables.
@@ -492,14 +534,11 @@ Semi structured can also include log data.
 It is a self-describing structure that contains tags
 examples: Social media, JSON and XML, Social Networkdata
 
-.panel[.panel-name[Meta-Data]
 
-.center[
-<img src="img/meta_dat.png" height="300px"/>
-]
 
-]
-???
+
+**META-DATA - TAB**
+
 Not in the readings but something to think about is Meta-data collection, such as the field dates, times and locations of photos, videos and other structured data about data.
  - contexts and purposes for why the data was collected
  
@@ -557,19 +596,6 @@ library(readr) #<<
 
 ```
 ]
-???
-
-In order to read in data we must load packages that allow us to read data in, like we did in foundation lab 1. 
-
-Although there are read-in capabilities with the `utils package` in base r, we are going to use a more modern approach.
-
-One of the packages in Tidyverse allows for reading in Comma delimiter files, or CSV. 
-
-
-*Reminder if needed - this was discussed in foundation 1*
-R comes with several packages in base r when you start a session. Packages are a collection of objects, data sets around a theme or purpose. You may find a package whose objects are for the purpose of correlation, like in the cor package. Or you may find a package that has objects to produce better tables, like in the *kable extra* package. Or you may find a package that will help wrangling the data (processing it) easier than in Base R package. That is the package we are going to install here Tidyverse.
-
-Tidyverse is a suite of packages that share a common philosophy and are designed to work together. Think Google products or Microsoft products. data importing, data wrangling and plotting.
 
 .panel[.panel-name[functions]
 Common readr functions
@@ -577,21 +603,7 @@ Common readr functions
 <img src="img/readr_function.png" height="300px"/>
 
 ]
-???
 
-Common functions that are included when you read in data are 
-1. the file, we need to give a path to get the data. It should be in the working directory.
-
-2. column names corresponds to variables on the first row. The first row of the input will be used as the column names, and will not be included in the data frame. If FALSE, column names will be generated automatically: X1, X2, X3 etc.
-
-3. NA corresponds to missing values. commonly you will see capital NA but you may also see quotations or only a period depending on the original database (excel, SAS, STATA etc).
-
-4. Skip functions allows you to skill to when your data starts. 
-
-5. col_types is not typically needed but good to know. R guesses what type of column types you have when it reads in the file using the default guess_max.
-This is convenient (and fast), but not robust. If the imputation fails, you'll need to increase the guess_max or supply the correct types yourself.
-
-6. guess_max if the imputation fails increase the number beyond the 1000 default to guess col_types correctly.
 
 .panel[.panel-name[readr]
 # Using the readr function
@@ -613,11 +625,7 @@ head(online_classes, n=5)
 <img src="img/delimiter.png" height="300px"/>
 ]
 ]
-???
-readr is a quick way to read in comma-separated values (CSV) and tab-separated values (TSV)
 
-- We read in from the path. My data is stored in a folder called data. I then use the assignment operator to save it as a new object called online-classes. 
-- (instructor is showing how to import from file) a quick way to see where your data file is stored is by clicking on the file under files and then import. 
 
 
 .panel[.panel-name[readxl]
@@ -632,8 +640,6 @@ head(csss_tweets, n = 5)
 ```
 ]
 
-???
-To read in an excel file we will need to install the readxl package and then read in with the read_excel function. We can see that it is an excel file with the .xlsx extension.
 
 .panel[.panel-name[functions]
 
@@ -650,11 +656,71 @@ head(csss_tweets, n = 5)
 
 ]
 ???
+
+**PACKAGES-TAB**
+
+In order to read in data we must load packages that allow us to read data in, like we did in foundation lab 1. 
+Although there are read-in capabilities with the `utils package` in base r, we are going to use a more modern approach.
+One of the packages in Tidyverse allows for reading in Comma delimiter files, or CSV. 
+
+
+*Reminder if needed - this was discussed in foundation 1*
+R comes with several packages in base r when you start a session. Packages are a collection of objects, data sets around a theme or purpose. You may find a package whose objects are for the purpose of correlation, like in the cor package. Or you may find a package that has objects to produce better tables, like in the *kable extra* package. Or you may find a package that will help wrangling the data (processing it) easier than in Base R package. That is the package we are going to install here Tidyverse.
+
+Tidyverse is a suite of packages that share a common philosophy and are designed to work together. Think Google products or Microsoft products. data importing, data wrangling and plotting.
+
+
+
+
+**FUNCTIONS-TAB**
+
+Common functions that are included when you read in data are 
+1. the file, we need to give a path to get the data. It should be in the working directory.
+
+2. column names corresponds to variables on the first row. The first row of the input will be used as the column names, and will not be included in the data frame. If FALSE, column names will be generated automatically: X1, X2, X3 etc.
+
+3. NA corresponds to missing values. commonly you will see capital NA but you may also see quotations or only a period depending on the original database (excel, SAS, STATA etc).
+
+4. Skip functions allows you to skill to when your data starts. 
+
+5. col_types is not typically needed but good to know. R guesses what type of column types you have when it reads in the file using the default guess_max.
+This is convenient (and fast), but not robust. If the imputation fails, you'll need to increase the guess_max or supply the correct types yourself.
+
+6. guess_max if the imputation fails increase the number beyond the 1000 default to guess col_types correctly.
+
+
+
+
+
+**READR-TAB**
+readr is a quick way to read in comma-separated values (CSV) and tab-separated values (TSV)
+
+- We read in from the path. My data is stored in a folder called data. I then use the assignment operator to save it as a new object called online-classes. 
+- (instructor is showing how to import from file) a quick way to see where your data file is stored is by clicking on the file under files and then import. 
+
+
+
+
+
+
+
+**readxl- TAB**
+To read in an excel file we will need to install the readxl package and then read in with the read_excel function. We can see that it is an excel file with the .xlsx extension.
+
+
+
+
+
+
+**FUNCTIONS-TAB**
+
 You can check what sheets are included in your excel file by calling it with the excel_sheets function. 
 Then you can call only that sheet. Our data only includes one sheet so we do not really need to use this function, but it's good to know.
 ]
 ---
 # Read in data cont.
+
+
 .panelset[
 
 .panel[.panel-name[path]
@@ -667,10 +733,7 @@ sci_ol_classes <- read_csv("C:/Users/User/Documents/RProj22/foundation_labs_2022
 
 
 ]
-???
 
-You can read in from your computers path. If you aren't sure you go to the file and hold down Shift on your keyboard and right-click on the file.
-You would need to change the direction of the slashes so that R can read it in.
 
 .panel[.panel-name[url]
 
@@ -683,9 +746,6 @@ head(air_quality, n=3)
 
 
 ]
-???
-
-If you want to read in a url you use the read_csv2 function. 
 
 .panel[.panel-name[.dta file]
 
@@ -700,31 +760,29 @@ gpa_dt <- read_dta("data/GPA3.dta") #<<
 ]
 
 ]
+???
+**PATH-tab**
+You can read in from your computers path. If you aren't sure you go to the file and hold down Shift on your keyboard and right-click on the file.
+You would need to change the direction of the slashes so that R can read it in.
 
+
+
+
+**URL-tab**
+If you want to read in a url you use the read_csv2 function.
+
+
+
+
+**.dta-TAB**
+You may want to read in a SAS, SPSS or Stata file. To do this we would use the Haven package. https://haven.tidyverse.org/
 
 ---
 
 class: inverse, clear, center
 
-## .font130[.center[**Thank you!**]]
+## .font130[.center[**Thank you! Any questions?**]]
 
-.left-col[
-.center[<img style="border-radius: 50%;" src="img/author1.jpeg" height="120px"/><br/>**First Author**<br/><mailto:author1@email.com>]
-]
-.center-col[
-.center[<img style="border-radius: 50%;" src="img/author2.jpeg" height="120px"/><br/>**Second Author**<br/><mailto:author2@email.com>]
-]
-.right-col[
-.center[<img style="border-radius: 50%;" src="img/author3.jpeg" height="120px"/><br/>**Third Author**<br/><mailto:author3@email.com>]
-]
-<br/><br/><br/><br/><br/>
 
-.pull-left-narrow[<br/>.center[<img style="border-radius: 50%;" src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png" height="100px"/> ]]
-
-.pull-right-wide[
-.left[.font70[
-This work was supported by countless cups of hot tea, cookies, and the RStats Xaringan community willingness to post of plethora of tutorials. But you may wish to thank your funding agency (e.g., the National Science Foundation) and put their logo on the left as shown here.
-]]
-]
 ---
 <img src="img/team_2022.png" height="550px"/>
