@@ -1,5 +1,5 @@
 ---
-title: "Foundation lab 4 Code-along"
+title: "Foundation lab 3 Explore Code-along"
 author: "Jeanne McClure"
 date: "`r Sys.Date()`"
 output: html_document
@@ -194,19 +194,22 @@ data_to_explore%>%
 ## Putting it all together
 
 Make a scatterplot using the sci_classes data to examine the relationship between 
+ - read in `sci-online-classes` save as a new object `sci_classes`
  - TimeSpent_hours (i.e. hours spent online by studnets)
  - and FinalGradeCEMS (i.e final course grade).
  - Map color to course subject.
  - Set the alpha (transparency) to 0.5.   
 
 ```{r}
+sci_classes <- read_csv("~/RProj22/foundation_labs_2022/foundation_lab_3/data/sci-online-classes.csv")
+
 ggplot(data = sci_classes, mapping = aes(x = TimeSpent_hours, y = FinalGradeCEMS)) +
   geom_point(alpha=0.5) +
   geom_smooth(mapping = aes(color = subject), se = FALSE)
 ```
 
 
-Use a bar chat to answer the question...
+Use a bar chart to answer the question...
 
 **RQ1**: Do males outperform females in online STEM courses?
 

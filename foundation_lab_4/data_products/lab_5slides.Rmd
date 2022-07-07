@@ -60,8 +60,17 @@ xaringanExtra::use_tile_view()
 ### `r format(Sys.time(), "%B %d, %Y")`
 
 ---
+# Recap from Learning Analytics Workflow
 
-<img src="img/team_2022.png" height="550px"/>
+--
+
+- Learning Analytics workflow
+
+--
+
+- Characteristics of Data (Format)
+
+
 
 ---
 # Agenda
@@ -235,3 +244,6 @@ class: inverse, clear, center
 This work was supported by countless cups of hot tea, cookies, and the RStats Xaringan community willingness to post of plethora of tutorials. But you may wish to thank your funding agency (e.g., the National Science Foundation) and put their logo on the left as shown here.
 ]]
 ]
+
+---
+<img src="img/team_2022.png" height="550px"/>
