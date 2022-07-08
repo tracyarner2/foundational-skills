@@ -346,7 +346,7 @@ _Must install LaTeX package first_
   + HTML presentation
 [`xarnigan_presentation`](https://laser-institute.github.io/foundational-skills/foundation_lab_1/index.html#1)
   + PDF presentation with LaTeX Beamer
-[`beamer_presentation`](https://bookdown.org/yihui/rmarkdown/beamer-presentation.html)
+[`beamer_presentation`](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_4/final_pdf.pdf)
 ]
 
 .pull-right[
