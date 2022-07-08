@@ -104,7 +104,7 @@ R for Data Science, (Ch. 21 & 23) by Hadley Wickham & Garrett Grolemund(https://
 ???
 In this presentation we are going to focus on communicating your data and findings effectively with education stakeholders. We'll also talk about how to create publication-ready products in R markdown. 
 
-For the code along, we will continue on in our Learning Analytics workflow to finish up with Model and Communication. Where we will be  converting R markdown files into a variety of formats and experiment a little bit with setting up a bibliography and formatting in-text citations. And if we have time you may have the opportunity to also experiment with the rticles package to tailor a publication or a document for a specific journal.
+For the code along, we will continue on in our Learning Analytics workflow to finish up with Model and Communication. Where we will be  converting R markdown files into a variety of formats and experiment a little bit with setting up a bibliography and formatting in-text citations. And if we have time you may have the opportunity to also experiment with the `rticles package` to tailor a publication or a document for a specific journal.
 
 So the pre-reading for this module was chapters 21 and 23 in the R for Data Science book by Hadley Wickham and Garrett Grolemund. Both of these chapters are a really great introduction to this module. The information is presented really clearly and succinctly, and each section of these chapters also has a number of small very manageable exercises that will enable you to practice some of these skills. And I think we may be incorporating a few of these exercises into the code-along, but I just want to reiterate that this is a really high quality resource. So, if you didn't have time to look at these chapters before today's session, I really recommend that you get this book and have it on your bookshelf to aid you as you continue to practice with data analytics in R.
 
@@ -140,15 +140,8 @@ Learning Analytics Workflow: Conceptual Overview
 
 ]
 ]
-???
 
-First let's talk about communicating effectively with stakeholders. In the education setting you are going to have a variety of stakeholders that you're working with and for. If you have actively been engaging in research and scholarship, you're probably fairly comfortable at this juncture tailoring a message to fellow scholars. But oftentimes in the field of education we want to craft and explain our message for people who are not necessarily in academia–people like administrators, teachers, other types of practitioners, and of course, students and their families. 
 
-One of the most effective ways that we can communicate is by telling a story. We tend to remember stories and we find them relatable. So one of the things I want you to think about as you're going through this module, and as you are going through the code-along, and later as you try to carry these skills and this knowledge over to your own practice, is, How can I take what I'm working on or what I'm investigating and turn it into a story that will captivate and inform and perhaps persuade people? 
-
-I have linked this Anderson source at the end of this presentation, along with all the other sources that I've used to compile this presentation. But this quote from Anderson is a nice explanation of this concept of data storytelling. It says "data storytelling is a method of communicating information that pairs data with visualization and narrative tailored to a particular audience.” 
-
-There's a lot in this quote. First, is this idea that we're telling a story, and that the data is only effective insofar as it is helping us tell the story or craft the message. It should be informative and so as you get into the next module where you talk about data visualization, part of what you can be thinking about is, How can I effectively communicate this information and what is the story that I'm trying to tell with this visualization? And then the last piece that I think is really important is that your narrative is tailored to a particular audience. So your message, or the way that you communicate your message, is probably going to be different if you are conveying that message to, say, a school principal versus if you are conveying it to a group of parents of middle school students. So that's really important too. As you are crafting your presentation or your website page or your article or your white paper or your letter, be thinking about your audience and what they may know or not know, what their concerns are likely to be, what information they need to make informed decisions, what's important to them, and so on.
 
 .panel[.panel-name[more points]
 
@@ -159,13 +152,29 @@ There's a lot in this quote. First, is this idea that we're telling a story, and
 - Make it possible to dig deeper
 
 ]
+]
 ???
+**STORYTELLING TAB**
+
+First let's talk about communicating effectively with stakeholders. In the education setting you are going to have a variety of stakeholders that you're working with and for. If you have actively been engaging in research and scholarship, you're probably fairly comfortable at this juncture tailoring a message to fellow scholars. But oftentimes in the field of education we want to craft and explain our message for people who are not necessarily  academia - like - people such as; administrators, teachers, other types of practitioners, and of course, students and their families. 
+
+One of the most effective ways that we can communicate is by telling a story. We tend to remember stories and we find them relatable. So one of the things I want you to think about as you're going through this module, and as you are going through the code-along, and later as you try to carry these skills and this knowledge over to your own practice, is, How can I take what I'm working on or what I'm investigating and turn it into a story that will captivate and inform and perhaps persuade people? 
+
+I have linked this Anderson source at the end of this presentation, along with all the other sources that I've used to compile this presentation. But this quote from Anderson is a nice explanation of this concept of data storytelling. It says "data storytelling is a method of communicating information that pairs data with visualization and narrative tailored to a particular audience.” 
+
+There's a lot in this quote. First, is this idea that we're telling a story, and that the data is only effective insofar as it is helping us tell the story or craft the message. It should be informative and so as you get into the next module where you talk about data visualization, part of what you can be thinking about is, How can I effectively communicate this information and what is the story that I'm trying to tell with this visualization? And then the last piece that I think is really important is that your narrative is tailored to a particular audience. So your message, or the way that you communicate your message, is probably going to be different if you are conveying that message to, say, a school principal versus if you are conveying it to a group of parents of middle school students. So that's really important too. As you are crafting your presentation or your website page or your article or your white paper or your letter, be thinking about your audience and what they may know or not know, what their concerns are likely to be, what information they need to make informed decisions, what's important to them, and so on.
+
+
+
+
+
+**MORE POINTS TAB**
 
 I also just want to add that in the references at the end of the presentation there is a really nice blog post that I have linked from a site called Storytelling with Data. And the specific post is entitled “visualizing education”. It's a really nice example of ways in which different participants have crafted visualizations to tell a particular story related to education, and specifically many of these visualizations have to do with equity in education. So I really recommend that. 
 
 Okay so continuing in this theme of communicating effectively with stakeholders, we've already talked about the importance of telling a story. One of the other references that I've linked to at the end of this presentation is from the Harvard Business School online and this is a nice web page that talks about data storytelling as well. They elaborate a little bit on this concept of the story and actually talk about these elements of story that we typically think of more in the context of maybe journalism or creative writing. They emphasize the characters, the setting, the conflict, and the resolution. Your “characters” are your audience, who the message is being delivered to. “Setting” really refers to the context of the larger issue. So let's just say that maybe your research is about women and girls participating in STEM fields, and so part of your setting or context might be to say that there's been a significant increase in women’s and girls’ participation in STEM education programs but in the professional realm, especially in technical roles, there's still few women working in the field. That’s your “setting.” All right, so then there's the “conflict,” which they describe as the root issue. So this might be the specific research question you posed and investigated. The last element is the “resolution.” This part is particularly meaningful if your research has generated some clear dos or don'ts. Or perhaps if you're trying to influence policy. What does your research show and what is the solution or the resolution that you are recommending to your audience? For example, maybe continuing with that previous example of women in STEM fields, perhaps you have found that women who participate in internships in their last two years of undergraduate education are more likely to enter technology professions. So that would be kind of your “call to action” or resolution. 
 
-All right, so let's talk about some of these other points.  I have gleaned these recommendations from the Anderson, Ball, Cote, and Knaflic sources cited at the end of this presentation.  Some of these latter points really speak to what your product looks like, so I think this is a nice transition because in just a slide or two we're going to start talking about using R markdown to actually put some of these concepts into practice. 
+Let's talk about some of these other points.  I have gleaned these recommendations from the Anderson, Ball, Cote, and Knaflic sources cited at the end of this presentation.  Some of these latter points really speak to what your product looks like, so I think this is a nice transition because in just a slide or two we're going to start talking about using R markdown to actually put some of these concepts into practice. 
 
 On the page from the data quality campaign, that’s the Ball citation, they talk about pointing audience members in the right direction. So I've rephrased that a little bit to say include signposts. And what I mean by that is that you're going to include elements in your final product–whether that's a presentation or a web page or a written document–you're going to include visual cues that help direct the reader or the viewer to the overall organization of the document as well as major concepts and points. You probably do this intuitively in many ways but what we're talking about here is using things like headers, bold text, perhaps different sizes or types of font, etc, to alert your audience to major points or transitions to new topics. This means that someone who's viewing your report can easily and quickly go to the relevant information that they're seeking. 
 
@@ -174,7 +183,7 @@ The next point from the data quality campaign is to help your audience make sens
 Well that's a nice segue to the next point, which is that we want to add graphs and visualizations to enhance understanding. Some people are going to be very drawn to the words and the text of your message whereas others are going to be drawn to the visualizations, so it's important to have a blend of both. And each should enhance the other. I think that's an important point, your graphs and your tables and your visualizations are not just there to look pretty, they're actually there to enhance and better convey the message. An additional point that was brought up on the Storytelling with Data website is also to just be careful about the number of visualizations you have, and the amount of information you have in general. Everything that is there should be serving a specific purpose, it should be absolutely necessary, and there really shouldn't be any more information than what is absolutely necessary. So kind of a “if the house was burning down what would you take” sort of mentality. This allows your audience to understand and process the major points of your report and makes it manageable for them to actually consume the information that you're giving them. 
 
 A really important caveat though is that you are going to also make a plan for and provide a method for enabling your audience members to dig deeper should they wish to. So that could be accomplished by maybe including links in your presentation or site, including an additional list of relevant readings, or even providing other opportunities to speak with you or hear presentations about the topics in greater depth. So ideally you want to provide opportunities for people to delve as deeply into the data as they wish to, but you also want to avoid the “fire hose”, and so for that initial presentation should include a digestible amount of information that clearly conveys your data story. 
-]
+
 
 ---
 # Communicating Your Message with R Markdown
@@ -201,10 +210,7 @@ A really important caveat though is that you are going to also make a plan for a
 
 ]
 ]
-???
-According to Wickam et al. "R Markdown provides a unified authoring framework for data science, combining your code, its results, and your prose commentary”p.423
 
-All right so we're going to step away from sort of the conceptual piece here and now talk about how you would actually accomplish some of these things in R markdown. So I started out here with a quote from Wickham and Grolemund from the R for Data Science book, it says “R markdown provides a unified authoring framework for data science, combining your code, its results, and your prose commentary.” So R markdown has some really nice features, and one of them is that you can use it to create reports in a variety of formats, including HTML, PDF, word, slideshows, websites, book formats, and more. And R markdown is designed for communicating with lots of different types of audience members, so it's really a good fit for communicating data to education stakeholders.
 
 .panel[.panel-name[Basics]
 
@@ -217,12 +223,6 @@ All right so we're going to step away from sort of the conceptual piece here and
 - “Knit” to produce a complete report
 
 ]
-???
-As a reminder on the RMarkdown basics from Foundation lab 2 - 
-
-When you go into the R IDE, you will have different options for the type of file that you can open or create and R Markdown files are files with the extension.rmd. An R markdown file allows you to combine your code and the output of that code together in a single file or report. By default that your code and the code’s output are going to show up together in your report, however there are ways to adjust that. For example you can suppress the code, you can suppress the output, you can include things that you don't necessarily want to run every time, you can even set it so that the code is visible but only if your viewer clicks a button to sort of unfold or show that code. So there are some options there. 
-
-The R markdown file contains three basic types of content: your YAML header, your chunks of our code, and interspersed with these chunks of code you have your text with some simple formatting. When you are done composing your report you are then going to knit it, which will convert your report to the format you choose, using a package called Pandoc. When you knit the file, you'll have the opportunity to choose the format of your output and we’ll talk more about that in a bit.
 
 .panel[.panel-name[Yaml]
 
@@ -235,15 +235,146 @@ The R markdown file contains three basic types of content: your YAML header, you
 .pull-right[
 <img src="img/yaml.png" height="300px"/>
 ]
-???
+
  
-
-
 ]
 
+
+.panel[.panel-name[Table]
+
+Default table formatting in R Markdown is same as what appears in console
+Add formatting with knitr::kable function
+For additional customization, see help within IDE (?knitr::kable).
+
+Additional packages allow for further customization:
+  + xtable
+  + stargazer
+  + pander
+  + tables
+  + asci
+]
+.panel[.panel-name[Format]
+
+  
+]
+]
+???
+
+**RMARKDOWN TAB**
+
+According to Wickam et al. "R Markdown provides a unified authoring framework for data science, combining your code, its results, and your prose commentary”p.423
+
+All right so we're going to step away from sort of the conceptual piece here and now talk about how you would actually accomplish some of these things in R markdown. So I started out here with a quote from Wickham and Grolemund from the R for Data Science book, it says “R markdown provides a unified authoring framework for data science, combining your code, its results, and your prose commentary.” So R markdown has some really nice features, and one of them is that you can use it to create reports in a variety of formats, including HTML, PDF, word, slideshows, websites, book formats, and more. And R markdown is designed for communicating with lots of different types of audience members, so it's really a good fit for communicating data to education stakeholders.
+
+
+
+
+
+
+
+**BASICS TAB**
+
+As a reminder on the RMarkdown basics from Foundation lab 2 - 
+
+When you go into the R IDE, you will have different options for the type of file that you can open or create and R Markdown files are files with the extension.rmd. An R markdown file allows you to combine your code and the output of that code together in a single file or report. By default that your code and the code’s output are going to show up together in your report, however there are ways to adjust that. For example you can suppress the code, you can suppress the output, you can include things that you don't necessarily want to run every time, you can even set it so that the code is visible but only if your viewer clicks a button to sort of unfold or show that code. So there are some options there. 
+
+The R markdown file contains three basic types of content: your YAML header, your chunks of our code, and interspersed with these chunks of code you have your text with some simple formatting. When you are done composing your report you are then going to knit it, which will convert your report to the format you choose, using a package called Pandoc. When you knit the file, you'll have the opportunity to choose the format of your output and we’ll talk more about that in a bit.
+
+
+
+
+
+
+
+
+**YAML: TAB**
 
 So let's talk about the yaml header first. YAML stands for yet another markdown language. The YAML header allows you to create settings that affect your whole document. And there are a number of settings and parameters that you can set in the YAML header but for today we're really just going to talk about two primary ones, output and bibliography, and then a brief mention for citation styles as well. So off to the right here I just have a quick example, and this is from the Wickham and Grolemund text, of a very brief YAML header. And you can see in this header there is a title for the file, the date of creation, and then it specifies how you would like this report to be knitted. So in this case, the final product of this report once we knit it is going to be an HTML document.
+
+
+
+
+
+
+**TABLE TAB**
+
+So when we are creating reports, or articles for journals, it's common to have tables to convey data concisely and in one place. R markdown’s basic format for tables looks pretty much identical to what is going to appear in the console, and this may not be the most visually appealing output. Luckily there are lots of different packages that can help you to create tables that are much more visually appealing and easier to read. So the formatting option that Wickham and Grolemunc recommend is to use the kable function which is part of the knitR package. And you can always learn more about that package in the IDE help function and I've just given you the command for that here. They also recommend several other packages that can help with even further customization of tables and I've listed these here on the slide.
+
+---
+#Formatting for your Audience
+
+.panelset[ 
+
+.panel[.panel-name[Format]
+- Two ways to set output of a document
+  + Permanently, by modifying the YAML header
+  + Transiently, by calling rmarkdown::render()
+  + Useful if you want to produce multiple types of output
+- When you knit, R will automatically put output in format listed in YAML header
+  + You can choose something different from the dropdown menu beside the knit button
 ]
+  
+.panel[.panel-name[Document]
+
+.left-column[
+<img src="img/output.png" height="400px"/>
+]
+
+.right-column[
+
+- Word: `word_document`
+- OpenDocument text: `odt_document`
+- Rich Text Format: `rtf_document`
+- Markdown: `md_document`
+- GitHub: `github_document`
+- PDF: `pdf_document`
+
+_Must install LaTeX package first_
+
+]
+
+]
+  
+.panel[.panel-name[Presentations]
+
+.pull-left[
+- Built in formats
+  + HTML presentation with ioslides
+`ioslides_presentation`
+  + HTML presentation with W3C Slidy
+`slidy_presentation`
+  + HTML presentation
+[`xarnigan_presentation`](https://laser-institute.github.io/foundational-skills/foundation_lab_1/index.html#1)
+  + PDF presentation with LaTeX Beamer
+[`beamer_presentation`](https://bookdown.org/yihui/rmarkdown/beamer-presentation.html)
+]
+
+.pull-right[
+- New slides begin at each first (#) or second (##)
+- A horizontal rule (***) used to create slide without a header
+
+
+]
+]
+
+]
+
+
+
+???
+
+**FORMAT TAB**
+
+Once you have completed your R markdown document and you are ready to share it with your audience, you want to decide how that output is going to appear. So remember that R markdown enables multiple different types of outputs, including everything from an HTML document, to a word document, to a PDF document, and more. There are two ways to set the output of your document. The first is by modifying the YAML header, and we talked about that earlier in the presentation, where you set the output in the YAML header to the type of output that you want. And on the next slide I've given you the code for those different types of outputs. You can also also set the output transiently by calling this function here:  rmarkdown::render() and that is useful if you want to produce multiple different types of output. 
+
+When you knit your file R will automatically produce the output of the format listed in the yaml header. But you can override this, by choosing a different option from the drop-down menu beside the knit button, so this is something that you'll practice doing in your code along today.
+
+
+
+**FORMAT DOCUMENTS TAB**
+Okay so here I've given you just some different options for how you can set the output to a variety of different document formats. And off to the left is an example of what that sort of piece of code would look like in your YAML header. So in this particular example the output is set to be an HTML document, But it's also going to produce a PDF document. So there's going to be two different types of outputs. The PDF document is going to be the default output. But if you use that drop-down menu to select an HTML document output it will do that and it will also include a table of contents, which is indicated by the TOC = true.
+
+
 ---
 
 

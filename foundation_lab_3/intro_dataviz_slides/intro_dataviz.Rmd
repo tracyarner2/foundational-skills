@@ -148,6 +148,8 @@ Healy, 2018 explains that knowing who you are creating the visualization for is 
 
 Knowing(who the stakeholders are) is just as important as tidying the data. Having an image for an audience of experts reading a professional journal is going to differ from having one to be interpreted by the public.
 
+We will talk more about this in lab 4 when we learn about R amrkdown output  formats.
+
 .panel[.panel-name[What?]
 
 .center[
@@ -180,11 +182,15 @@ Following (Tufte, 1983, p. 177)principles of having “more routine, workaday de
 -“use words, numbers, and drawing together,” 
 -“display an accessible complexity of detail” and “avoid content-free decoration, including chartjunk.
 
-Not so much on how it looks rather, how human visual perception works.
 
 Here we are showing a chart from the readings that Healy states is of bad taste 
 
+Not so much on how it looks rather, how human visual perception works.
+
+
 Another graph shows bad data. The top one is over inflated.
+
+Add what this data was about fro Healy
 
 .panel[.panel-name[Perception]
 
@@ -284,21 +290,19 @@ As highlighted in both
 [DSEIUR](https://datascienceineducation.com/c03.html#doing-analysis-exploring-visualizing-and-modeling-data)
 and Learning Analytics Goes to School, calculating summary statistics
 and data visualization are a key part of exploratory data analysis. One
-goal in this phase is explore questions that drove the original analysis
+goal in this phase is explore questions that drive the original analysis
 and develop new questions and hypotheses to test in later stages. 
 In this part we will:
 -   **Summarize Key Stats**. We'll learn about the {skmir} package for
     pulling together some quick creating descriptive statistics when
     your goal is to understand your data internally.
 
--   **Visualize Data**. We'll introduce the histogram geom for taking a
-    quick peak the distributions of some key variables and put together
-    some scatter plots for examining potential relationships between
-    time spent and student performance.
+-   **Visualize Data**. We'll introduce the scatter plots for examining potential relationships between time spent and student performance. Then we will look at histogram geom for taking a
+    quick peak at the distributions of some key variables.
     
     On the right,
     we see that the skimr package is used for creating descriptive statistics *when your goal
-is to understand your data internally* (rather than to create a tablefor an external-to-the-research-team audience, like for a journal article).
+is to understand your data internally* (rather than to create a table for an external-to-the-research-team audience, like for a journal article).
 
 -   Pass to the `skim()` function a single argument
 -   That single *argument* is the data frame (aka in tidyverse parlance,

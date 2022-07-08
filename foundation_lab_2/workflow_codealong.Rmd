@@ -50,11 +50,11 @@ Markdown](https://pandoc.org/MANUAL.html).
 
 ##### Headers
 
-    + # One
-    + ## Two
-    + ### Three
-    + #### Four
-    + ##### Five
+    + # Level One(largest)
+    + ## Level Two
+    + ### Level Three
+    + #### Level Four
+    + ##### Level Five(smallest)
 
 ##### Bullet points
 
@@ -153,8 +153,7 @@ glimpse(gradebook)
 
 The third data source is a self-report survey. This was data collected
 before the start of the course. The survey included ten items, each
-corresponding to one of three motivation measures: interest, utility
-value, and perceived competence. These were chosen for their alignment
+corresponding to one of three motivation measures: interest, utility value, and perceived competence. These were chosen for their alignment
 with one way to think about students' motivation, to what extent they
 expect to do well (corresponding to their perceived competence) and
 their value for what they are learning (corresponding to their interest
@@ -175,21 +174,26 @@ View(survey)
 # separate course_id variable in the time-spent
 
 ```{r}
-time_spent %>%
+time_spent %>%  
   separate(course_id,
            c("subject", "semester", "section"))
+
+
 ```
 
 ```{r}
-time_spent <- time_spent %>%
+time_spent_2 <- time_spent %>%
   separate(course_id,
            c("subject", "semester", "section"))
+
+time_spent_2
 ```
 
 ```{r}
 # mutate minutes to hours on time spent and save as new variable.
-time_spent <- time_spent %>% 
+time_spent_2 <- time_spent_2 %>% 
   mutate(time_spent_hours = time_spent / 60)
+time_spent_2
 ```
 
 ##### Data 2: GRADEBOOK
@@ -198,6 +202,8 @@ time_spent <- time_spent %>%
 # separate the course_id variable
 gradebook <- gradebook %>% 
   separate(course_id, c("subject", "semester", "section"))
+
+gradebook
 ```
 
 ```{r}
@@ -231,9 +237,10 @@ survey
 
 ```{r}
 # use single join to join data sets by student_id, subject, semester and section.
-joined_data <- full_join(gradebook, time_spent, 
+joined_data <- full_join(gradebook, time_spent_2, 
                          by = c("student_id", "subject", "semester", "section"))
 
+joined_data
 ```
 
 # join together the grade_book and log_wrangled
@@ -242,6 +249,13 @@ data_to_explore \<- full_join(joined_data, survey, by = c("student_id",
 "subject", "section"))
 
 #Inspect data data_to_explore
+
+```{r eval = FALSE}
+# add a join with joined data and survey
+
+
+```
+
 
 ```{r}
 #mutate to change variable class from double or numeric to character
@@ -261,29 +275,3 @@ data_to_explore
 write_csv(data_to_explore, "data/data_to_explore.csv")
 
 ```
-
-## Explore
-
-#### A. TABLE SUMMARY
-
-```{r}
-#install package if this is first time using skimr
-
-
-#load library
-library(skimr)
-
-#skim data
-skim(data_to_explore)
-
-```
-
-```{r}
-# using the `select()` and `filter()` functions. In the code chunk below,look at descriptive for just `proportion_earned` , `time_spent` and `gender`, but only for the "OcnA" and "PhysA" subjects.
-
-data_to_explore %>% 
-  select(c('subject', 'gender', 'proportion_earned', 'time_spent')) %>% 
-  filter(subject == "OcnA" | subject == "PhysA") %>%
-  skim()
-```
-

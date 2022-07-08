@@ -24,8 +24,7 @@ Read in survey data from the previous session
 ```{r}
 data_to_explore <- read_csv(here("data", "data_to_explore.csv"))
 
-# Choose a way to inspect your data with what ever function you wish
-view(data_to_explore)
+# Choose a way to inspect your datat with what ever function you wish
 ```
 
 
@@ -71,11 +70,11 @@ Basic graph
 
 ```{r}
 #layer 1: add data and aesthetics mapping 
-ggplot(data_to_explore,
+ggplot(data_to_explore, #<<
        aes(x = time_spent_hours, 
            y = proportion_earned)) +
 #layer 2: +  geom function type
-  geom_point() 
+  geom_point() #<<
 ```
 
 Add **Scale ** with different color for enrollment status.
@@ -86,7 +85,7 @@ Add **Scale ** with different color for enrollment status.
 ggplot(data_to_explore, 
        aes(x = time_spent_hours, 
            y = proportion_earned,
-           color = enrollment_status)) +
+           color = enrollment_status)) + #<<
 #layer 2: +  geom function type
   geom_point()
 ```
@@ -102,7 +101,7 @@ ggplot(data_to_explore,
            color = enrollment_status)) +
 #layer 2: +  geom function type
   geom_point() +
-#layer 4: add labels
+#layer 4: add lables
   labs(title="How Time Spent on Course LMS is Related to Points Earned in the Course", x="Time Spent (Hours)", y = "Proportion of Points Earned")
 ```
 
@@ -114,10 +113,10 @@ Add the **facet** layer
 ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color = enrollment_status)) +
 #layer 2: +  geom function type
   geom_point() +
-#layer 4: add labels
-    labs(title="How Time Spent on Course LMS is Related to Points Earned in the Course", 
+#layer 4: add lables
+    x_lab(title="How Time Spent on Course LMS is Related to Points Earned in the Course", 
        x="Time Spent (Hours)",
-       y = "Proportion of Points Earned")+
+       y = "Proportion of Points Earned")
 #layer 5: add facet wrap
   facet_wrap(~ subject) 
 ```
@@ -187,14 +186,14 @@ Create a histogram with density plot
 data_to_explore%>%
   ggplot(aes(x=time_spent_hours)) +
   geom_histogram(aes(y=..density..), colour="black", fill="white", bins = 10)+
- geom_density(alpha=.2, fill="#FF6666") +
+ geom_density(alpha=.2, fill="#FF6666") 
   labs(title="Time Spent on LMS histogram/density plot",x="Time Spent(hours)", y = "Density")+
   theme_classic()
 ```
 
 ## Putting it all together
 
-Make a scatterplot using the sci_classes data to examine the relationship between  time spent in hours and final grades.
+Make a scatterplot using the sci_classes data to examine the relationship between 
  - read in `sci-online-classes` save as a new object `sci_classes`
  - TimeSpent_hours (i.e. hours spent online by studnets)
  - and FinalGradeCEMS (i.e final course grade).
