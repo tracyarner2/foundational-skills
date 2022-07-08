@@ -1,8 +1,12 @@
 ---
-title: ''
+title: 'Laser Lab 4 - Final Workflow'
 author: "Jeanne McClure"
 date: "`r Sys.Date()`"
-output: pdf_document
+output:
+  pdf_document:
+    toc: true
+    number_sections: true
+    latex_engine: xelatex
 ---
 
 ```{r setup, include=FALSE}
@@ -25,6 +29,14 @@ Load Packages
 #Load necessary packages
 library(tidyverse)
 library(here)
+```
+
+```{r eval = FALSE}
+
+# install Latex - this may take a few minutes. After it is installed you do not need to keep it on your file. Doing this in a seperate script would be better.
+
+install.packages("tinytex")
+tinytex::install_tinytex()
 ```
 
 ## 2. Wrangle
@@ -265,8 +277,6 @@ apa.reg.table(m1, filename = "lm-table.doc")
 ```
 
 ## Communicate
-
-
 
 **RQ1**: Do males outperform females in online STEM courses?
 
