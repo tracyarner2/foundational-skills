@@ -40,10 +40,23 @@ data_to_explore <- read_csv(here("data", "data_to_explore.csv"))
 #load library
 library(skimr)
 
+```
+
+```{r}
+
 #skim data
 skim(data_to_explore)
 
 ```
+
+
+This output is best for internal use. This is
+because the output is rich, but not well-suited to exporting to a table
+that you add, for instance, to a Google Docs or Microsoft Word
+manuscript. Of course, these values can be entered manually into a
+table, but we'll also discuss ways later on to create tables that are
+ready--or nearly-ready--to be added directly to manuscripts
+
 
 ## B. TIDY to EXPLORE
 ```{r}
@@ -55,6 +68,9 @@ data_to_explore %>%
   skim()
 ```
 
+
+If you are curious about doing more with {skimr}, check out:
+[\<https://cran.r-project.org/web/packages/skimr/vignettes/skimr.html\>](https://cran.r-project.org/web/packages/skimr/vignettes/skimr.html){.uri}
 
 #### B. DATA VIZ
 
@@ -207,36 +223,4 @@ ggplot(data = sci_classes, mapping = aes(x = TimeSpent_hours, y = FinalGradeCEMS
   geom_point(alpha=0.5) +
   geom_smooth(mapping = aes(color = subject), se = FALSE)
 ```
-
-
-Use a bar chart to answer the question...
-
-**RQ1**: Do males outperform females in online STEM courses?
-
-```{r warning=FALSE, message=FALSE}
-data_viz <- data_to_explore %>%
-  select(subject, gender, proportion_earned) %>%  # reduced 
-  mutate(subject = recode(subject, 
-                          "AnPhA" = "Anatomy",
-                          "BioA" = "Biology", 
-                          "FrScA" = "Forensics", 
-                          "OcnA" =  "Oceanography", 
-                          "PhysA" = "Physics")) %>%
-  mutate(grade = proportion_earned * 100) %>%
-  # filter(!is.na(gender)) %>%
-  na.omit() %>% # removed all NAs instead of just those for gender
-  group_by(subject, gender) %>% # grouped by subject and gender
-  summarise(grade = mean(grade), 
-            sd = sd(grade))# calculated mean and sd for grade and saved as grade again  
-
-  ggplot(data_viz, aes(x = subject, y = grade, 
-                          fill = gender)) +
-  geom_bar(stat = "identity", 
-           position = position_dodge()) +
-  labs(title = "Do Males out-preform Females in online STEM courses?",
-       caption = "Online STEM course performance, why is there still a gender gap?",
-       y = "Average Grade",
-       x = "Online STEM Course")
-```
-
 

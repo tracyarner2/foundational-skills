@@ -1,5 +1,5 @@
 ---
-title: 'Laser Lab 4 - Final Workflow'
+title: 'Laser Lab 4 - pdf Final Workflow'
 author: "Jeanne McClure"
 date: "`r Sys.Date()`"
 output:
@@ -33,7 +33,7 @@ library(here)
 
 ```{r eval = FALSE}
 
-# install Latex - this may take a few minutes. After it is installed you do not need to keep it on your file. Doing this in a seperate script would be better.
+# install Latex - this may take a few minutes. After it is installed you do not need to keep it on your file. Doing this in a separate script would be better.
 
 install.packages("tinytex")
 tinytex::install_tinytex()
@@ -305,6 +305,14 @@ data_viz <- data_to_explore %>%
        y = "Average Grade",
        x = "Online STEM Course")
 ```
+
+1. **Purpose** -  
+
+2. **Methods** - 
+
+3. **Findings** - 
+
+4. **Discussion** - 
 
 
 
