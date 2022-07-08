@@ -125,7 +125,7 @@ On a quick recap from our data structures presentation we discussed the differen
 ]
 
 .footnote[Pre-Reading:
-[Learning Analytics Goes to School, (Ch. 2, pp. 41 - 34) By Andrew Krumm, Barbara Means, Marie Bienkowski]()
+[Learning Analytics Goes to School, (Ch. 2, pp. 41 - 34) By Andrew Krumm, Barbara Means, Marie Bienkowski](https://github.com/laser-institute/essential-readings/blob/main/foundation_labs/foundlab_1/krumm_2018.pdf)
 ]
 ---
 

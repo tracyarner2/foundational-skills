@@ -96,7 +96,7 @@ behind the open data movement is that anyone can access or use a data set, and k
 - view Data
 
 .footnote[Pre-Reading:
-[Learning Analytics Goes to School, (Ch. 2, pp 28 - 41 ) By Andrew Krumm, Barbara Means, Marie Bienkowski]()
+[Learning Analytics Goes to School, (Ch. 2, pp 28 - 41 ) By Andrew Krumm, Barbara Means, Marie Bienkowski](https://github.com/laser-institute/essential-readings/blob/main/foundation_labs/foundlab_1/krumm_2018.pdf)
 ]
 ]
 ???
