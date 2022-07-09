@@ -99,6 +99,7 @@ behind the open data movement is that anyone can access or use a data set, and k
 [Learning Analytics Goes to School, (Ch. 2, pp 28 - 41 ) By Andrew Krumm, Barbara Means, Marie Bienkowski](https://github.com/laser-institute/essential-readings/blob/main/foundation_labs/foundlab_1/krumm_2018.pdf)
 ]
 ]
+
 ???
 In this session for the conceptual overview we are going to learn more about the types and characteristics of data structures common in Learning Analytics. Many of these you will be familiar with and some may be new.
 
