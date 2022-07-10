@@ -1,13 +1,13 @@
 <img src="foundation_lab_1/img/FLA_Primary.png" width="40%"/>
 
-## Foundation of Learning Analytics for STEM Education Research
+### Foundation of Learning Analytics for STEM Education Research
 
 Foundation knowledge is the base knowledge of which new knowledge is built. Learning Analytics is the measurement, collection, analysis and reporting of data about learners and their contexts, for purposes of understanding and optimizing learning and the environments in which it occurs (Siemens, 2011).
 
 These foundation labs allow for the gentle introduction of conceptual understanding of foundation of learning analytics along with R programming basics for STEM Education Research. 
 
 
-### **Foundation lab 1** - Data Structures
+#### **Foundation lab 1** - Data Sources
 
 **Required Pre-Reading:**
 
@@ -23,12 +23,12 @@ Written by Jeanne McClure, Catherine Noonan, and Shaun Kellogg. Presented by Jea
 
 **Required Work:**
 
--  Make sure to complete the 1st primer: [R Basics](https://rstudio.cloud/learn/primers/1.2)
--  Complete the badge requirement document [foundationlab1_badge - Data Sources](https://github.com/laser-institute/foundational-skills/tree/master/foundation_lab_1/lab1_badge).
+- Make sure to complete the R Programming primers:  [Work with Data](https://rstudio.cloud/learn/primers/2))
+- Complete the Badge requirement document[Foundations badge - Data Sources](https://github.com/laser-institute/foundational-skills/tree/master/foundation_lab_1/lab1_badge).
 
 
 
-### **Foundation lab 2** - Learning Analytics Workflow
+#### **Foundation lab 2** - Learning Analytics Workflow
 
 
 **Required Pre-Reading:**
@@ -45,12 +45,11 @@ Written by Jeanne McClure, Catherine Noonan and Shaun Kellogg. Presented by Jean
 
 **Required Work:**
 
--  Make sure to complete the R Programming primer: [Work with Data](https://rstudio.cloud/learn/primers/2)).
+-  Make sure to complete the R Programming primers:  [Tidy your Data](https://rstudio.cloud/learn/primers/4)
+-  Complete the badge requirement document from your lab 2 folder [foudationlab2_badge - Data Sources](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_2/foundationlab2_badge.Rmd).
 
--  Complete the badge requirement document from your lab 2 folder [foundationlab2_badge - Data Sources](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_2/foundationlab2_badge.Rmd).
 
-
-### **Foundation-lab 3** - Data Visualization
+#### **Foundation-lab 3** - Data Visualization
 
 
 **Required Pre-Reading:**
@@ -77,7 +76,7 @@ Written by Jeanne McClure, and Shaun Kellogg. Presented by Jeanne McClure and Je
 -  Complete the badge requirement document from your lab 3 folder [foundationlab3_badge- Data Visualization](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_3/foundationlab3_badge.Rmd).
 
 
-### **Foundation-lab 4** - Data Products
+#### **Foundation-lab 4** - Data Products
 
 **Required Pre-Reading:**
 

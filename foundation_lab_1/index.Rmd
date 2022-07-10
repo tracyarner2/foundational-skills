@@ -786,8 +786,9 @@ class: inverse, clear, center
 <br/><br/><br/><br/><br/>
 
 .pull-left-wide[.left[.font100[
-- Make sure to complete the 1st primer: [R Basics](https://rstudio.cloud/learn/primers/1.2).
-- Complete the badge requirement document [Foundations badge - Data Sources](https://github.com/laser-institute/foundational-skills/tree/master/foundation_lab_1/lab1_badge).
+
+- Make sure to complete the R Programming primer:  [Work with Data](https://rstudio.cloud/learn/primers/2))
+- Complete the Badge requirement document[Foundations badge - Data Sources](https://github.com/laser-institute/foundational-skills/tree/master/foundation_lab_1/lab1_badge).
 ]]
 ]
 

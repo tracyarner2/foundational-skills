@@ -1,7 +1,7 @@
 <img src="img/wrkflo_badge.png" width="40%"/>
 
 
-**Foundation lab 2** - Learning Analytics Workflow
+### **Foundation lab 2** - Learning Analytics Workflow
 
 **Required Pre-Reading:**
 
@@ -16,5 +16,5 @@ Written by Jeanne McClure, Catherine Noonan and Shaun Kellogg. Presented by Jean
 
 **Required Work:**
 
--  Make sure to complete the R Programming primers: [Work with Data](https://rstudio.cloud/learn/primers/2)) & [Tidy your Data](https://rstudio.cloud/learn/primers/4)
+-  Make sure to complete the R Programming primers:  [Tidy your Data](https://rstudio.cloud/learn/primers/4)
 -  Complete the badge requirement document from your lab 2 folder [foudationlab2_badge - Data Sources](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_2/foundationlab2_badge.Rmd).

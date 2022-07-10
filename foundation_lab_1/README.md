@@ -1,6 +1,6 @@
 <img src="img/sources_badge.png" width="40%"/>
 
-## Foundation lab 1
+### **Foundation lab 1** - Data Sources
 
 **Required Pre-Reading:**
 
@@ -13,5 +13,5 @@ The code-along includes introduction of a script file and commonly used packages
 
 
 **Required Work:**
-  + Make sure to complete the 1st primer:[R Basics](https://rstudio.cloud/learn/primers/1.2)
-  + Complete the Badge requirement document[Foundations badge - Data Sources](https://github.com/laser-institute/foundational-skills/tree/master/foundation_lab_1/lab1_badge).
+- Make sure to complete the R Programming primers:  [Work with Data](https://rstudio.cloud/learn/primers/2))
+- Complete the Badge requirement document[Foundations badge - Data Sources](https://github.com/laser-institute/foundational-skills/tree/master/foundation_lab_1/lab1_badge).

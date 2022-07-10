@@ -721,9 +721,9 @@ class: inverse, clear, center
 <br/><br/><br/><br/><br/>
 
 .pull-left-wide[.left[.font100[
--  Make sure to complete the R Programming primer: [Work with Data](https://rstudio.cloud/learn/primers/2).
+-  Make sure to complete the R Programming primers:  [Tidy your Data](https://rstudio.cloud/learn/primers/4)
 
--  Complete the badge requirement document: [foudationlab2_badge - Data Sources](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_2/foundationlab2_badge.Rmd).
+-  Complete the badge requirement document from your lab 2 folder [foudationlab2_badge - Data Sources](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_2/foundationlab2_badge.Rmd).
 ]]
 ]
 
