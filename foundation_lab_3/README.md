@@ -6,10 +6,8 @@
 
 **Required Pre-Reading:**
 
-(Feel free to skim)
-1. [Data Visualization: A practical Introduction (CH. 1 & 3) by Kieren Healy](https://socviz.co/)
 
-
+1. [Data Visualization: A practical Introduction (CH. 1 & 3) by Kieren Healy](https://socviz.co/)(Feel free to skim)
 2. [R for Data Science. (CH. 3) by Hadley Wickham & Garrett Grolemund](https://r4ds.had.co.nz/index.html)
 
 
@@ -24,6 +22,5 @@ Written by Jeanne McClure, and Shaun Kellogg. Presented by Jeanne McClure and Je
 **Required Work:**
 
 -  Make sure to complete the R Programming primer: [Introduction to data visualization](https://rstudio.cloud/learn/primers/3))
-
 -  Complete the badge requirement document from your lab 3 folder [foundationlab3_badge- Data Visualization](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_3/foundationlab3_badge.Rmd).
 

@@ -6,7 +6,6 @@
 **Required Pre-Reading:**
 
 1. [Learning Analytics Goes to School, (Ch. 2, pp. 28 - 33) By Andrew Krumm, Barbara Means, Marie Bienkowski](https://github.com/laser-institute/essential-readings/blob/main/foundation_labs/foundlab_1/krumm_2018.pdf)
-
 2. [R for Data Science. (CH. 9) by Hadley Wickham & Garrett Grolemund](https://r4ds.had.co.nz/index.html)
 
 
@@ -17,5 +16,5 @@ Written by Jeanne McClure, Catherine Noonan and Shaun Kellogg. Presented by Jean
 
 **Required Work:**
 
--  Make sure to complete the R Programming primer: [Work with Data](https://rstudio.cloud/learn/primers/2))
+-  Make sure to complete the R Programming primers: [Work with Data](https://rstudio.cloud/learn/primers/2)) & [Tidy your Data](https://rstudio.cloud/learn/primers/4)
 -  Complete the badge requirement document from your lab 2 folder [foudationlab2_badge - Data Sources](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_2/foundationlab2_badge.Rmd).

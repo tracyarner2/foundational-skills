@@ -16,7 +16,6 @@ Written by Catherine Noonan, Jeanne McClure, and Shaun Kellogg. Presented by Jea
 **Required Work:**
 
 -  Make sure to complete the R Programming primer: [R Markdown](https://rmarkdown.rstudio.com/lesson-1.html?_ga=2.149737333.2122961316.1655817816-1599820931.1654624890)
-
 -  Complete the badge requirement document from your lab 4 folder [foudationlab4_badge - Data Products](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_4/foundationlab4_badge.Rmd).
 
 

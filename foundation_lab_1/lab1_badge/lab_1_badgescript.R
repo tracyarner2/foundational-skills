@@ -47,13 +47,11 @@
 
 # c. Examine the contents of sci_classes in your console.Is your object a tibble? How do you know? (Hint: Check the output in the console.) 
 
-# b.Subset the car object to only return the Car and Depreciation column.
+
 
 
 #### Write your code below:
-library(tidyverse)
-sci_classes <- read_csv("data/sci-online-classes.csv")
-is_tibble(sci_classes)
+
 
 
 
