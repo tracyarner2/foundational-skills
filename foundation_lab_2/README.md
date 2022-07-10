@@ -16,4 +16,4 @@ Written by Jeanne McClure, Catherine Noonan and Shaun Kellogg. Presented by Jean
 **Required Work:**
 
 -  Make sure to complete the R Programming primer: [Work with Data](https://rstudio.cloud/learn/primers/2))
--  Complete the badge requirement document [workflow badge - Data Sources](https://github.com/laser-institute/foundational-skills/tree/master/foundation_lab_1/lab1_badge).
+-  Complete the badge requirement document from your lab 2 folder [foudationlab2_badge - Data Sources](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_2/foundationlab2_badge.Rmd).
