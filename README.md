@@ -24,7 +24,7 @@ Written by Jeanne McClure, Catherine Noonan, and Shaun Kellogg. Presented by Jea
 **Required Work:**
 
 -  Make sure to complete the 1st primer: [R Basics](https://rstudio.cloud/learn/primers/1.2)
--  Complete the badge requirement document [Foundations badge - Data Sources](https://github.com/laser-institute/foundational-skills/tree/master/foundation_lab_1/lab1_badge).
+-  Complete the badge requirement document [foundationlab1_badge - Data Sources](https://github.com/laser-institute/foundational-skills/tree/master/foundation_lab_1/lab1_badge).
 
 
 
@@ -45,13 +45,24 @@ Written by Jeanne McClure, Catherine Noonan and Shaun Kellogg. Presented by Jean
 
 **Required Work:**
 
--  Make sure to complete the R Programming primer: [Work with Data](https://rstudio.cloud/learn/primers/2))
+-  Make sure to complete the R Programming primer: [Work with Data](https://rstudio.cloud/learn/primers/2)).
 
--  Complete the badge requirement document from your lab 2 folder [foudationlab2_badge - Data Sources](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_2/foundationlab2_badge.Rmd).
+-  Complete the badge requirement document from your lab 2 folder [foundationlab2_badge - Data Sources](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_2/foundationlab2_badge.Rmd).
 
 
 ### **Foundation-lab 3** - Data Visualization
 
+
+**Required Pre-Reading:**
+
+(Feel free to skim)
+1. [Data Visualization: A practical Introduction (CH. 1 & 3) by Kieren Healy](https://socviz.co/)
+
+
+2. [R for Data Science. (CH. 3) by Hadley Wickham & Garrett Grolemund](https://r4ds.had.co.nz/index.html)
+
+
+**Presentation and code-along:**
 The overview introduces and reviews some of the basic principles of data visualization as it relates to data graphics, including data visualization perception and color.
 
 The accompanying code-along takes a deep dive into the ggplot2 grammar in a simple-to-understand layering approach. We will look at a representation of numeric variables using some of the most popular geoms, histogram and scatter plot, and put it all together to answer a research question. 
@@ -59,9 +70,27 @@ At the end of this code-along participants will understand the "hows" of ggplots
 
 Written by Jeanne McClure, and Shaun Kellogg. Presented by Jeanne McClure and Jenn Houchins at the Learning Analytics in STEM Education Research (LASER) workshop, July 11, 2022, through July 15, 2022, at the Friday Institute, North Carolina State University.
 
+**Required Work:**
+
+-  Make sure to complete the R Programming primer: [Introduction to data visualization](https://rstudio.cloud/learn/primers/3))
+
+-  Complete the badge requirement document from your lab 3 folder [foundationlab3_badge- Data Visualization](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_3/foundationlab3_badge.Rmd).
+
+
 ### **Foundation-lab 4** - Data Products
+
+**Required Pre-Reading:**
+
+1 & 2. [R for Data Science. (CH. 22 & 23) by Hadley Wickham & Garrett Grolemund](https://r4ds.had.co.nz/index.html)
+
+**Presentation and code-along:**
 
 This presentation will cover the essentials of crafting a data product for different stakeholders. Concepts covered include: data storytelling, narrative elements, and methods for improving stakeholder understanding and facilitating resolution or call-to-action. The code-along will focus on using R Markdown to create reports in a variety of formats and will introduce formatting for bibliographies and in-text citations for scholarly publications.
 
 Written by Catherine Noonan, Jeanne McClure, and Shaun Kellogg. Presented by Jeanne McClure and Jenn Houchins at the Learning Analytics in STEM Education Research (LASER) workshop, July 11, 2022, through July 15, 2022, at the Friday Institute, North Carolina State University.
 
+**Required Work:**
+
+-  Make sure to complete the R Programming primer: [R Markdown](https://rmarkdown.rstudio.com/lesson-1.html?_ga=2.149737333.2122961316.1655817816-1599820931.1654624890)
+
+-  Complete the badge requirement document from your lab 4 folder [foudationlab4_badge - Data Products](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_4/foundationlab4_badge.Rmd).

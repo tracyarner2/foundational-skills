@@ -713,9 +713,22 @@ GREAT job on wrangling your data!
 
 
 ---
+
 class: inverse, clear, center
 
-## .font130[.center[**Thank you! Any Questions???**]]
+## .font130[.pull-left[**What's next?**]]
+
+<br/><br/><br/><br/><br/>
+
+.pull-left-wide[.left[.font100[
+-  Make sure to complete the R Programming primer: [Work with Data](https://rstudio.cloud/learn/primers/2).
+
+-  Complete the badge requirement document: [foudationlab2_badge - Data Sources](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_2/foundationlab2_badge.Rmd).
+]]
+]
+
+## .font175[.center[Thank you! Any questions?]]
+
 
 
 ---
