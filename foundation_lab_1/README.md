@@ -1,3 +1,5 @@
+<img src="img/sources_badge.png" width="40%"/>
+
 ## Foundation lab 1
 
 **Required Pre-Reading:**

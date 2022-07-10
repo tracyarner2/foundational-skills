@@ -1,3 +1,5 @@
+<img src="img/wrkflo_badge.png" width="40%"/>
+
 
 **Foundation lab 2** - Learning Analytics Workflow
 
