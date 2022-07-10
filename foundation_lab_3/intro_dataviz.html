@@ -99,20 +99,6 @@ Intro to Data Visualization: Conceptual Overview
 ]
 ]
 
-???
-
-Looking at data graphed visualization may be easy to understand but it can be messy.
-This visualization looks at Twitter sentiment of four popular Learning Management Systems. 
-
-Looking at the the frequency table on the left it is hard to get a good sense of the twitter sentiment for each LMS.
-
-In the the visualization on the right we can quickly see that it looks as though Blackboard had the most positive scores. However, when really diving in and reading the analysis you know that the Twitter counts for Blackboard were the lowest. So, this graph is very informative but requires you to look at all of the analysis for understanding.
-
-In "Data Science for Education," Estrellado et al. (2020) states," that while this relationship might seem intuitive, you can’t draw a definitive conclusion just from the visualization, because it doesn’t tell you whether the relationship between those variables is meaningful." In the proceeding session we will talk about modeling. 
-
-The authors explain that, while descriptive statistics and data visualization during the**Explore** step can help us to identify patterns and relationships in our data, statistical models can be used to help us determine if relationships, patterns and trends are actually meaningful.
-
-
 
 .panel[.panel-name[Who?]
 .center[
@@ -120,14 +106,6 @@ The authors explain that, while descriptive statistics and data visualization du
 ]
 ]
 
-
-???
-
-Healy, 2018 explains that knowing who you are creating the visualization for is as important as how it looks in an abstract. Taking large sets of data and having an idea of what sort of visual work is most effective to deliberately simplify things in a way that lets us see past a cloud of data points shown in a figure.
-
-Knowing(who the stakeholders are) is just as important as tidying the data. Having an image for an audience of experts reading a professional journal is going to differ from having one to be interpreted by the public.
-
-We will talk more about this in lab 4 when we learn about R amrkdown output  formats.
 
 .panel[.panel-name[What?]
 
@@ -139,6 +117,37 @@ We will talk more about this in lab 4 when we learn about R amrkdown output  for
 
 
 ]
+
+???
+**WHY TAB**
+
+Looking at data graphed visualization may be easy to understand but it can be messy.
+This visualization looks at Twitter sentiment of four popular Learning Management Systems. 
+
+Looking at the the frequency table on the left it is hard to get a good sense of the twitter sentiment for each LMS.
+
+In the the visualization on the right we can quickly see that it looks as though Blackboard had the most positive scores. However, when really diving in and reading the analysis you know that the Twitter counts for Blackboard were the lowest. So, this graph is very informative but requires you to look at all of the analysis for understanding.
+
+In "Data Science for Education," Estrellado et al. (2020) states," that while this relationship might seem intuitive, you can’t draw a definitive conclusion just from the visualization, because it doesn’t tell you whether the relationship between those variables is meaningful." In the proceeding session we will talk about modeling. 
+
+The authors explain that, while descriptive statistics and data visualization during the**Explore** step can help us to identify patterns
+
+and relationships in our data, statistical models can be used to help us determine if relationships, patterns and trends are actually meaningful.
+
+
+
+**WHO TAB**
+Healy, 2018 explains that knowing who you are creating the visualization for is as important as how it looks in an abstract. Taking large sets of data and having an idea of what sort of visual work is most effective to deliberately simplify things in a way that lets us see past a cloud of data points shown in a figure.
+
+Knowing(who the stakeholders are) is just as important as tidying the data. Having an image for an audience of experts reading a professional journal is going to differ from having one to be interpreted by the public.
+
+We will talk more about this in lab 4 when we learn about R amrkdown output  formats.
+
+
+
+**WHAT TAB**
+
+
 
 ---
 # Principles
@@ -153,49 +162,17 @@ We will talk more about this in lab 4 when we learn about R amrkdown output  for
 ]
 ]
 
-???
-Healy suggests we can often clean up the typeface, remove extraneous colors and backgrounds, and simplify, mute, or delete gridlines, superfluous axis marks, or needless keys and legends.
-
-Following (Tufte, 1983, p. 177)principles of having “more routine, workaday designs,” create charts 
--by having a properly chosen format and design,” 
--“use words, numbers, and drawing together,” 
--“display an accessible complexity of detail” and “avoid content-free decoration, including chartjunk.
-
-
-Here we are showing a chart from the readings that Healy states is of bad taste 
-
-Not so much on how it looks rather, how human visual perception works.
-
-
-Another graph shows bad data. The top one is over inflated.
-
-Add what this data was about fro Healy
 
 .panel[.panel-name[Perception]
 
 &lt;img src="img/perception.png" height="400px"/&gt;
 ]
-???
-This is a great graphic from Healy's book. 
-
-What do you see with the graph on the **left**?
-
-- the lines appear at first glance to be converging as the value of x increases. 
-- they might even intersect if we extended the graph out further
-
-What about the graph on the **right**?
-- the curves are clearly equidistant from the beginning. 
-
-These are the same graph - But misleading. The apparent convergence in the left panel is just a result of the aspect ratio of the figure.
-
 
 .panel[.panel-name[Color]
 
 &lt;img src="img/color.png" height="400px"/&gt;
 ]
-???
 
-Write something about the color from Healys
 
 
 .panel[.panel-name[Relationships]
@@ -216,7 +193,56 @@ Write something about the color from Healys
 
 ]
 ]
+
+]
 ???
+**GRAPH CONSTRUCTION TAB**
+
+Healy suggests we can often clean up the typeface, remove extraneous colors and backgrounds, and simplify, mute, or delete gridlines, superfluous axis marks, or needless keys and legends.
+
+Following (Tufte, 1983, p. 177)principles of having “more routine, workaday designs,” create charts 
+-by having a properly chosen format and design,” 
+-“use words, numbers, and drawing together,” 
+-“display an accessible complexity of detail” and “avoid content-free decoration, including chartjunk.
+
+
+Here we are showing a chart from the readings that Healy states is of bad taste 
+
+Not so much on how it looks rather, how human visual perception works.
+
+
+Another graph shows bad data. The top one is over inflated.
+
+Add what this data was about from Healy
+
+
+**PERCEPTION TAB**
+
+This is a great graphic from Healy's book. 
+
+What do you see with the graph on the **left**?
+
+- the lines appear at first glance to be converging as the value of x increases. 
+- they might even intersect if we extended the graph out further
+
+What about the graph on the **right**?
+- the curves are clearly equidistant from the beginning. 
+
+These are the same graph - But misleading. The apparent convergence in the left panel is just a result of the aspect ratio of the figure.
+
+
+
+
+**COLOR TAB**
+
+Write something about the color from Healys
+
+
+
+
+
+**RELATIONSHIPS TAB**
+
 - **Proximity**: Things that are spatially near to one another seem to be related.
 - **Similarity**: Things that look alike seem to be related.
 - **Connection**: Things that are visually tied to one another seem to be related.
@@ -225,7 +251,6 @@ Write something about the color from Healys
 - **Figure and Ground**: Visual elements are taken to be either in the foreground or the background.
 - **Common Fate**: Elements sharing a direction of movement are perceived as a unit.
 
-]
 
 
 ---
@@ -265,7 +290,26 @@ skim(data_to_explore)
 
 
 
+.panel[.panel-name[TIDY]
+
+```r
+data_to_explore %&gt;% 
+  select(c('subject', 'gender', 'proportion_earned', 'time_spent')) %&gt;% 
+  filter(subject == "OcnA" | subject == "PhysA") %&gt;%
+  skim() &lt;##
+```
+
+]
+]
+
 ???
+**EXPLORE TAB**
+
+
+
+
+**TABLE TAB**
+
 As highlighted in both
 [DSEIUR](https://datascienceineducation.com/c03.html#doing-analysis-exploring-visualizing-and-modeling-data)
 and Learning Analytics Goes to School, calculating summary statistics
@@ -293,17 +337,12 @@ is to understand your data internally* (rather than to create a table for an ext
 chunk, try clicking the icon in the output that looks like a spreadsheet
 with an arrow on it to expand your output in a separate window.
 
-.panel[.panel-name[TIDY]
 
-```r
-data_to_explore %&gt;% 
-  select(c('subject', 'gender', 'proportion_earned', 'time_spent')) %&gt;% 
-  filter(subject == "OcnA" | subject == "PhysA") %&gt;%
-  skim() &lt;##
-```
 
-]
-]
+
+**TIDY TAB**
+
+
 ---
 
 # GGplot2 - Scatter plot
@@ -317,28 +356,6 @@ data_to_explore %&gt;%
 
 ]
 
-???
-In the last session we looked at the first two parts of the Learning Analytics Workflow, *Prepare* and *Wrangle.*
-In this session we will continue with the *Explore* phase in the LA workflow cycle. 
-ggplot. An important package that is used for data visualization.
-
-ggplot consists of a grammar of graphics to organize and make sense of  different elements (Wilkinson, 2005). Healy explains that ggplot breaks up the task of making a graph into a series of distinct tasks. 
-
-ggplot had logical connections between your data and the plot elements are called aesthetic mappings
-
-ggplot2 has **layers** what you see on the plot (lines, points, etc)
-
-- The overall type of plot is called a **geom.** Each geom has a function that creates it.
-- Of course you must name the data that you are using.
-
-- mappings are specified using the **aes()** function.  we need to tell it which variables in the data should be represented by which visual elements in the plot. It also doesn’t know what sort of plot we want.
-- **scales** function maps the data to graphical output
-- **coordinates** the visualization perspective (grid)
-- **labels and legends** create titles and change up your legends.
-- **faceting** provides digital "drill-down" into the data. Multiple plots by value
-- **theme** fine grain control over the visualization of the display (fonts)
-
-Do you need all of these things to create a graph? No!
 
 
 .panel[.panel-name[Data, AES, Geom]
@@ -359,19 +376,7 @@ Do you need all of these things to create a graph? No!
 
 ]
 ]
-???
-What you need to create a graph 80% of the time is 
-1. **The data**: the raw material that is required for your visualization what you are trying to explore.
-2. **Aesthetics**: Its the mappings of your data to the visualization.
-3. **Layer**: must provide graphics layers as geom functions. You will need to tell them what geom function you want to render based on the data you provide and the aesthetic mapping. ie: geom_line(), geom_bar() etc
 
-Recall our engineered data to explore dataset. Here we call the ggplot () functions, we then add our dataset = "data_to_explore" followed by a comma and then the aes() function stating the variables we want to run for x and y. 
-
-While in the ggplot function we will always use a plus operator and not the pipe. The pipe is for dplyr and we are working in ggplot2.
-
-Immediately the next layer is the geom() function. we are going to create a scatter plot so we will use the geom_point() function.
-This is the least amount you need to create a graph 80% of the time. 
-Do you think this would be enough. No we could add a scale to it.
 
 .panel[.panel-name[Scale]
 
@@ -443,6 +448,65 @@ ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color =
 ]
 ]
 ]
+
+**GRAMMER 101 TAB**
+
+In the last session we looked at the first two parts of the Learning Analytics Workflow, *Prepare* and *Wrangle.*
+In this session we will continue with the *Explore* phase in the LA workflow cycle. 
+ggplot. An important package that is used for data visualization.
+
+ggplot consists of a grammar of graphics to organize and make sense of  different elements (Wilkinson, 2005). Healy explains that ggplot breaks up the task of making a graph into a series of distinct tasks. 
+
+ggplot had logical connections between your data and the plot elements are called aesthetic mappings
+
+ggplot2 has **layers** what you see on the plot (lines, points, etc)
+
+- The overall type of plot is called a **geom.** Each geom has a function that creates it.
+- Of course you must name the data that you are using.
+
+- mappings are specified using the **aes()** function.  we need to tell it which variables in the data should be represented by which visual elements in the plot. It also doesn’t know what sort of plot we want.
+- **scales** function maps the data to graphical output
+- **coordinates** the visualization perspective (grid)
+- **labels and legends** create titles and change up your legends.
+- **faceting** provides digital "drill-down" into the data. Multiple plots by value
+- **theme** fine grain control over the visualization of the display (fonts)
+
+Do you need all of these things to create a graph? No!
+
+
+
+**DATA, AES.. TAB**
+
+What you need to create a graph 80% of the time is 
+1. **The data**: the raw material that is required for your visualization what you are trying to explore.
+2. **Aesthetics**: Its the mappings of your data to the visualization.
+3. **Layer**: must provide graphics layers as geom functions. You will need to tell them what geom function you want to render based on the data you provide and the aesthetic mapping. ie: geom_line(), geom_bar() etc
+
+Recall our engineered data to explore dataset. Here we call the ggplot () functions, we then add our dataset = "data_to_explore" followed by a comma and then the aes() function stating the variables we want to run for x and y. 
+
+While in the ggplot function we will always use a plus operator and not the pipe. The pipe is for dplyr and we are working in ggplot2.
+
+Immediately the next layer is the geom() function. we are going to create a scatter plot so we will use the geom_point() function.
+This is the least amount you need to create a graph 80% of the time. 
+Do you think this would be enough. No we could add a scale to it.
+
+
+
+
+**SCALE TAB**
+
+
+
+
+
+**LABELS TAB**
+
+
+
+
+
+**FACET TAB**
+
 ---
 # GGplot2 - Histogram
 .panelset[
@@ -549,7 +613,7 @@ class: inverse, clear, center
 .pull-left-wide[.left[.font100[
 -  Make sure to complete the R Programming primer: [Introduction to data visualization](https://rstudio.cloud/learn/primers/3).
 
--  Complete the badge requirement document: [foudationlab3_badge- Data Visualization](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_2/foundationlab2_badge.Rmd).
+-  Complete the badge requirement document: [foudationlab3_badge- Data Visualization](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_3/foundationlab3_badge.Rmd).
 ]]
 ]
 
