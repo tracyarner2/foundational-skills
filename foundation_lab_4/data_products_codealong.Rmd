@@ -176,9 +176,6 @@ apa.reg.table(m1, filename = "lm-table.doc")
 ```
 
 
-
-
-
 ```{r messages=FALSE, warning=FALSE}
 #install apaTables if this is your first time - do you remember how?
 
@@ -197,16 +194,11 @@ of this task, imagine that your audience consists of the developers and
 facilitators of the DLT MOOC-Eds who have limited background in SNA and
 adapt the following steps accordingly:
 
-1.  **Select.** Select a group and/or node-level analysis from above, or
-    a new analysis if so motivated, that you think would be interesting
-    or relevant for the target audience and that helps answer our
-    research questions.
+1.  **Select.** Select a group  from above, or a new analysis if so motivated, that you think would be interesting or relevant for the target audience and that helps answer our research questions.
 
-2.  **Polish.** Create and polish a data visualization and/or data table
-    to communicate your selected findings.
+2.  **Polish.** Create and polish a data visualization and/or data table to communicate your selected findings.
 
-3.  **Narrate.** Write a brief narrative (2-3 paragraphs) to accompany
-    your visualization and/or table that includes the following:
+3.  **Narrate.** Write a brief narrative (2-3 paragraphs) to accompany your visualization and/or table that includes the following:
 
     -   The question or questions guiding the analysis;
 

@@ -112,6 +112,8 @@ So the pre-reading for this module was chapters 21 and 23 in the R for Data Scie
 
 Who are some of the stakeholders that you communicate your findings?
 
+What experiences have you had with communicating the results of data analysis and how did you communicate these findings?
+
 What types of differences are there in your communications between your stakeholders? 
 
 ???
