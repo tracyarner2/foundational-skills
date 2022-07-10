@@ -155,6 +155,8 @@ The authors explain that, while descriptive statistics and data visualization du
 
 and relationships in our data, statistical models can be used to help us determine if relationships, patterns and trends are actually meaningful.
 
+In Learning Analytics goes to school there is a chapter on exploratory Analysis that is linked in optional readings. As a general rule of thumb, Exploratory Data Analysis (EDA) is a set of steps to guide you in the Explore phase. Primarily pairing visualization data and feature engineering to look at, create and understand features value and identify new features where necessary.
+
 
 
 **WHO TAB**
