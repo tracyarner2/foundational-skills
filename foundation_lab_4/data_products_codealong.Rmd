@@ -38,7 +38,7 @@ R](https://datascienceineducation.com/c03.html), the.**Model**.step of the data 
 
 ##### A. Correlation Matrix
 
-As highlighted in @macfadyen2010, the scatter plots are a useful initial approach for identifying potential correlational trends between variables under investigation, but to further interrogate the significance of selected variables as indicators of student achievement, a simple correlation analysis of each variable with student final grade can be conducted.
+As highlighted in @macfadyen2010, scatter plots are a useful initial approach for identifying potential correlational trends between variables under investigation, but to further interrogate the significance of selected variables as indicators of student achievement, a simple correlation analysis of each variable with student final grade can be conducted.
 
 There are two efficient ways to create correlation matrices, one that is best for internal use, and one that is best for inclusion in a manuscript. The {corrr} package provides a way to create a correlation matrix in a {tidyverse}-friendly way. Like for the {skimr} package, it can take as little as a line of code to create a correlation matrix. If not familiar, a correlation matrix is a table that presents how *all of the variables* are related to *all of the other variables*.
 
@@ -96,7 +96,9 @@ data_to_explore_subset <- data_to_explore %>%
 
 apa.cor.table(data_to_explore_subset)
 ```
-This may look nice, but how to actually add this into a dissertation or article that you might be interested in publishing? Read the documentation for `apa.cor.table()` by running `?apa.cor.table()` in the console. Look through the documentation and examples to understand how to output a file with the formatted correlation table, and then run the code to do that with your subset of the `data_to_explore` data frame.
+This may look nice, but how to actually add this into a dissertation or article that you might be interested in publishing? 
+
+Read the documentation for `apa.cor.table()` by running `?apa.cor.table()` in the console. Look through the documentation and examples to understand how to output a file with the formatted correlation table, and then run the code to do that with your subset of the `data_to_explore` data frame.
 
 ```{r messages=FALSE, warning=FALSE}
 apa.cor.table(data_to_explore_subset, filename = "cor-table.doc")
