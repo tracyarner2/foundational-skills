@@ -7,7 +7,7 @@ Foundation knowledge is the base knowledge of which new knowledge is built. Lear
 These foundation labs allow for the gentle introduction of conceptual understanding of foundation of learning analytics along with R programming basics for STEM Education Research. 
 
 
-#### **Foundation lab 1** - Data Sources
+## **Foundation lab 1** - Data Sources
 
 **Required Pre-Reading:**
 
@@ -45,14 +45,14 @@ The code-along includes introduction of a script file and commonly used packages
 - Make sure to complete the R Programming primers:  [Work with Data](https://rstudio.cloud/learn/primers/2))
 
 
-**Badge Requirements**
+**Badge Requirement**
 
-- Complete the Badge requirement document[Foundations badge - Data Sources](https://laser-institute.github.io/foundational-skills/foundation_lab_1/foundationlab1_badge.html).
+- Complete the Badge requirement document[Foundations badge - Data Sources](https://laser-institute.github.io/foundational-skills/foundation_lab_1/lab1_badge/foundationlab1_badge.html).
 
 
 Written by Jeanne McClure, Catherine Noonan, and Shaun Kellogg. Presented by Jeanne McClure and Jenn Houchins at the Learning Analytics in STEM Education Research (LASER) workshop, July 11, 2022, through July 15, 2022, at the Friday Institute, North Carolina State University.
 
-#### **Foundation lab 2** - Learning Analytics Workflow
+## **Foundation lab 2** - Learning Analytics Workflow
 
 
 **Required Pre-Reading:**
@@ -94,13 +94,16 @@ PHASE oF WORKFLOW
 **Required Work:**
 
 -  Make sure to complete the R Programming primers:  [Tidy your Data](https://rstudio.cloud/learn/primers/4)
+
+**Badge Requirement**
+
 -  Complete the badge requirement document from your lab 2 folder [foudationlab2_badge - Data Sources](https://laser-institute.github.io/foundational-skills/foundation_lab_2/foundationlab2_badge.html).
 
 
 Written by Jeanne McClure, Catherine Noonan and Shaun Kellogg. Presented by Jeanne McClure and Jenn Houchins at the Learning Analytics in STEM Education Research (LASER) workshop, July 11, 2022, through July 15, 2022, at the Friday Institute, North Carolina State University.
 
 
-#### **Foundation-lab 3** - Data Visualization
+## **Foundation-lab 3** - Data Visualization
 
 
 **Required Pre-Reading:**
@@ -136,12 +139,14 @@ PHASE OF WORKFLOW
 
 -  Make sure to complete the R Programming primer: [Introduction to data visualization](https://rstudio.cloud/learn/primers/3))
 
+**Badge Requirement**
+
 -  Complete the badge requirement document from your lab 3 folder [foundationlab3_badge- Data Visualization](https://laser-institute.github.io/foundational-skills/foundation_lab_3/foundationlab3_badge.html).
 
 Written by Jeanne McClure, and Shaun Kellogg. Presented by Jeanne McClure and Jenn Houchins at the Learning Analytics in STEM Education Research (LASER) workshop, July 11, 2022, through July 15, 2022, at the Friday Institute, North Carolina State University.
 
 
-#### **Foundation-lab 4** - Data Products
+## **Foundation-lab 4** - Data Products
 
 **Required Pre-Reading:**
 
@@ -175,6 +180,8 @@ PHASE OF WORKFLOW
 **Required Work:**
 
 -  Make sure to complete the R Programming primer: [R Markdown](https://rmarkdown.rstudio.com/lesson-1.html?_ga=2.149737333.2122961316.1655817816-1599820931.1654624890)
+
+**Badge Requirement**
 
 -  Complete the badge requirement document from your lab 4 folder [foudationlab4_badge - Data Products](https://laser-institute.github.io/foundational-skills/foundation_lab_4/foundationlab4_badge.html).
 
