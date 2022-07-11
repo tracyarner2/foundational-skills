@@ -16,17 +16,41 @@ These foundation labs allow for the gentle introduction of conceptual understand
 
 **Presentation and code-along:**
 This presentation is a review of the types of data typically used to perform learning analytics in education. The focus of the essential readings are to introduce LASER Scholars to the most common data structures used in Learning Analytics. We will look closely at Digital Learning Environments, Administrative Data and Sensors / Multimodal. 
+
+TYPES:
+
+- Digital Learning Environments
+- Games and Simulations
+- MOOCs
+- Intelligent Tutoring Systems
+- Learning Management Systems
+
+CHARACTERISTIC of DATA
+
+- Structured
+- Unstructured
+- Semi-Structured
+- Meta-Data
+
+
 The code-along includes introduction of a script file and commonly used packages that read in different data types. Scholars learn to use the readr package from tidyverse to organize data into data frames and tibbles. Additionally, scholars will learn how to read in files using the Haven package.  
 
-Written by Jeanne McClure, Catherine Noonan, and Shaun Kellogg. Presented by Jeanne McClure and Jenn Houchins at the Learning Analytics in STEM Education Research (LASER) workshop, July 11, 2022, through July 15, 2022, at the Friday Institute, North Carolina State University.
+- Reading in Data
+- Packages
+- Common Functions
 
 
 **Required Work:**
 
 - Make sure to complete the R Programming primers:  [Work with Data](https://rstudio.cloud/learn/primers/2))
-- Complete the Badge requirement document[Foundations badge - Data Sources](https://github.com/laser-institute/foundational-skills/tree/master/foundation_lab_1/lab1_badge).
 
 
+**Badge Requirements**
+
+- Complete the Badge requirement document[Foundations badge - Data Sources](https://laser-institute.github.io/foundational-skills/foundation_lab_1/foundationlab1_badge.html).
+
+
+Written by Jeanne McClure, Catherine Noonan, and Shaun Kellogg. Presented by Jeanne McClure and Jenn Houchins at the Learning Analytics in STEM Education Research (LASER) workshop, July 11, 2022, through July 15, 2022, at the Friday Institute, North Carolina State University.
 
 #### **Foundation lab 2** - Learning Analytics Workflow
 
@@ -39,14 +63,41 @@ Written by Jeanne McClure, Catherine Noonan, and Shaun Kellogg. Presented by Jea
 
 
 **Presentation and code-along:**
-Learning Analytics. The focus of the essential reading dives deep into the Learning Analytics workflow. The accompanying code-along introduces R Markdown and Markdown syntax, as well as the YAML header. Participants will practice preparing and wrangling data, including reading in and tidying data. 
+Learning Analytics. The focus of the essential reading dives deep into the Learning Analytics workflow. 
 
-Written by Jeanne McClure, Catherine Noonan and Shaun Kellogg. Presented by Jeanne McClure and Jenn Houchins at the Learning Analytics in STEM Education Research (LASER) workshop, July 11, 2022, through July 15, 2022, at the Friday Institute, North Carolina State University.
+LEARNING ANALYTICS WORKFLOW
+
+- Prepare
+- Wrangle
+- Explore
+- Model
+_ Communication
+
+
+
+
+The accompanying code-along introduces R Markdown and Markdown syntax, as well as the YAML header. Participants will practice preparing and wrangling data, including reading in and tidying data. 
+PHASE oF WORKFLOW
+
+
+- Prepare
+  + How to read in Packages
+    + Tidyverse Package
+
+- Wrangle
+  + Read in Data
+  + Import
+  + Tidy
+  + Join
+
 
 **Required Work:**
 
 -  Make sure to complete the R Programming primers:  [Tidy your Data](https://rstudio.cloud/learn/primers/4)
--  Complete the badge requirement document from your lab 2 folder [foudationlab2_badge - Data Sources](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_2/foundationlab2_badge.Rmd).
+-  Complete the badge requirement document from your lab 2 folder [foudationlab2_badge - Data Sources](https://laser-institute.github.io/foundational-skills/foundation_lab_2/foundationlab2_badge.html).
+
+
+Written by Jeanne McClure, Catherine Noonan and Shaun Kellogg. Presented by Jeanne McClure and Jenn Houchins at the Learning Analytics in STEM Education Research (LASER) workshop, July 11, 2022, through July 15, 2022, at the Friday Institute, North Carolina State University.
 
 
 #### **Foundation-lab 3** - Data Visualization
@@ -54,8 +105,8 @@ Written by Jeanne McClure, Catherine Noonan and Shaun Kellogg. Presented by Jean
 
 **Required Pre-Reading:**
 
-(Feel free to skim)
-1. [Data Visualization: A practical Introduction (CH. 1 & 3) by Kieren Healy](https://socviz.co/)
+
+1. [Data Visualization: A practical Introduction (CH. 1 & 3) by Kieren Healy](https://socviz.co/)(Feel free to skim)
 
 
 2. [R for Data Science. (CH. 3) by Hadley Wickham & Garrett Grolemund](https://r4ds.had.co.nz/index.html)
@@ -64,16 +115,30 @@ Written by Jeanne McClure, Catherine Noonan and Shaun Kellogg. Presented by Jean
 **Presentation and code-along:**
 The overview introduces and reviews some of the basic principles of data visualization as it relates to data graphics, including data visualization perception and color.
 
-The accompanying code-along takes a deep dive into the ggplot2 grammar in a simple-to-understand layering approach. We will look at a representation of numeric variables using some of the most popular geoms, histogram and scatter plot, and put it all together to answer a research question. 
-At the end of this code-along participants will understand the "hows" of ggplots aesthetics. 
+DATA VISUALIZATION
 
-Written by Jeanne McClure, and Shaun Kellogg. Presented by Jeanne McClure and Jenn Houchins at the Learning Analytics in STEM Education Research (LASER) workshop, July 11, 2022, through July 15, 2022, at the Friday Institute, North Carolina State University.
+- Purpose of Visualizations
+- Principles
+  + Perception
+  + Color
+  + Cognitive Processing
+
+The accompanying code-along takes a deep dive into the ggplot2 grammar in a simple-to-understand layering approach. We will look at a representation of numeric variables using some of the most popular geoms, histogram and scatter plot, and put it all together to answer a research question. At the end of this code-along participants will understand the "hows" of ggplots aesthetics. 
+
+PHASE OF WORKFLOW
+
+- EXPLORE
+  + `ggplot2` grammar
+  + Scatter plot
+  + Histogram
 
 **Required Work:**
 
 -  Make sure to complete the R Programming primer: [Introduction to data visualization](https://rstudio.cloud/learn/primers/3))
 
--  Complete the badge requirement document from your lab 3 folder [foundationlab3_badge- Data Visualization](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_3/foundationlab3_badge.Rmd).
+-  Complete the badge requirement document from your lab 3 folder [foundationlab3_badge- Data Visualization](https://laser-institute.github.io/foundational-skills/foundation_lab_3/foundationlab3_badge.html).
+
+Written by Jeanne McClure, and Shaun Kellogg. Presented by Jeanne McClure and Jenn Houchins at the Learning Analytics in STEM Education Research (LASER) workshop, July 11, 2022, through July 15, 2022, at the Friday Institute, North Carolina State University.
 
 
 #### **Foundation-lab 4** - Data Products
@@ -84,12 +149,37 @@ Written by Jeanne McClure, and Shaun Kellogg. Presented by Jeanne McClure and Je
 
 **Presentation and code-along:**
 
-This presentation will cover the essentials of crafting a data product for different stakeholders. Concepts covered include: data storytelling, narrative elements, and methods for improving stakeholder understanding and facilitating resolution or call-to-action. The code-along will focus on using R Markdown to create reports in a variety of formats and will introduce formatting for bibliographies and in-text citations for scholarly publications.
+This presentation will cover the essentials of crafting a data product for different stakeholders. 
 
-Written by Catherine Noonan, Jeanne McClure, and Shaun Kellogg. Presented by Jeanne McClure and Jenn Houchins at the Learning Analytics in STEM Education Research (LASER) workshop, July 11, 2022, through July 15, 2022, at the Friday Institute, North Carolina State University.
+- Data storytelling
+- narrative elements, 
+- methods for improving stakeholder understanding and facilitating resolution or call-to-action. 
+
+The code-along will focus on using R Markdown to create reports in a variety of formats and will introduce formatting for bibliographies and in-text citations for scholarly publications.
+
+PHASE OF WORKFLOW
+- Model
+  + Correlation Matrix
+    + APA Formatted Table
+  + Linear Regression
+    + APA Formatted Table
+  + Summarize 
+
+- Communicate
+  + Select
+  + Polish
+  + Narrate
+  
+
 
 **Required Work:**
 
 -  Make sure to complete the R Programming primer: [R Markdown](https://rmarkdown.rstudio.com/lesson-1.html?_ga=2.149737333.2122961316.1655817816-1599820931.1654624890)
 
--  Complete the badge requirement document from your lab 4 folder [foudationlab4_badge - Data Products](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_4/foundationlab4_badge.Rmd).
+-  Complete the badge requirement document from your lab 4 folder [foudationlab4_badge - Data Products](https://laser-institute.github.io/foundational-skills/foundation_lab_4/foundationlab4_badge.html).
+
+
+Written by Catherine Noonan, Jeanne McClure, and Shaun Kellogg. Presented by Jeanne McClure and Jenn Houchins at the Learning Analytics in STEM Education Research (LASER) workshop, July 11, 2022, through July 15, 2022, at the Friday Institute, North Carolina State University.
+
+
+THANK YOU!! 
