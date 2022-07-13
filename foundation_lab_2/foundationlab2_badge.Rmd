@@ -88,7 +88,7 @@ Feel free to create a new script in your lab 2 to work through the following pro
 
 ## Wrangle
 
-3. In the chunk called `read-data`: _Import_ the `sci-online-classes.csv` from the `data` folder and _save_ as a new `object` called `sci-classes`. Then _inspect_ your data using a `function` of your choice.
+3. In the chunk called `read-data`: _Import_ the `sci-online-classes.csv` from the `data` folder and _save_ as a new `object` called `sci_classes`. Then _inspect_ your data using a `function` of your choice.
 
 
 ```{r, read-data}
@@ -108,11 +108,12 @@ What do you notice about FinalGradeCEMS?(*Hint: NAs?)
 - Answer here
 
 5. In code chunk named `select-2` _select_ all columns except `subject` and `section`. _Assign_ to a new object with a different name. _Examine_ your data frame with a different `function`.
+
 ```{r, select-2}
 # Type your code here
 ```
 
-6. In the code chunk named `filter-1`, _Filter_ the sci_classes data frame for students in OcnA courses. _Assign_ to a new object with a different name. _Use_ the head() function to examine your data frame. 
+6. In the code chunk named `filter-1`, _Filter_ the **sci_classes data** frame for students in OcnA courses. _Assign_ to a new object with a different name. _Use_ the head() function to examine your data frame. 
  
 ```{r, filter-1}
 #Type your code here
@@ -124,15 +125,15 @@ Q: How many rows does the head() function display?
 - Answer here
 
 
-7. In code chunk named `filter-2`, _filter_ the sci_classes data frame so rows with NA for points earned are removed. _Assign_ to a new object with a different name. _Use_ glimpse() to examine all columns of your data frame.
+7. In code chunk named `filter-2`, _filter_ the **sci_classes data** frame so rows with NA for points earned are removed. _Assign_ to a new object with a different name. _Use_ glimpse() to examine all columns of your data frame.
 
 ```{r, filter 2}
 # Type your code here
 ```
 
-8. In the code chunk called `arrange-1`, _Arrange_ `sci_classes` by `subject` then `percentage_earned` in descending order. _Assign_ to a new object. _Use_ the str() function to examine the data type of each column in your data frame.
+8. In the code chunk called `arrange-1`, _Arrange_ **sci_classes data** by `subject` then `percentage_earned` in descending order. _Assign_ to a new object. _Use_ the str() function to examine the data type of each column in your data frame.
 
-9. In the code chunk name `final-wrangle`, _use_ `sci_classes` data and the %>% `pipe` operator: 
+9. In the code chunk name `final-wrangle`, _use_ **sci_classes data** data and the %>% `pipe` operator: 
   + Select `student_id`, `subject`, `semester`, `FinalGradeCEMS`. 
   + Filter for students in OcnA courses.
   + Arrange grades by section in descending order. 
