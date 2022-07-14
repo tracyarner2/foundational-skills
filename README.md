@@ -14,7 +14,7 @@ These foundation labs allow for the gentle introduction of conceptual understand
 [Learning Analytics Goes to School, (Ch. 2, pp. 15 - 28) By Andrew Krumm, Barbara Means, Marie Bienkowski](https://github.com/laser-institute/essential-readings/blob/main/foundation_labs/foundlab_1/krumm_2018.pdf)
 
 
-**Presentation and code-along:**
+**[Foundation Presentation - One](https://laser-institute.github.io/foundational-skills/foundation_lab_1/index.html) and code-along:**
 This presentation is a review of the types of data typically used to perform learning analytics in education. The focus of the essential readings are to introduce LASER Scholars to the most common data structures used in Learning Analytics. We will look closely at Digital Learning Environments, Administrative Data and Sensors / Multimodal. 
 
 TYPES:
@@ -62,7 +62,7 @@ Written by Jeanne McClure, Catherine Noonan, and Shaun Kellogg. Presented by Jea
 2. [R for Data Science. (CH. 9) by Hadley Wickham & Garrett Grolemund](https://r4ds.had.co.nz/index.html)
 
 
-**Presentation and code-along:**
+**[Foundation Presentation - two](https://laser-institute.github.io/foundational-skills/foundation_lab_2/la_workflow_slides.html) and code-along:**
 Learning Analytics. The focus of the essential reading dives deep into the Learning Analytics workflow. 
 
 LEARNING ANALYTICS WORKFLOW
@@ -115,7 +115,7 @@ Written by Jeanne McClure, Catherine Noonan and Shaun Kellogg. Presented by Jean
 2. [R for Data Science. (CH. 3) by Hadley Wickham & Garrett Grolemund](https://r4ds.had.co.nz/index.html)
 
 
-**Presentation and code-along:**
+**[Foundations Presentation - Three](https://laser-institute.github.io/foundational-skills/foundation_lab_3/intro_dataviz.html)and code-along:**
 The overview introduces and reviews some of the basic principles of data visualization as it relates to data graphics, including data visualization perception and color.
 
 DATA VISUALIZATION
@@ -152,7 +152,7 @@ Written by Jeanne McClure, and Shaun Kellogg. Presented by Jeanne McClure and Je
 
 1 & 2. [R for Data Science. (CH. 22 & 23) by Hadley Wickham & Garrett Grolemund](https://r4ds.had.co.nz/index.html)
 
-**Presentation and code-along:**
+**[Foundation Presentation - four](https://laser-institute.github.io/foundational-skills/foundation_lab_3/intro_dataviz.html) and code-along:**
 
 This presentation will cover the essentials of crafting a data product for different stakeholders. 
 
