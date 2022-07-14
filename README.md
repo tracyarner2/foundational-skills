@@ -141,7 +141,7 @@ PHASE OF WORKFLOW
 
 **Badge Requirement**
 
--  Complete the badge requirement document from your lab 3 folder [foundationlab3_badge- Data Visualization](https://laser-institute.github.io/foundational-skills/foundation_lab_3/foundationlab3_badge.Rmd).
+-  Complete the badge requirement document from your lab 3 folder [foundationlab3_badge- Data Visualization](https://laser-institute.github.io/foundational-skills/foundation_lab_3/foundationlab3_badge.html).
 
 Written by Jeanne McClure, and Shaun Kellogg. Presented by Jeanne McClure and Jenn Houchins at the Learning Analytics in STEM Education Research (LASER) workshop, July 11, 2022, through July 15, 2022, at the Friday Institute, North Carolina State University.
 
