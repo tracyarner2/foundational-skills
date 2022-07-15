@@ -1,7 +1,7 @@
 ---
 title: 'Data Sources badge'
 subtitle: "LASER Institute Foundation Learning Lab 1"
-author: "Jeanne McClure"
+author: "Tracy Arner"
 date: "`r format(Sys.Date(),'%B %e, %Y')`"
 output: html_document
 ---
@@ -71,14 +71,15 @@ After you finish the script file for [lab1_badge](https://github.com/laser-insti
 
 ```{r, problem_1}
 # YOUR FINAL CODE HERE
-
+df <- data.frame(Students = c("Thor", "Rogue", "Electra", "Electra", "Wolverine"), Food = c("Bread", "Orange", "Chocolate", "Carrots", "Milk"))
+df
 
 ```
 
 
 ```{r, problem_2}
 # YOUR FINAL CODE HERE
-
+table(df)
 
 ```
 
@@ -86,7 +87,8 @@ After you finish the script file for [lab1_badge](https://github.com/laser-insti
 ```{r, problem_3}
 # YOUR FINAL CODE HERE
 
-
+numbers<-c(2:8)
+sum(numbers)
 ```
 
 
@@ -94,14 +96,19 @@ After you finish the script file for [lab1_badge](https://github.com/laser-insti
 ```{r, problem_4}
 # YOUR FINAL CODE HERE
 
+library(tidyverse)
+sci_classes <-read_csv("data/sci-online-classes.csv")
 
+glimpse(sci_classes)
 ```
 
 
 
 ```{r, problem_5}
 # YOUR FINAL CODE HERE
-
+sci_classes2 <- sci_classes %>%
+  select(-c(subject, section))
+sci_classes2
 
 ```
 

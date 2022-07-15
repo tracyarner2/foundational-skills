@@ -1,6 +1,6 @@
 # Lab 1 Badge Code
 
-# Type your name here:
+# Type your name here: Tracy Arner
 
 
 ################
@@ -9,13 +9,13 @@
 
 # Create a data frame that includes two columns, one named "Students" and the other named "Foods". The first column should be this vector (note the intentional repeated values): Thor, Rogue, Electra, Electra, Wolverine
 
-
 #The second column should be this vector: Bread, Orange, Chocolate, Carrots, Milk
 
 
 #### Write your code below:
 
-
+df <- data.frame(Students = c("Thor", "Rogue", "Electra", "Electra", "Wolverine"), Food = c("Bread", "Orange", "Chocolate", "Carrots", "Milk"))
+df
 
 
 ################
@@ -25,7 +25,7 @@
 # Using the data frame created in Problem 2, use the table() command to create a frequency table for the column called "Students".
 
 
-
+table(df)
 
 ################
 ## Problem 3 ###
@@ -36,14 +36,16 @@
 
 #### Write your code below:
 
-
-
+numbers<-c(2:8)
+sum(numbers)
 
 ################
 ## Problem 4 ###
 ################
 
-# a. Create code to read the data/sci-online-classes.csv file into R using function(s) from the tidyverse. (Note: this package loads with library(tidyverse). Save the data as an object called sci_classes.
+# a. Create code to read the data/sci-online-classes.csv file into R using function(s) from the tidyverse. 
+#(Note: this package loads with library(tidyverse). 
+#Save the data as an object called sci_classes.
 
 # c. Examine the contents of sci_classes in your console.Is your object a tibble? How do you know? (Hint: Check the output in the console.) 
 
@@ -51,9 +53,10 @@
 
 
 #### Write your code below:
+library(tidyverse)
+sci_classes <-read_csv("data/sci-online-classes.csv")
 
-
-
+glimpse(sci_classes)
 
 
 
@@ -70,8 +73,9 @@
 
 
 #### Write your code below:
-
-
+sci_classes2 <- sci_classes %>%
+  select(-c(subject, section))
+sci_classes2
 
 
 ##################
